@@ -627,7 +627,7 @@ age_by_year = dmc.Card(
         ),
         dmc.ScatterChart(
             h=300,
-            data=data,
+            data=df_age_by_year,
             dataKey={"x": "Age", "y": "Year"},
             xAxisLabel="Age",
             # yAxisLabel="BMI",
