@@ -3,7 +3,7 @@ from dash import html
 import dash_mantine_components as dmc
 
 
-dash.register_page(__name__, path="/about", name="About")
+dash.register_page(__name__, path="/about", name="About", title="About BasketHogs")
 
 layout = dmc.Box(
     children=[
