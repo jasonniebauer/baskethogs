@@ -13,8 +13,7 @@ external_stylesheets = [
     },
 ]
 
-app = Dash(__name__, use_pages=True, suppress_callback_exceptions=True, assets_folder=None, external_stylesheets=external_stylesheets)
-# assets_folder="public/assets"
+app = Dash(__name__, use_pages=True, suppress_callback_exceptions=True, assets_folder="public/assets", external_stylesheets=external_stylesheets)
 
 # Google analytics
 app.index_string = f"""
