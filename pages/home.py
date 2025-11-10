@@ -384,7 +384,10 @@ total_wins_over_time = dmc.Card(
             series = [
                 {"name": "Total Wins", "color": ARKANSAS_RED},
             ],
-            curveType="linear",
+            curveType="Linear",
+        	color="ARKANSAS_RED,
+        	fillOpacity=1,
+        	withGradient=True,
             tickLine="y",
             # withXAxis=False,
             mb="sm",
