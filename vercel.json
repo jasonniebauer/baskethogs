@@ -18,6 +18,14 @@
     {
       "source": "/about/(.*)",
       "destination": "/app.py"
+    },
+    {
+      "source": "/api/(.*)",
+      "destination": "/app.py"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/app.py"
     }
   ],
   "headers": [
