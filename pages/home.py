@@ -4,7 +4,7 @@ from dash import html
 import dash_mantine_components as dmc
 
 
-dash.register_page(__name__, path="/", name="Home")
+dash.register_page(__name__, path="/", name="Home", title="BasketHogs")
 
 ARKANSAS_RED = "#9D2235"
 TODAY = date.today()
