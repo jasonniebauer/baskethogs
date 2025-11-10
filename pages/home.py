@@ -394,8 +394,8 @@ total_wins_over_time = dmc.Card(
 )
 
 df_total_points_over_time = [
-  {"date": "Nov 3", "Total Points": 109},
-  {"date": "Nov 8", "Total Points": 66},
+  {"date": "Nov 3", "Arkansas Points": 109, "Opponent Points": 77},
+  {"date": "Nov 8", "Arkansas Points": 66, "Opponent Points": 69},
 ]
 
 total_points_over_time = dmc.Card(
@@ -419,13 +419,15 @@ total_points_over_time = dmc.Card(
             dataKey="date",
             data=df_total_points_over_time,
             series = [
-                {"name": "Total Points", "color": ARKANSAS_RED},
+                {"name": "Arkansas Points", "color": ARKANSAS_RED},
+                {"name": "Opponent", "color": "black"},
             ],
             curveType="linear",
             tickLine="y",
             # withXAxis=False,
             mb="sm",
             pr="1rem",
+            withLegend=True,
         ),
     ]
 )
