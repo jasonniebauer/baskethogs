@@ -1,0 +1,17 @@
+{
+    "name":"BasketHogs",
+    "short_name":"BasketHogs",
+    "icons":[
+        {
+            "src":"/android-chrome-192x192.png",
+            "sizes":"192x192","type":"image/png"
+        },
+        {
+            "src":"/android-chrome-512x512.png",
+            "sizes":"512x512","type":"image/png"
+            }
+    ],
+    "theme_color":"#9D2235",
+    "background_color":"#9D2235",
+    "display":"standalone"
+}
