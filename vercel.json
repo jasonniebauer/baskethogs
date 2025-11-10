@@ -8,14 +8,6 @@
   ],
   "rewrites": [
     {
-      "source": "/assets/(.*)",
-      "destination": "/public/assets/$1"
-    },
-    {
-      "source": "/favicon.ico",
-      "destination": "/public/assets/favicon.ico"
-    },
-    {
       "source": "/about/(.*)",
       "destination": "/app.py"
     },
