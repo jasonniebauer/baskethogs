@@ -377,7 +377,7 @@ total_wins_over_time = dmc.Card(
             order=1,
             mb="xl",
         ),
-        dmc.LineChart(
+        dmc.Sparkline(
             h=300,
             dataKey="date",
             data=df_total_wins_over_time,
@@ -590,6 +590,45 @@ points_gap_over_time = dmc.Card(
             # withXAxis=False,
             mb="sm",
             pr="1rem",
+        ),
+    ]
+)
+
+df_age_by_year = [
+    {"Player": "Jaden Karuletwa", "Age": 19, "Year": "Sophomore"},
+    {"Player": "Meleek Thomas", "Age": 19, "Year": "Freshman"},
+    {"Player": "Amere Brown", "Age": 19, "Year": "Freshman"},
+    {"Player": "Darius Acuff Jr.", "Age": , "Year": ""},
+    {"Player": "Trevon Brazile", "Age": 22, "Year": "Senior"},
+    {"Player": "Karter Knox", "Age": 20, "Year": "Sophomore"},
+    {"Player": "Malique Ewin", "Age": 22, "Year": "Senior"},
+    {"Player": "Ayden Kelley", "Age": 19, "Year": "Sophomore"},
+    {"Player": "Elmir Džafić", "Age": 20, "Year": "Freshman"},
+    {"Player": "D.J. Wagner", "Age": 20, "Year": "Junior"},
+    {"Player": "Nick Pringle", "Age": 24, "Year": "Senior"},
+    {"Player": "Billy Richmond III", "Age": 19, "Year": "Junior"},
+    {"Player": "Isaiah Sealy", "Age": 18, "Year": "Freshman"},
+    {"Player": "Karim Rtail", "Age": 21, "Year": "Freshman"},
+    {"Player": "Paulo Semedo", "Age": 19, "Year": "Freshman"},
+]
+
+age_by_year = dmc.Card(
+    radius="md",
+    bd="1px solid #C7C8CA",
+    mb="5rem",
+    children=[
+        dmc.Title(
+            "Total Wins Over Time",
+            order=1,
+            mb="xl",
+        ),
+        dmc.ScatterChart(
+            h=300,
+            data=data,
+            dataKey={"x": "Age", "y": "Year"},
+            xAxisLabel="Age",
+            # yAxisLabel="BMI",
+            withLegend=True,
         ),
     ]
 )
@@ -872,7 +911,7 @@ meleek_thomas_radar = [
 nick_pringle_stats = {
     "Name": "Nick Pringle",
     "Position": "Forward",
-    "Year": "Gr. Senior",
+    "Year": "Graduate Senior",
     "Height": "6' 10\"",
     "Weight": "230",
     "Birthdate": "9/16/2001",
@@ -1299,12 +1338,13 @@ layout = dmc.Box(
     children=[
         scorecard_main,
         scorecard_secondary,
-        # total_wins_over_time,
+        total_wins_over_time,
         total_points_over_time,
         count_points_by_type,
         totals_points_by_type,
         point_type_by_percent_of_total,
         points_gap_over_time,
+        age_by_year,
         player_stats_headline,
         players,
     ]
