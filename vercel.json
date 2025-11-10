@@ -4,17 +4,9 @@
     {
       "src": "app.py",
       "use": "@vercel/python"
-    },
-    {
-      "src": "public/**",
-      "use": "@vercel/assets"
     }
   ],
   "rewrites": [
-    {
-      "source": "/public/(.*)",
-      "destination": "/public/$1"
-    },
     {
       "source": "/assets/(.*)",
       "destination": "/public/assets/$1"
