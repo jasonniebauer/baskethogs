@@ -131,7 +131,7 @@ scoreboard = dmc.Grid(
                     radius="md",
                 )
             ]),
-            span={"base": 12, "sm": 12, "md": 3},
+            span={"base": 6, "sm": 6, "md": 3},
         ),
         dmc.GridCol(
             dmc.Center([
@@ -172,7 +172,7 @@ scoreboard = dmc.Grid(
                     # withBorder=True,
                 )
             ]),
-            span={"base": 12, "sm": 12, "md": 3},
+            span={"base": 6, "sm": 6, "md": 3},
         ),
         dmc.GridCol(
             dmc.Center([
@@ -213,7 +213,7 @@ scoreboard = dmc.Grid(
                     # withBorder=True,
                 )
             ]),
-            span={"base": 12, "sm": 12, "md": 3},
+            span={"base": 6, "sm": 6, "md": 3},
         ),
         dmc.GridCol(
             dmc.Center([
@@ -253,7 +253,7 @@ scoreboard = dmc.Grid(
                     radius="md",
                 )
             ]),
-            span={"base": 12, "sm": 12, "md": 3},
+            span={"base": 6, "sm": 6, "md": 3},
         ),
         dmc.GridCol(
             dmc.Center([
@@ -293,7 +293,7 @@ scoreboard = dmc.Grid(
                     radius="md",
                 )
             ]),
-            span={"base": 12, "sm": 12, "md": 3},
+            span={"base": 6, "sm": 6, "md": 3},
         ),
         dmc.GridCol(
             dmc.Center([
@@ -333,7 +333,7 @@ scoreboard = dmc.Grid(
                     radius="md",
                 )
             ]),
-            span={"base": 12, "sm": 12, "md": 3},
+            span={"base": 6, "sm": 6, "md": 3},
         ),
     ]
 )
