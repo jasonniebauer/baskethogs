@@ -115,11 +115,11 @@ navbar = dmc.Flex(
                 ),
                 dmc.Anchor(
                     dmc.Button(
-                        "Twitter",
+                        "",
                         variant="white",
                         color="black",
                         size="xs",
-                        leftSection=DashIconify(icon="logos:x"),
+                        rightSection=DashIconify(icon="logos:x"),
                     ),
                     href="https://x.com/baskethogs",
                     underline="never",
