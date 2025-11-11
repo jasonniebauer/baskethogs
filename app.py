@@ -147,7 +147,7 @@ header = dmc.Box(
             direction="column",
             wrap="wrap",
             pt={"base": "7rem", "lg": "10rem"},
-            pb="5rem",
+            pb={"base": "3rem", "lg": "5rem"},
             style={
                 "backdropFilter": "blur(0.5px)",
             },
@@ -235,3 +235,4 @@ app.layout = html.Div([
 if __name__ == "__main__":
 
     app.run(debug=True)
+
