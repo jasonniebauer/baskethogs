@@ -115,7 +115,7 @@ navbar = dmc.Flex(
                 ),
                 dmc.Anchor(
                     dmc.Button(
-                        "",
+                        "Twitter",
                         variant="white",
                         color="black",
                         size="xs",
