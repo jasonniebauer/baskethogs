@@ -9,10 +9,9 @@ dash.register_page(__name__, path="/", name="Home", title="BasketHogs")
 ARKANSAS_RED = "#9D2235"
 TODAY = date.today()
 
-# scoreboard = 
-
-scorecard_main = dmc.Grid(
-    pt="5rem",
+scoreboard = dmc.Grid(
+    pt="7rem",
+    pb="5rem",
     justify="center",
     gutter="sm",
     children=[
@@ -46,8 +45,6 @@ scorecard_main = dmc.Grid(
                             c="#9D2235",  # Color utility
                             ta="center",  # Text align, like .text-center
                             fw="600",
-                            # mb="sm",  # Margin bottom
-                            pb="sm"
                         ),
                     ],
                     miw="250",
@@ -86,8 +83,6 @@ scorecard_main = dmc.Grid(
                             c="#9D2235",  # Color utility
                             ta="center",  # Text align, like .text-center
                             fw="600",
-                            # mb="sm",  # Margin bottom
-                            pb="sm"
                         ),
                     ],
                     # px="1.5rem",
@@ -123,13 +118,11 @@ scorecard_main = dmc.Grid(
                             fw="800",
                         ),
                         dmc.Title(
-                            "Loss to Win Ratio",
+                            "Win to Loss Ratio",
                             order=6,  # Largest: ~2.5rem, bold by default Large. Display Heading (order=1, like .display-1)
                             c="#9D2235",  # Color utility
                             ta="center",  # Text align, like .text-center
                             fw="600",
-                            # mb="sm",  # Margin bottom
-                            pb="sm"
                         ),
                     ],
                     # px="1.5rem",
@@ -170,8 +163,6 @@ scorecard_main = dmc.Grid(
                             c="#9D2235",  # Color utility
                             ta="center",  # Text align, like .text-center
                             fw="600",
-                            # mb="sm",  # Margin bottom
-                            pb="sm"
                         ),
                     ],
                     px="1.5rem",
@@ -182,14 +173,6 @@ scorecard_main = dmc.Grid(
             ]),
             span={"base": 12, "sm": 12, "md": 3},
         ),
-    ]
-)
-
-scorecard_secondary = dmc.Grid(
-    justify="center",
-    gutter="md",
-    pb="5rem",
-    children=[
         dmc.GridCol(
             dmc.Center([
                 dmc.Card(
@@ -221,8 +204,6 @@ scorecard_secondary = dmc.Grid(
                             c="#9D2235",  # Color utility
                             ta="center",  # Text align, like .text-center
                             fw="600",
-                            # mb="sm",  # Margin bottom
-                            pb="sm"
                         ),
                     ],
                     px="1.5rem",
@@ -264,8 +245,6 @@ scorecard_secondary = dmc.Grid(
                             c="#9D2235",  # Color utility
                             ta="center",  # Text align, like .text-center
                             fw="600",
-                            # mb="sm",  # Margin bottom
-                            pb="sm"
                         ),
                     ],
                     px="1.5rem",
@@ -306,8 +285,6 @@ scorecard_secondary = dmc.Grid(
                             c="#9D2235",  # Color utility
                             ta="center",  # Text align, like .text-center
                             fw="600",
-                            # mb="sm",  # Margin bottom
-                            pb="sm"
                         ),
                     ],
                     px="1.5rem",
@@ -348,8 +325,6 @@ scorecard_secondary = dmc.Grid(
                             c="#9D2235",  # Color utility
                             ta="center",  # Text align, like .text-center
                             fw="600",
-                            # mb="sm",  # Margin bottom
-                            pb="sm"
                         ),
                     ],
                     px="1.5rem",
@@ -362,39 +337,45 @@ scorecard_secondary = dmc.Grid(
     ]
 )
 
-df_total_wins_over_time = [
-  {"date": "Nov 3", "Total Wins": 1},
-  {"date": "Nov 8", "Total Wins": 1},
-]
+# scorecard_secondary = dmc.Grid(
+#     justify="center",
+#     gutter="md",
+#     pb="5rem",
+#     children=[
+        
+#     ]
+# )
 
-total_wins_over_time = dmc.Card(
-    radius="md",
-    bd="1px solid #C7C8CA",
-    mb="5rem",
-    children=[
-        dmc.Title(
-            "Total Wins Over Time",
-            order=1,
-            mb="xl",
-        ),
-        dmc.Sparkline(
-            h=300,
-            dataKey="date",
-            data=df_total_wins_over_time,
-            series = [
-                {"name": "Total Wins", "color": ARKANSAS_RED},
-            ],
-            curveType="Linear",
-        	color=ARKANSAS_RED,
-        	fillOpacity=1,
-        	withGradient=True,
-            tickLine="y",
-            # withXAxis=False,
-            mb="sm",
-            pr="1rem",
-        ),
-    ]
-)
+# df_total_wins_over_time = [
+#   {"date": "Nov 3", "Total Wins": 1},
+#   {"date": "Nov 8", "Total Wins": 1},
+# ]
+
+# total_wins_over_time = dmc.Card(
+#     radius="md",
+#     bd="1px solid #C7C8CA",
+#     mb="5rem",
+#     children=[
+#         dmc.Title(
+#             "Total Wins Over Time",
+#             order=1,
+#             mb="xl",
+#         ),
+#         dmc.LineChart(
+#             h=300,
+#             dataKey="date",
+#             data=df_total_wins_over_time,
+#             series = [
+#                 {"name": "Total Wins", "color": ARKANSAS_RED},
+#             ],
+#             curveType="Linear",
+#             tickLine="y",
+#             # withXAxis=False,
+#             mb="sm",
+#             pr="1rem",
+#         ),
+#     ]
+# )
 
 df_total_points_over_time = [
   {"date": "Nov 3", "Arkansas Points": 109, "Opponent Points": 77},
@@ -597,44 +578,46 @@ points_gap_over_time = dmc.Card(
     ]
 )
 
-df_age_by_year = [
-    {"Player": "Jaden Karuletwa", "Age": 19, "Year": "Sophomore"},
-    {"Player": "Meleek Thomas", "Age": 19, "Year": "Freshman"},
-    {"Player": "Amere Brown", "Age": 19, "Year": "Freshman"},
-    {"Player": "Darius Acuff Jr.", "Age": , "Year": ""},
-    {"Player": "Trevon Brazile", "Age": 22, "Year": "Senior"},
-    {"Player": "Karter Knox", "Age": 20, "Year": "Sophomore"},
-    {"Player": "Malique Ewin", "Age": 22, "Year": "Senior"},
-    {"Player": "Ayden Kelley", "Age": 19, "Year": "Sophomore"},
-    {"Player": "Elmir Džafić", "Age": 20, "Year": "Freshman"},
-    {"Player": "D.J. Wagner", "Age": 20, "Year": "Junior"},
-    {"Player": "Nick Pringle", "Age": 24, "Year": "Senior"},
-    {"Player": "Billy Richmond III", "Age": 19, "Year": "Junior"},
-    {"Player": "Isaiah Sealy", "Age": 18, "Year": "Freshman"},
-    {"Player": "Karim Rtail", "Age": 21, "Year": "Freshman"},
-    {"Player": "Paulo Semedo", "Age": 19, "Year": "Freshman"},
-]
+# df_player_age = [
+#     {"Player": "Jaden Karuletwa", "Age": 19, "Year": "Sophomore"},
+#     {"Player": "Meleek Thomas", "Age": 19, "Year": "Freshman"},
+#     {"Player": "Amere Brown", "Age": 19, "Year": "Freshman"},
+#     {"Player": "Darius Acuff Jr.", "Age": 18, "Year": "Freshman"},
+#     {"Player": "Trevon Brazile", "Age": 22, "Year": "Senior"},
+#     {"Player": "Karter Knox", "Age": 20, "Year": "Sophomore"},
+#     {"Player": "Malique Ewin", "Age": 22, "Year": "Senior"},
+#     {"Player": "Ayden Kelley", "Age": 19, "Year": "Sophomore"},
+#     {"Player": "Elmir Džafić", "Age": 20, "Year": "Freshman"},
+#     {"Player": "D.J. Wagner", "Age": 20, "Year": "Junior"},
+#     {"Player": "Nick Pringle", "Age": 24, "Year": "Senior"},
+#     {"Player": "Billy Richmond III", "Age": 19, "Year": "Junior"},
+#     {"Player": "Isaiah Sealy", "Age": 18, "Year": "Freshman"},
+#     {"Player": "Karim Rtail", "Age": 21, "Year": "Freshman"},
+#     {"Player": "Paulo Semedo", "Age": 19, "Year": "Freshman"},
+# ]
 
-age_by_year = dmc.Card(
-    radius="md",
-    bd="1px solid #C7C8CA",
-    mb="5rem",
-    children=[
-        dmc.Title(
-            "Total Wins Over Time",
-            order=1,
-            mb="xl",
-        ),
-        dmc.ScatterChart(
-            h=300,
-            data=df_age_by_year,
-            dataKey={"x": "Age", "y": "Year"},
-            xAxisLabel="Age",
-            # yAxisLabel="BMI",
-            withLegend=True,
-        ),
-    ]
-)
+# player_age = dmc.Card(
+#     radius="md",
+#     bd="1px solid #C7C8CA",
+#     mb="5rem",
+#     children=[
+#         dmc.Title(
+#             "Total Wins Over Time",
+#             order=1,
+#             mb="xl",
+#         ),
+#         dmc.BubbleChart(
+#             gridColor="gray.5",
+#             textColor="gray.9",
+#             h=60,
+#             data=data,
+#             range=[16, 225],
+#             label="Sales/hour",
+#             color="lime.6",
+#             dataKey={"x": "hour", "y": "index", "z": "value"}
+#         )
+#     ]
+# )
 
 def player_card(player_stats_data, radar_data):
     # name, position, year, height, weight, age, number, 
@@ -1339,15 +1322,14 @@ players = dmc.Grid(
 
 layout = dmc.Box(
     children=[
-        scorecard_main,
-        scorecard_secondary,
-        total_wins_over_time,
+        scoreboard,
+        # total_wins_over_time,
         total_points_over_time,
         count_points_by_type,
         totals_points_by_type,
         point_type_by_percent_of_total,
         points_gap_over_time,
-        age_by_year,
+        # player_age,
         player_stats_headline,
         players,
     ]

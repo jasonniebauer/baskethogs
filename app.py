@@ -134,7 +134,7 @@ navbar = dmc.Flex(
 
 header = dmc.Box(
     px="1rem",
-    mb="2rem",
+    # mb="2rem",
     style={
         "backgroundImage": "linear-gradient(rgba(0, 0, 0, 0.375), rgba(0, 0, 0, 0.25)), url('/assets/bwa-packed-arena.png')",
         "backgroundSize": "cover",
