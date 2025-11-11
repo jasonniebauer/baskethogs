@@ -13,8 +13,7 @@ external_stylesheets = [
     },
 ]
 
-app = Dash(__name__, use_pages=True, suppress_callback_exceptions=True, external_stylesheets=external_stylesheets)
-# assets_folder="public/assets"
+app = Dash(__name__, use_pages=True, suppress_callback_exceptions=True, external_stylesheets=external_stylesheets)
 
 # Google analytics
 app.index_string = f"""
@@ -125,7 +124,6 @@ navbar = dmc.Flex(
                     href="https://x.com/baskethogs",
                     underline="never",
                 ),
-                # dmc.Button("About", href="#", c="white", color="white", variant="outline", mr="1rem"),
             ]
         )
         
