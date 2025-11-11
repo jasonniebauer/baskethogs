@@ -338,15 +338,6 @@ scoreboard = dmc.Grid(
     ]
 )
 
-# scorecard_secondary = dmc.Grid(
-#     justify="center",
-#     gutter="md",
-#     pb="5rem",
-#     children=[
-        
-#     ]
-# )
-
 # df_total_wins_over_time = [
 #   {"date": "Nov 3", "Total Wins": 1},
 #   {"date": "Nov 8", "Total Wins": 1},
@@ -389,7 +380,7 @@ total_points_over_time = dmc.Card(
     mb="5rem",
     children=[
         dmc.Title(
-            "Total Points Over Time",
+            "Total Points",
             order=1,
             # mb="xl",
         ),
@@ -404,8 +395,8 @@ total_points_over_time = dmc.Card(
             dataKey="date",
             data=df_total_points_over_time,
             series = [
-                {"name": "Arkansas Points", "color": ARKANSAS_RED},
                 {"name": "Opponent Points", "color": "#000000"},
+                {"name": "Arkansas Points", "color": ARKANSAS_RED},
             ],
             curveType="linear",
             tickLine="y",
@@ -428,7 +419,7 @@ count_points_by_type = dmc.Card(
     mb="5rem",
     children=[
         dmc.Title(
-            "Number of Points by Type",
+            "Number of Points",
             order=1,
             # mb="xl",
         ),
@@ -511,7 +502,7 @@ point_type_by_percent_of_total = dmc.Card(
     mb="5rem",
     children=[
         dmc.Title(
-            "Point % of Total Points",
+            "Percent of Total Points",
             order=1,
             # mb="xl",
         ),
