@@ -13,7 +13,8 @@ external_stylesheets = [
     },
 ]
 
-app = Dash(__name__, use_pages=True, suppress_callback_exceptions=True, external_stylesheets=external_stylesheets)
+app = Dash(__name__, use_pages=True, suppress_callback_exceptions=True, external_stylesheets=external_stylesheets)
+
 
 # Google analytics
 app.index_string = f"""
@@ -145,7 +146,7 @@ header = dmc.Box(
             align="center",
             direction="column",
             wrap="wrap",
-            pt="10rem",
+            pt={"base": "7rem", "lg": "10rem"},
             pb="5rem",
             style={
                 "backdropFilter": "blur(0.5px)",
@@ -159,8 +160,8 @@ header = dmc.Box(
                     lh=1.0,  # line height 1
                     mb="sm",  # margin-bottom
                     fz={
-                        "base": "5rem",  # mobile ≤576px
-                        "sm": "7rem",  # ≥768px
+                        "base": "4rem",  # mobile ≤576px
+                        "sm": "5rem",  # ≥768px
                         "md": "7rem",  # ≥992px
                         "lg": "7rem",  # ≥1200px
                         "xl": "7rem"  # ≥1440px
@@ -232,4 +233,5 @@ app.layout = html.Div([
 ])
 
 if __name__ == "__main__":
+
     app.run(debug=True)
