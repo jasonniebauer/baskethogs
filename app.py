@@ -120,7 +120,7 @@ navbar = dmc.Flex(
                         variant="white",
                         color="black",
                         size="xs",
-                        rightSection=DashIconify(icon="logos:x"),
+                        leftSection=DashIconify(icon="logos:x"),
                     ),
                     href="https://x.com/baskethogs",
                     underline="never",
