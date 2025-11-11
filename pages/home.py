@@ -428,12 +428,12 @@ count_points_by_type = dmc.Card(
     mb="5rem",
     children=[
         dmc.Title(
-            "Count of Points by Type",
+            "Number of Points by Type",
             order=1,
             # mb="xl",
         ),
         dmc.Title(
-            "The total count of points by point type.",
+            "The total number of points for each type.",
             order=5,
             mb="xl",
             fw="500",
