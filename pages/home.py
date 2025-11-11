@@ -51,7 +51,7 @@ scoreboard = dmc.Grid(
                     radius="md",
                 )
             ]),
-            span={"base": 12, "sm": 12, "md": 3},
+            span={"base": 12, "sm": 6, "md": 3},
         ),
         dmc.GridCol(
             dmc.Center([
@@ -90,7 +90,7 @@ scoreboard = dmc.Grid(
                     radius="md",
                 )
             ]),
-            span={"base": 12, "sm": 12, "md": 3},
+            span={"base": 12, "sm": 6, "md": 3},
         ),
         dmc.GridCol(
             dmc.Center([
@@ -897,7 +897,7 @@ meleek_thomas_radar = [
 nick_pringle_stats = {
     "Name": "Nick Pringle",
     "Position": "Forward",
-    "Year": "Graduate Senior",
+    "Year": "Gr. Senior",
     "Height": "6' 10\"",
     "Weight": "230",
     "Birthdate": "9/16/2001",
