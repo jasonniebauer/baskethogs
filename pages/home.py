@@ -406,6 +406,7 @@ count_points_by_type = dmc.Card(
 df_totals_points_by_type = [
     {"date": "Nov 3", "2-Pointers": 54, "3-Pointers": 30, "Free Throws": 25},
     {"date": "Nov 8", "2-Pointers": 30, "3-Pointers": 21, "Free Throws": 15},
+    {"date": "Nov 1", "2-Pointers": 36, "3-Pointers": 39, "Free Throws": 18},
 ]
 
 totals_points_by_type = dmc.Card(
