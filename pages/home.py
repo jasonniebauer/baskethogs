@@ -364,6 +364,7 @@ total_points_over_time = dmc.Card(
 df_count_points_by_type = [
     {"date": "Nov 3", "2-Pointers": 27, "3-Pointers": 10, "Free Throws": 25},
     {"date": "Nov 8", "2-Pointers": 15, "3-Pointers": 7, "Free Throws": 15},
+    {"date": "Nov 1", "2-Pointers": 18, "3-Pointers": 13, "Free Throws": 18},
 ]
 
 count_points_by_type = dmc.Card(
