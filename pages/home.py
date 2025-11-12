@@ -1259,7 +1259,7 @@ player_stats_headline = dmc.Title(
 players = dmc.Grid(
     justify="center",
     gutter="md",
-    mb="sm",
+    mb="5rem",
     children=[
         player_card(
             player_stats_data=darius_acuff_jr_stats,
