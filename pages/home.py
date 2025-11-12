@@ -1328,6 +1328,8 @@ layout = dmc.Box(
     children=[
         # team,
         scoreboard,
+        player_stats_headline,
+        players,
         # total_wins_over_time,
         total_points_over_time,
         count_points_by_type,
@@ -1335,7 +1337,5 @@ layout = dmc.Box(
         point_type_by_percent_of_total,
         points_gap_over_time,
         # players_by_age,
-        player_stats_headline,
-        players,
     ]
 )
