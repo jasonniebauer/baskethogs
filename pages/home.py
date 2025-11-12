@@ -8,7 +8,17 @@ dash.register_page(__name__, path="/", name="Home", title="BasketHogs")
 
 ARKANSAS_RED = "#9D2235"
 BLACK = "#000000"
+SPOOFER_STONE = "#424242"
 TODAY = date.today()
+
+# team = dmc.AvatarGroup([
+#     dmc.Tooltip(
+#         dmc.Avatar(src="/assets/players/Meleek-Thomas.jpg", size="xl", style={"borderRadius": "9999px"}),
+#         label="Meleek Thomas",
+#         position="bottom",
+#     ),
+#     dmc.Avatar(src="/assets/players/Dj-Wagner.jpg", size="xl", style={"borderRadius": "9999px"}),
+# ])
 
 scoreboard = dmc.Grid(
     pt="7rem",
@@ -17,322 +27,265 @@ scoreboard = dmc.Grid(
     gutter="sm",
     children=[
         dmc.GridCol(
-            dmc.Center([
-                dmc.Card(
-                    mb="xl",
-                    children=[
-                        dmc.Title(
-                            "2",
-                            order=1,  # Largest: ~2.5rem, bold by default Large. Display Heading (order=1, like .display-1)
-                            c="black",  # Color utility
-                            ta="center",  # Text align, like .text-center
-                            mb="0.25rem",  # Margin bottom
-                            fz="6rem",
-                            lh=1.0,
-                            fw="800",
-                        ),
-                        dmc.Title(
-                            "Total Games",
-                            order=4,  # Largest: ~2.5rem, bold by default Large. Display Heading (order=1, like .display-1)
-                            c="black",  # Color utility
-                            ta="center",  # Text align, like .text-center
-                            tt="uppercase",  # Uppercase text
-                            lh=1.0,
-                            fw="800",
-                        ),
-                        dmc.Title(
-                            "Non-Conference",
-                            order=6,  # Largest: ~2.5rem, bold by default Large. Display Heading (order=1, like .display-1)
-                            c="#9D2235",  # Color utility
-                            ta="center",  # Text align, like .text-center
-                            fw="600",
-                        ),
-                    ],
-                    miw="250",
-                    radius="md",
-                )
-            ]),
+            mb="xl",
+            children=[
+                dmc.Title(
+                    "3",
+                    order=1,  # Largest: ~2.5rem, bold by default Large. Display Heading (order=1, like .display-1)
+                    c="black",  # Color utility
+                    ta="center",  # Text align, like .text-center
+                    fz="6rem",
+                    lh=1.0,
+                    fw="800",
+                    ff="Oxanium, sans-serif",
+                ),
+                dmc.Title(
+                    "Total Games",
+                    order=4,  # Largest: ~2.5rem, bold by default Large. Display Heading (order=1, like .display-1)
+                    c="black",  # Color utility
+                    ta="center",  # Text align, like .text-center
+                    tt="uppercase",  # Uppercase text
+                    lh=1.0,
+                    fw="800",
+                ),
+                dmc.Title(
+                    "Non-Conference",
+                    order=6,  # Largest: ~2.5rem, bold by default Large. Display Heading (order=1, like .display-1)
+                    c="#9D2235",  # Color utility
+                    ta="center",  # Text align, like .text-center
+                    fw="600",
+                ),
+            ],
             span={"base": 6, "sm": 6, "md": 3},
         ),
         dmc.GridCol(
-            dmc.Center([
-                dmc.Card(
-                    mb="xl",
-                    children=[
-                        dmc.Title(
-                            "1",
-                            order=1,  # Largest: ~2.5rem, bold by default Large. Display Heading (order=1, like .display-1)
-                            c="black",  # Color utility
-                            ta="center",  # Text align, like .text-center
-                            mb="0.25rem",  # Margin bottom
-                            fz="6rem",
-                            lh=1.0,
-                            fw="800",
-                        ),
-                        dmc.Title(
-                            "Total Wins",
-                            order=4,  # Largest: ~2.5rem, bold by default Large. Display Heading (order=1, like .display-1)
-                            c="black",  # Color utility
-                            ta="center",  # Text align, like .text-center
-                            tt="uppercase",  # Uppercase text
-                            lh=1.0,
-                            fw="800",
-                        ),
-                        dmc.Title(
-                            "Non-Conference",
-                            order=6,  # Largest: ~2.5rem, bold by default Large. Display Heading (order=1, like .display-1)
-                            c="#9D2235",  # Color utility
-                            ta="center",  # Text align, like .text-center
-                            fw="600",
-                        ),
-                    ],
-                    # px="1.5rem",
-                    miw="250",
-                    radius="md",
-                )
-            ]),
+            mb="xl",
+            children=[
+                dmc.Title(
+                    "2",
+                    order=1,  # Largest: ~2.5rem, bold by default Large. Display Heading (order=1, like .display-1)
+                    c="black",  # Color utility
+                    ta="center",  # Text align, like .text-center
+                    fz="6rem",
+                    lh=1.0,
+                    fw="800",
+                    ff="Oxanium, sans-serif",
+                ),
+                dmc.Title(
+                    "Total Wins",
+                    order=4,  # Largest: ~2.5rem, bold by default Large. Display Heading (order=1, like .display-1)
+                    c="black",  # Color utility
+                    ta="center",  # Text align, like .text-center
+                    tt="uppercase",  # Uppercase text
+                    lh=1.0,
+                    fw="800",
+                ),
+                dmc.Title(
+                    "Non-Conference",
+                    order=6,  # Largest: ~2.5rem, bold by default Large. Display Heading (order=1, like .display-1)
+                    c="#9D2235",  # Color utility
+                    ta="center",  # Text align, like .text-center
+                    fw="600",
+                ),
+            ],
             span={"base": 6, "sm": 6, "md": 3},
         ),
         dmc.GridCol(
-            dmc.Center([
-                dmc.Card(
-                    mb="xl",
-                    children=[
-                        dmc.Title(
-                            "50%",
-                            order=1,  # Largest: ~2.5rem, bold by default Large. Display Heading (order=1, like .display-1)
-                            c="black",  # Color utility
-                            ta="center",  # Text align, like .text-center
-                            mb="0.25rem",  # Margin bottom
-                            fz="6rem",
-                            lh=1.0,
-                            fw="800",
-                        ),
-                        dmc.Title(
-                            "Winning Percent",
-                            order=4,  # Largest: ~2.5rem, bold by default Large. Display Heading (order=1, like .display-1)
-                            c="black",  # Color utility
-                            ta="center",  # Text align, like .text-center
-                            tt="uppercase",  # Uppercase text
-                            # mb="md",  # Margin bottom
-                            lh=1.0,
-                            fw="800",
-                        ),
-                        dmc.Title(
-                            "Win to Loss Ratio",
-                            order=6,  # Largest: ~2.5rem, bold by default Large. Display Heading (order=1, like .display-1)
-                            c="#9D2235",  # Color utility
-                            ta="center",  # Text align, like .text-center
-                            fw="600",
-                        ),
-                    ],
-                    # px="1.5rem",
-                    miw="250",
-                    radius="md",
-                )
-            ]),
+            mb="xl",
+            children=[
+                dmc.Title(
+                    "67%",
+                    order=1,  # Largest: ~2.5rem, bold by default Large. Display Heading (order=1, like .display-1)
+                    c="black",  # Color utility
+                    ta="center",  # Text align, like .text-center
+                    fz="6rem",
+                    lh=1.0,
+                    fw="800",
+                    ff="Oxanium, sans-serif",
+                ),
+                dmc.Title(
+                    "Winning Percent",
+                    order=4,  # Largest: ~2.5rem, bold by default Large. Display Heading (order=1, like .display-1)
+                    c="black",  # Color utility
+                    ta="center",  # Text align, like .text-center
+                    tt="uppercase",  # Uppercase text
+                    # mb="md",  # Margin bottom
+                    lh=1.0,
+                    fw="800",
+                ),
+                dmc.Title(
+                    "Win to Loss Ratio",
+                    order=6,  # Largest: ~2.5rem, bold by default Large. Display Heading (order=1, like .display-1)
+                    c="#9D2235",  # Color utility
+                    ta="center",  # Text align, like .text-center
+                    fw="600",
+                ),
+            ],
             span={"base": 6, "sm": 6, "md": 3},
         ),
         dmc.GridCol(
-            dmc.Center([
-                dmc.Card(
-                    mb="xl",
-                    children=[
-                        dmc.Title(
-                            "L1",
-                            order=1,  # Largest: ~2.5rem, bold by default Large. Display Heading (order=1, like .display-1)
-                            c="black",  # Color utility
-                            ta="center",  # Text align, like .text-center
-                            mb="0.25rem",  # Margin bottom
-                            fz="6rem",
-                            lh=1.0,
-                            fw="800",
-                        ),
-                        dmc.Title(
-                            "Streak",
-                            order=4,  # Largest: ~2.5rem, bold by default Large. Display Heading (order=1, like .display-1)
-                            c="black",  # Color utility
-                            ta="center",  # Text align, like .text-center
-                            tt="uppercase",  # Uppercase text
-                            # mb="md",  # Margin bottom
-                            lh=1.0,
-                            fw="800",
-                        ),
-                        dmc.Title(
-                            "Non-Conference",
-                            order=6,  # Largest: ~2.5rem, bold by default Large. Display Heading (order=1, like .display-1)
-                            c="#9D2235",  # Color utility
-                            ta="center",  # Text align, like .text-center
-                            fw="600",
-                        ),
-                    ],
-                    px="1.5rem",
-                    miw="250",
-                    radius="md",
-                    # withBorder=True,
-                )
-            ]),
+            mb="xl",
+            children=[
+                dmc.Title(
+                    "W1",
+                    order=1,  # Largest: ~2.5rem, bold by default Large. Display Heading (order=1, like .display-1)
+                    c="black",  # Color utility
+                    ta="center",  # Text align, like .text-center
+                    fz="6rem",
+                    lh=1.0,
+                    fw="800",
+                    ff="Oxanium, sans-serif",
+                ),
+                dmc.Title(
+                    "Streak",
+                    order=4,  # Largest: ~2.5rem, bold by default Large. Display Heading (order=1, like .display-1)
+                    c="black",  # Color utility
+                    ta="center",  # Text align, like .text-center
+                    tt="uppercase",  # Uppercase text
+                    # mb="md",  # Margin bottom
+                    lh=1.0,
+                    fw="800",
+                ),
+                dmc.Title(
+                    "Non-Conference",
+                    order=6,  # Largest: ~2.5rem, bold by default Large. Display Heading (order=1, like .display-1)
+                    c="#9D2235",  # Color utility
+                    ta="center",  # Text align, like .text-center
+                    fw="600",
+                ),
+            ],
             span={"base": 6, "sm": 6, "md": 3},
         ),
         dmc.GridCol(
-            dmc.Center([
-                dmc.Card(
-                    mb="xl",
-                    children=[
-                        dmc.Title(
-                            "88",
-                            order=1,  # Largest: ~2.5rem, bold by default Large. Display Heading (order=1, like .display-1)
-                            c="black",  # Color utility
-                            ta="center",  # Text align, like .text-center
-                            mb="0.25rem",  # Margin bottom
-                            fz="6rem",
-                            lh=1.0,
-                            fw="800",
-                        ),
-                        dmc.Title(
-                            "Avg. Points",
-                            order=4,  # Largest: ~2.5rem, bold by default Large. Display Heading (order=1, like .display-1)
-                            c="black",  # Color utility
-                            ta="center",  # Text align, like .text-center
-                            tt="uppercase",  # Uppercase text
-                            # mb="md",  # Margin bottom
-                            lh=1.0,
-                            fw="800",
-                        ),
-                        dmc.Title(
-                            "Per Game",
-                            order=6,  # Largest: ~2.5rem, bold by default Large. Display Heading (order=1, like .display-1)
-                            c="#9D2235",  # Color utility
-                            ta="center",  # Text align, like .text-center
-                            fw="600",
-                        ),
-                    ],
-                    px="1.5rem",
-                    miw="250",
-                    radius="md",
-                    # withBorder=True,
-                )
-            ]),
+            mb="xl",
+            children=[
+                dmc.Title(
+                    "88",
+                    order=1,  # Largest: ~2.5rem, bold by default Large. Display Heading (order=1, like .display-1)
+                    c="black",  # Color utility
+                    ta="center",  # Text align, like .text-center
+                    fz="6rem",
+                    lh=1.0,
+                    fw="800",
+                    ff="Oxanium, sans-serif",
+                ),
+                dmc.Title(
+                    "Avg. Points",
+                    order=4,  # Largest: ~2.5rem, bold by default Large. Display Heading (order=1, like .display-1)
+                    c="black",  # Color utility
+                    ta="center",  # Text align, like .text-center
+                    tt="uppercase",  # Uppercase text
+                    # mb="md",  # Margin bottom
+                    lh=1.0,
+                    fw="800",
+                ),
+                dmc.Title(
+                    "Per Game",
+                    order=6,  # Largest: ~2.5rem, bold by default Large. Display Heading (order=1, like .display-1)
+                    c="#9D2235",  # Color utility
+                    ta="center",  # Text align, like .text-center
+                    fw="600",
+                ),
+            ],
             span={"base": 6, "sm": 6, "md": 3},
         ),
         dmc.GridCol(
-            dmc.Center([
-                dmc.Card(
-                    mb="xl",
-                    children=[
-                        dmc.Title(
-                            "30",
-                            order=1,  # Largest: ~2.5rem, bold by default Large. Display Heading (order=1, like .display-1)
-                            c="black",  # Color utility
-                            ta="center",  # Text align, like .text-center
-                            mb="0.25rem",  # Margin bottom
-                            fz="6rem",
-                            lh=1.0,
-                            fw="800",
-                        ),
-                        dmc.Title(
-                            "Avg. Field Goals",
-                            order=4,  # Largest: ~2.5rem, bold by default Large. Display Heading (order=1, like .display-1)
-                            c="black",  # Color utility
-                            ta="center",  # Text align, like .text-center
-                            tt="uppercase",  # Uppercase text
-                            fw="800",
-                            # mb="md",  # Margin bottom
-                            lh=1.0,
-                        ),
-                        dmc.Title(
-                            "Per Game",
-                            order=6,  # Largest: ~2.5rem, bold by default Large. Display Heading (order=1, like .display-1)
-                            c="#9D2235",  # Color utility
-                            ta="center",  # Text align, like .text-center
-                            fw="600",
-                        ),
-                    ],
-                    px="1.5rem",
-                    miw="250",
-                    radius="md",
-                )
-            ]),
+            mb="xl",
+            children=[
+                dmc.Title(
+                    "30",
+                    order=1,  # Largest: ~2.5rem, bold by default Large. Display Heading (order=1, like .display-1)
+                    c="black",  # Color utility
+                    ta="center",  # Text align, like .text-center
+                    fz="6rem",
+                    lh=1.0,
+                    fw="800",
+                    ff="Oxanium, sans-serif",
+                ),
+                dmc.Title(
+                    "Avg. Field Goals",
+                    order=4,  # Largest: ~2.5rem, bold by default Large. Display Heading (order=1, like .display-1)
+                    c="black",  # Color utility
+                    ta="center",  # Text align, like .text-center
+                    tt="uppercase",  # Uppercase text
+                    fw="800",
+                    # mb="md",  # Margin bottom
+                    lh=1.0,
+                ),
+                dmc.Title(
+                    "Per Game",
+                    order=6,  # Largest: ~2.5rem, bold by default Large. Display Heading (order=1, like .display-1)
+                    c="#9D2235",  # Color utility
+                    ta="center",  # Text align, like .text-center
+                    fw="600",
+                ),
+            ],
             span={"base": 6, "sm": 6, "md": 3},
         ),
         dmc.GridCol(
-            dmc.Center([
-                dmc.Card(
-                    mb="xl",
-                    children=[
-                        dmc.Title(
-                            "9",
-                            order=1,  # Largest: ~2.5rem, bold by default Large. Display Heading (order=1, like .display-1)
-                            c="black",  # Color utility
-                            ta="center",  # Text align, like .text-center
-                            mb="0.25rem",  # Margin bottom
-                            fz="6rem",
-                            lh=1.0,
-                            fw="800",
-                        ),
-                        dmc.Title(
-                            "Avg. 3-Pointers",
-                            order=4,  # Largest: ~2.5rem, bold by default Large. Display Heading (order=1, like .display-1)
-                            c="black",  # Color utility
-                            ta="center",  # Text align, like .text-center
-                            tt="uppercase",  # Uppercase text
-                            fw="800",
-                            # mb="md",  # Margin bottom
-                            lh=1.0,
-                        ),
-                        dmc.Title(
-                            "Per Game",
-                            order=6,  # Largest: ~2.5rem, bold by default Large. Display Heading (order=1, like .display-1)
-                            c="#9D2235",  # Color utility
-                            ta="center",  # Text align, like .text-center
-                            fw="600",
-                        ),
-                    ],
-                    px="1.5rem",
-                    miw="250",
-                    radius="md",
-                )
-            ]),
+            mb="xl",
+            children=[
+                dmc.Title(
+                    "9",
+                    order=1,  # Largest: ~2.5rem, bold by default Large. Display Heading (order=1, like .display-1)
+                    c="black",  # Color utility
+                    ta="center",  # Text align, like .text-center
+                    fz="6rem",
+                    lh=1.0,
+                    fw="800",
+                    ff="Oxanium, sans-serif",
+                ),
+                dmc.Title(
+                    "Avg. 3-Pointers",
+                    order=4,  # Largest: ~2.5rem, bold by default Large. Display Heading (order=1, like .display-1)
+                    c="black",  # Color utility
+                    ta="center",  # Text align, like .text-center
+                    tt="uppercase",  # Uppercase text
+                    fw="800",
+                    # mb="md",  # Margin bottom
+                    lh=1.0,
+                ),
+                dmc.Title(
+                    "Per Game",
+                    order=6,  # Largest: ~2.5rem, bold by default Large. Display Heading (order=1, like .display-1)
+                    c="#9D2235",  # Color utility
+                    ta="center",  # Text align, like .text-center
+                    fw="600",
+                ),
+            ],
             span={"base": 6, "sm": 6, "md": 3},
         ),
         dmc.GridCol(
-            dmc.Center([
-                dmc.Card(
-                    mb="xl",
-                    children=[
-                        dmc.Title(
-                            "20",
-                            order=1,  # Largest: ~2.5rem, bold by default Large. Display Heading (order=1, like .display-1)
-                            c="black",  # Color utility
-                            ta="center",  # Text align, like .text-center
-                            mb="0.25rem",  # Margin bottom
-                            fz="6rem",
-                            lh=1.0,
-                            fw="800",
-                        ),
-                        dmc.Title(
-                            "Avg. Free Throws",
-                            order=4,  # Largest: ~2.5rem, bold by default Large. Display Heading (order=1, like .display-1)
-                            c="black",  # Color utility
-                            ta="center",  # Text align, like .text-center
-                            tt="uppercase",  # Uppercase text
-                            fw="800",
-                            # mb="md",  # Margin bottom
-                            lh=1.0,
-                        ),
-                        dmc.Title(
-                            "Per Game",
-                            order=6,  # Largest: ~2.5rem, bold by default Large. Display Heading (order=1, like .display-1)
-                            c="#9D2235",  # Color utility
-                            ta="center",  # Text align, like .text-center
-                            fw="600",
-                        ),
-                    ],
-                    px="1.5rem",
-                    miw="250",
-                    radius="md",
-                )
-            ]),
+            mb="xl",
+            children=[
+                dmc.Title(
+                    "20",
+                    order=1,  # Largest: ~2.5rem, bold by default Large. Display Heading (order=1, like .display-1)
+                    c="black",  # Color utility
+                    ta="center",  # Text align, like .text-center
+                    fz="6rem",
+                    lh=1.0,
+                    fw="800",
+                    ff="Oxanium, sans-serif",
+                ),
+                dmc.Title(
+                    "Avg. Free Throws",
+                    order=4,  # Largest: ~2.5rem, bold by default Large. Display Heading (order=1, like .display-1)
+                    c="black",  # Color utility
+                    ta="center",  # Text align, like .text-center
+                    tt="uppercase",  # Uppercase text
+                    fw="800",
+                    # mb="md",  # Margin bottom
+                    lh=1.0,
+                ),
+                dmc.Title(
+                    "Per Game",
+                    order=6,  # Largest: ~2.5rem, bold by default Large. Display Heading (order=1, like .display-1)
+                    c="#9D2235",  # Color utility
+                    ta="center",  # Text align, like .text-center
+                    fw="600",
+                ),
+            ],
             span={"base": 6, "sm": 6, "md": 3},
         ),
     ]
@@ -382,7 +335,6 @@ total_points_over_time = dmc.Card(
         dmc.Title(
             "Total Points",
             order=1,
-            # mb="xl",
         ),
         dmc.Title(
             "The total points scored per game.",
@@ -395,7 +347,7 @@ total_points_over_time = dmc.Card(
             dataKey="date",
             data=df_total_points_over_time,
             series = [
-                {"name": "Opponent Points", "color": "#000000"},
+                {"name": "Opponent Points", "color": SPOOFER_STONE},
                 {"name": "Arkansas Points", "color": ARKANSAS_RED},
             ],
             curveType="linear",
@@ -570,6 +522,68 @@ points_gap_over_time = dmc.Card(
     ]
 )
 
+def get_player_age(birthdate_string):
+    # Convert the player's birthdate string to a date
+    birthdate = datetime.strptime(birthdate_string, "%m/%d/%Y").date()
+    # Get the player's age based on their date of birth
+    return TODAY.year - birthdate.year - ((TODAY.month, TODAY.day) < (birthdate.month, birthdate.day))
+
+df_players_by_age = [
+    {"Name": "Isaiah Sealy", "Birthdate": "1/1/2007"},
+    {"Name": "Darius Acuff Jr.", "Birthdate": "11/16/2006"},
+    {"Name": "Meleek Thomas", "Birthdate": "8/6/2006"},
+    {"Name": "Paulo Semedo", "Birthdate": "6/12/2006"},
+    {"Name": "Amere Brown", "Birthdate": "5/22/2006"},
+    {"Name": "Billy Richmond III", "Birthdate": "4/11/2006"},
+    {"Name": "Ayden Kelley", "Birthdate": "4/9/2006"},
+    {"Name": "Jaden Karuletwa", "Birthdate": "1/1/2006"},
+    {"Name": "Karter Knox", "Birthdate": "5/16/2005"},
+    {"Name": "D.J. Wagner", "Birthdate": "5/4/2005"},
+    {"Name": "Elmir Dzafic", "Birthdate": "1/1/2005"},
+    {"Name": "Karim Rtail", "Birthdate": "3/23/2004"},
+    {"Name": "Trevon Brazile", "Birthdate": "1/7/2003"},
+    {"Name": "Malique Ewin", "Birthdate": "1/1/2003"},
+    {"Name": "Nick Pringle", "Birthdate": "9/16/2001"},
+]
+
+# Loop through the list of dictionaries and add key for age
+for player in df_players_by_age:
+    # Add a new key 'city' with a default value to each dictionary
+    player["Age"] = get_player_age(player['Birthdate'])
+
+players_by_age = dmc.Card(
+    radius="md",
+    bd="1px solid #C7C8CA",
+    mb="5rem",
+    children=[
+        dmc.Title(
+            "Players by Age",
+            order=1,
+        ),
+        dmc.Title(
+            "The age of each player.",
+            order=5,
+            mb="xl",
+            fw="500",
+        ),
+        dmc.BarChart(
+            h=300,
+            dataKey="Name",
+            data=df_players_by_age,
+            series=[
+                {"name": "Age", "color": ARKANSAS_RED},
+            ],
+            orientation="vertical",
+            tickLine="none",
+            gridAxis="x",
+            withXAxis=True,
+            withYAxis=True,
+            mb="sm",
+            pr="1rem",
+        ),
+    ]
+)
+
 # df_player_age = [
 #     {"Player": "Jaden Karuletwa", "Age": 19, "Year": "Sophomore"},
 #     {"Player": "Meleek Thomas", "Age": 19, "Year": "Freshman"},
@@ -612,15 +626,11 @@ points_gap_over_time = dmc.Card(
 # )
 
 def player_card(player_stats_data, radar_data):
-    # name, position, year, height, weight, age, number, 
-
     # Remove space characters and periods
     name_formatted_for_headshot = player_stats_data['Name'].replace(" ", "-").replace(".", "")
 
-    # Convert the player's birthdate string to a date
-    birthdate = datetime.strptime(player_stats_data['Birthdate'], "%m/%d/%Y").date()
-    # Get the player's age based on their date of birth
-    age = TODAY.year - birthdate.year - ((TODAY.month, TODAY.day) < (birthdate.month, birthdate.day))
+    # Get player's age
+    age = get_player_age(player_stats_data['Birthdate'])
     
     return dmc.GridCol(
         dmc.Card(
@@ -1314,6 +1324,7 @@ players = dmc.Grid(
 
 layout = dmc.Box(
     children=[
+        # team,
         scoreboard,
         # total_wins_over_time,
         total_points_over_time,
@@ -1321,7 +1332,7 @@ layout = dmc.Box(
         totals_points_by_type,
         point_type_by_percent_of_total,
         points_gap_over_time,
-        # player_age,
+        # players_by_age,
         player_stats_headline,
         players,
     ]

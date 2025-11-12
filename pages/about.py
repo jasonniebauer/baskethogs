@@ -27,14 +27,14 @@ layout = dmc.Box(
             "BasketHogs is updated after every game as soon as the data becomes available and is compiled. Charts will continue to grow and expand throughout the season, and player stats will become more balanced as the players spend time on the court.",
             html.Br(),
             html.Br(),
-            "Follow and subscribe to ",
+            "Follow ",
             dmc.Anchor(
                 "BasketHogs on Twitter(X)",
                 href="https://x.com/baskethogs",
                 # target="_blank",
                 c="#9D2235",
             ),
-            " for:",
+            " and subscribe for:",
             dmc.List(
                 [
                     dmc.ListItem("Game day notifications"),

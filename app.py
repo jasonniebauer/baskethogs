@@ -8,9 +8,9 @@ GA_MEASUREMENT_ID = 'G-ZD0QG42GY9'
 
 external_stylesheets = [
     {
-        "href": "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap",
+        "href": "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Oxanium:wght@200..800&display=swap",
         "rel": "stylesheet"
-    },
+    }
 ]
 
 app = Dash(__name__, use_pages=True, suppress_callback_exceptions=True, external_stylesheets=external_stylesheets)
@@ -147,7 +147,7 @@ header = dmc.Box(
             direction="column",
             wrap="wrap",
             pt={"base": "7rem", "lg": "10rem"},
-            pb={"base": "3rem", "lg": "5rem"},
+            pb={"base": "3rem", "lg": "4rem"},
             style={
                 "backdropFilter": "blur(0.5px)",
             },
