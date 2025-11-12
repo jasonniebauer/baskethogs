@@ -364,7 +364,7 @@ total_points_over_time = dmc.Card(
 df_count_points_by_type = [
     {"date": "Nov 3", "2-Pointers": 27, "3-Pointers": 10, "Free Throws": 25},
     {"date": "Nov 8", "2-Pointers": 15, "3-Pointers": 7, "Free Throws": 15},
-    {"date": "Nov 1", "2-Pointers": 18, "3-Pointers": 13, "Free Throws": 18},
+    {"date": "Nov 11", "2-Pointers": 18, "3-Pointers": 13, "Free Throws": 18},
 ]
 
 count_points_by_type = dmc.Card(
@@ -406,7 +406,7 @@ count_points_by_type = dmc.Card(
 df_totals_points_by_type = [
     {"date": "Nov 3", "2-Pointers": 54, "3-Pointers": 30, "Free Throws": 25},
     {"date": "Nov 8", "2-Pointers": 30, "3-Pointers": 21, "Free Throws": 15},
-    {"date": "Nov 1", "2-Pointers": 36, "3-Pointers": 39, "Free Throws": 18},
+    {"date": "Nov 11", "2-Pointers": 36, "3-Pointers": 39, "Free Throws": 18},
 ]
 
 totals_points_by_type = dmc.Card(
@@ -449,6 +449,7 @@ totals_points_by_type = dmc.Card(
 df_point_type_by_percent_of_total = [
     {"date": "Nov 3", "2-Pointers": 49.5, "3-Pointers": 27.5, "Free Throws": 22.9},
     {"date": "Nov 8", "2-Pointers": 45.4, "3-Pointers": 31.8, "Free Throws": 22.7},
+    {"date": "Nov 11", "2-Pointers": 38.7, "3-Pointers": 41.9, "Free Throws": 19.4},
 ]
 
 point_type_by_percent_of_total = dmc.Card(
