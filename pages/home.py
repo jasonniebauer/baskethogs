@@ -325,6 +325,7 @@ scoreboard = dmc.Grid(
 df_total_points_over_time = [
   {"date": "Nov 3", "Arkansas Points": 109, "Opponent Points": 77},
   {"date": "Nov 8", "Arkansas Points": 66, "Opponent Points": 69},
+  {"date": "Nov 11", "Arkansas Points": 93, "Opponent Points": 56},
 ]
 
 total_points_over_time = dmc.Card(
@@ -488,6 +489,7 @@ point_type_by_percent_of_total = dmc.Card(
 df_points_gap_over_time = [
   {"date": "Nov 3", "Point Gap": 32},
   {"date": "Nov 8", "Point Gap": 3},
+  {"date": "Nov 11", "Point Gap": 37},
 ]
 
 points_gap_over_time = dmc.Card(
