@@ -160,7 +160,7 @@ scoreboard = dmc.Grid(
             mb="xl",
             children=[
                 dmc.Title(
-                    "88",
+                    "89",
                     order=1,  # Largest: ~2.5rem, bold by default Large. Display Heading (order=1, like .display-1)
                     c="black",  # Color utility
                     ta="center",  # Text align, like .text-center
@@ -226,7 +226,7 @@ scoreboard = dmc.Grid(
             mb="xl",
             children=[
                 dmc.Title(
-                    "9",
+                    "10",
                     order=1,  # Largest: ~2.5rem, bold by default Large. Display Heading (order=1, like .display-1)
                     c="black",  # Color utility
                     ta="center",  # Text align, like .text-center
@@ -259,7 +259,7 @@ scoreboard = dmc.Grid(
             mb="xl",
             children=[
                 dmc.Title(
-                    "20",
+                    "19",
                     order=1,  # Largest: ~2.5rem, bold by default Large. Display Heading (order=1, like .display-1)
                     c="black",  # Color utility
                     ta="center",  # Text align, like .text-center
