@@ -1,11 +1,15 @@
 import dash
 from dash import html
 import dash_mantine_components as dmc
+from dash_iconify import DashIconify
 
 
 dash.register_page(__name__, path="/about", name="About", title="About BasketHogs")
 
+ARKANSAS_RED = "#9D2235"
+
 layout = dmc.Box(
+    mb="5rem",
     children=[
         dmc.Title(
             "About",
@@ -19,7 +23,7 @@ layout = dmc.Box(
                 "Jason Niebauer",
                 href="https://www.linkedin.com/in/jasonniebauer/",
                 target="_blank",
-                c="#9D2235",
+                c=ARKANSAS_RED,
             ),
             " to track and chart performance, and soon grew to be a full website providing insights on the team's overall success as well as individual player stats.",
             html.Br(),
@@ -32,7 +36,7 @@ layout = dmc.Box(
                 "BasketHogs on Twitter(X)",
                 href="https://x.com/baskethogs",
                 # target="_blank",
-                c="#9D2235",
+                c=ARKANSAS_RED,
             ),
             " and subscribe for:",
             dmc.List(
@@ -40,7 +44,7 @@ layout = dmc.Box(
                     dmc.ListItem("Game day notifications"),
                     dmc.ListItem("Website updates"),
                     dmc.ListItem("If you're a fan of the Arkansas Razorbacks"),
-                ]
+                ],
             ),
             html.Br(),
             html.Br(),
@@ -49,12 +53,25 @@ layout = dmc.Box(
                 "BasketHogs on Twitter(X)",
                 href="https://x.com/baskethogs",
                 # target="_blank",
-                c="#9D2235",
+                c=ARKANSAS_RED,
             ),
             ".",
             html.Br(),
             html.Br(),
-            dmc.Text("Go Hogs!", fw=700)
+            html.Br(),
+            dmc.Anchor(
+                children=dmc.Group(
+                    [
+                        DashIconify(icon="mdi:arrow-left", width=18),  # Back arrow icon (Material Design Icons)
+                        dmc.Text("Back to home"),  # The text after the icon
+                    ],
+                    gap="0.5rem",
+                    align="center",
+                ),
+                href="/",
+                c=ARKANSAS_RED,
+                # underline="never",
+            )
         ],
         maw=670,
         mx="auto",

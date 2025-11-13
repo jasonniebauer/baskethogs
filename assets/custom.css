@@ -1,0 +1,13 @@
+/*
+Ensures the entire Dash app covers the full viewport,
+enabling flexbox to push the footer correctly.
+*/
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+#react-entry-point {
+    height: 100%;
+}

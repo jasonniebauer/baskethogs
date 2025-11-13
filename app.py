@@ -10,7 +10,8 @@ external_stylesheets = [
     {
         "href": "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Oxanium:wght@200..800&display=swap",
         "rel": "stylesheet"
-    }
+    },
+    "custom.css",
 ]
 
 app = Dash(__name__, use_pages=True, suppress_callback_exceptions=True, external_stylesheets=external_stylesheets)
@@ -192,9 +193,10 @@ header = dmc.Box(
 
 footer = dmc.Group(
     align="center",   # vertical alignment
-    gap="xl",
-    pt="5rem",
-    pb="1.25rem",
+    pt="2.5rem",
+    mb="1.25rem",
+    justify="space-between",
+    mt="auto",
     children=[
         dmc.Anchor(
             "Source",
@@ -205,7 +207,7 @@ footer = dmc.Group(
         ),
         dmc.Text(
             "© 2025 BasketHogs",
-            ml="auto",
+            # ml="auto",
         ),
     ]
 )
@@ -227,11 +229,19 @@ app.layout = html.Div([
             dmc.Container(
                 fluid=True,  # Makes it full-width
                 style={
-                    "minHeight": "100vh",  # Ensures full viewport height
+                    "minHeight": "100vh",
+                    "display": "flex",          # Added: Enables flexbox
+                    "flexDirection": "column",  # Added: Vertical stacking (page > footer)
                 },
                 children=[
-                    page_container,
-                    footer
+                    # page_container,
+                    # footer
+                    # Main content (grows to fill space)
+                    html.Div(
+                        style={"flex": "1"},  # Added: Expands page_container
+                        children=page_container,  # Dash injects multi-page content here
+                    ),
+                    footer,  # Pushed to bottom by flex:1 above
                 ],
             ),
         ]
@@ -239,7 +249,4 @@ app.layout = html.Div([
 ])
 
 if __name__ == "__main__":
-
     app.run(debug=True)
-
-

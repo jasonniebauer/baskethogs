@@ -587,7 +587,7 @@ players_by_age_and_year = dmc.Grid([
         children=dmc.Card(
             radius="md",
             bd="1px solid #C7C8CA",
-            mb="5rem",
+            mb="4rem",  # subtract 1rem from bottom margin for extra margin added for stacked columns
             children=[
                 dmc.Title(
                     "Players by Age",
@@ -617,7 +617,7 @@ players_by_age_and_year = dmc.Grid([
         )
     ),
     dmc.GridCol(
-        span={"base": 12, "sm": 6, "md": 6},
+        span={"base": 12, "sm": 12, "md": 6},
         children=dmc.Card(
             radius="md",
             bd="1px solid #C7C8CA",
@@ -649,7 +649,7 @@ players_by_age_and_year = dmc.Grid([
                 ),
             ]
         )
-    )
+    ),
 ])
 
 # df_player_weight_vs_height = [
