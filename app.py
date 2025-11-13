@@ -176,7 +176,7 @@ header = dmc.Box(
                     }
                 ),
                 dmc.Title(
-                    "Men's Basketball 2025-2026 • Last Updated Nov 12, 2025",
+                    "Men's Basketball 2025-2026 • Last Updated Nov 13, 2025",
                     order=6,
                     c="white",
                     fw=500,

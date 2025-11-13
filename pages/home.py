@@ -583,7 +583,7 @@ df_players_by_year = [
 
 players_by_age_and_year = dmc.Grid([
     dmc.GridCol(
-        span={"base": 12, "sm": 6, "md": 6},
+        span={"base": 12, "sm": 12, "md": 6},
         children=dmc.Card(
             radius="md",
             bd="1px solid #C7C8CA",
@@ -652,46 +652,83 @@ players_by_age_and_year = dmc.Grid([
     )
 ])
 
-# df_player_age = [
-#     {"Player": "Jaden Karuletwa", "Age": 19, "Year": "Sophomore"},
-#     {"Player": "Meleek Thomas", "Age": 19, "Year": "Freshman"},
-#     {"Player": "Amere Brown", "Age": 19, "Year": "Freshman"},
-#     {"Player": "Darius Acuff Jr.", "Age": 18, "Year": "Freshman"},
-#     {"Player": "Trevon Brazile", "Age": 22, "Year": "Senior"},
-#     {"Player": "Karter Knox", "Age": 20, "Year": "Sophomore"},
-#     {"Player": "Malique Ewin", "Age": 22, "Year": "Senior"},
-#     {"Player": "Ayden Kelley", "Age": 19, "Year": "Sophomore"},
-#     {"Player": "Elmir Džafić", "Age": 20, "Year": "Freshman"},
-#     {"Player": "D.J. Wagner", "Age": 20, "Year": "Junior"},
-#     {"Player": "Nick Pringle", "Age": 24, "Year": "Gr. Senior"},
-#     {"Player": "Billy Richmond III", "Age": 19, "Year": "Junior"},
-#     {"Player": "Isaiah Sealy", "Age": 18, "Year": "Freshman"},
-#     {"Player": "Karim Rtail", "Age": 21, "Year": "Freshman"},
-#     {"Player": "Paulo Semedo", "Age": 19, "Year": "Freshman"},
+# df_player_weight_vs_height = [
+#     {"Weight": 15, "Height": 76},  # Jaden Karuletwa
+#     {"Weight": 185, "Height": 77},  # Meleek Thomas
+#     {"Weight": 180, "Height": 69},  # Amere Brown
+#     {"Weight": 190, "Height": 75},  # Darius Acuff Jr.
+#     {"Weight": 230, "Height": 82},  # Trevon Brazile
+#     {"Weight": 220, "Height": 78},  # Karter Knox
+#     {"Weight": 240, "Height": 82},  # Malique Ewin
+#     {"Weight": 170, "Height": 70},  # Ayden Kelley
+#     {"Weight": 285, "Height": 84},  #Elmir Džafić
+#     {"Weight": 190, "Height": 76},  # D.J. Wagner
+#     {"Weight": 230, "Height": 82},  # Nick Pringle
+#     {"Weight": 205, "Height": 78},  # Billy Richmond III
+#     {"Weight": 195, "Height": 79},  # Isaiah Sealy
+#     {"Weight": 205, "Height": 79},  # Karim Rtail
+#     {"Weight": 225, "Height": 85},  # Paulo Semedo
 # ]
 
-# player_age = dmc.Card(
+# player_weight_vs_height = dmc.Card(
 #     radius="md",
 #     bd="1px solid #C7C8CA",
 #     mb="5rem",
 #     children=[
 #         dmc.Title(
-#             "Total Wins Over Time",
+#             "Players by Weight & Height",
 #             order=1,
 #             mb="xl",
 #         ),
-#         dmc.BubbleChart(
-#             gridColor="gray.5",
-#             textColor="gray.9",
-#             h=60,
-#             data=data,
-#             range=[16, 225],
-#             label="Sales/hour",
-#             color="lime.6",
-#             dataKey={"x": "hour", "y": "index", "z": "value"}
+#         dmc.ScatterChart(
+#             h=300,
+#             data=df_player_weight_vs_height,
+#             dataKey={"x": "Weight", "y": "Height"},
+#             xAxisLabel="Weight (lbs)",
+#             yAxisLabel="Height (in)",
+#             # style={"--mantine-primary-color": ARKANSAS_RED},
 #         )
 #     ]
 # )
+
+df_field_goals_over_time = [
+    {"date": "Nov 3", "Field Goals": 37, "Field Goal Avg.": 30},
+    {"date": "Nov 8", "Field Goals": 22, "Field Goal Avg.": 30},
+    {"date": "Nov 11", "Field Goals": 31, "Field Goal Avg.": 30},
+]
+
+field_goals_over_time = dmc.Card(
+    radius="md",
+    bd="1px solid #C7C8CA",
+    mb="5rem",
+    children=[
+        dmc.Title(
+            "Field Goals Over Time",
+            order=1,
+        ),
+        dmc.Title(
+            "The total number of field goals made per game compared to the team's average.",
+            order=5,
+            mb="xl",
+            fw="500",
+        ),
+        dmc.CompositeChart(
+            h=300,
+            data=df_field_goals_over_time,
+            dataKey="date",
+            curveType="Linear",
+            gridAxis="x",
+            withXAxis=True,
+            withYAxis=True,
+            withLegend=True,
+            series=[
+                {"name": "Field Goal Avg.", "label": "Field Goal Avg.", "color": "#C7C8CA", "type": "bar"},
+                {"name": "Field Goals", "color": ARKANSAS_RED, "type": "line"},
+            ]
+        )
+    ]
+)
+
 
 def player_card(player_stats_data, radar_data):
     # Remove space characters and periods
@@ -931,6 +968,7 @@ def player_card(player_stats_data, radar_data):
             ]
         ),
         span={"base": 12, "sm": 6, "md": 6, "lg": 4},
+        mb="1.5rem",
     )
 
 jaden_karuletwa_stats = {
@@ -1348,7 +1386,7 @@ player_stats_headline = dmc.Title(
 players = dmc.Grid(
     justify="center",
     gutter="md",
-    mb="5rem",
+    mb="3.5rem",
     children=[
         player_card(
             player_stats_data=darius_acuff_jr_stats,
@@ -1426,5 +1464,7 @@ layout = dmc.Box(
         point_type_by_percent_of_total,
         points_gap_over_time,
         players_by_age_and_year,
+        field_goals_over_time,
+        # player_weight_vs_height,
     ]
 )
