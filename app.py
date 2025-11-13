@@ -121,6 +121,11 @@ navbar = dmc.Flex(
                         color="black",
                         size="xs",
                         rightSection=DashIconify(icon="logos:x"),
+                        styles={
+                            "section": {
+                                "marginInlineStart": "0.375rem"
+                            }
+                        }
                     ),
                     href="https://x.com/baskethogs",
                     underline="never",
@@ -177,7 +182,8 @@ header = dmc.Box(
                     fw=500,
                     bg="black",
                     p="0.375rem 0.75rem",
-                    style={"borderRadius": "0.375rem"}
+                    style={"borderRadius": "0.375rem"},
+                    fz={"base": "0.75rem", "sm": "0.75rem", "md": "0.875rem"},
                 ),
             ]
         )
