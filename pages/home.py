@@ -13,11 +13,11 @@ TODAY = date.today()
 
 # team = dmc.AvatarGroup([
 #     dmc.Tooltip(
-#         dmc.Avatar(src="/assets/players/Meleek-Thomas.jpg", size="xl", style={"borderRadius": "9999px"}),
+#         dmc.Avatar(src="/assets/players/Meleek-Thomas.jpg", size="xl", radius="md"),
 #         label="Meleek Thomas",
 #         position="bottom",
 #     ),
-#     dmc.Avatar(src="/assets/players/Dj-Wagner.jpg", size="xl", style={"borderRadius": "9999px"}),
+#     dmc.Avatar(src="/assets/players/Dj-Wagner.jpg", size="xl", radius="md"),
 # ])
 
 scoreboard = dmc.Grid(
@@ -389,7 +389,7 @@ count_points_by_type = dmc.Card(
             data=df_count_points_by_type,
             series=[
                 {"name": "2-Pointers", "color": ARKANSAS_RED},
-                {"name": "3-Pointers", "color": "black"},
+                {"name": "3-Pointers", "color": SPOOFER_STONE},
                 {"name": "Free Throws", "color": "#C7C8CA"}
             ],
             withLegend=True,
@@ -533,7 +533,7 @@ def get_player_age(birthdate_string):
     # Get the player's age based on their date of birth
     return TODAY.year - birthdate.year - ((TODAY.month, TODAY.day) < (birthdate.month, birthdate.day))
 
-df_players_by_age = [
+players_and_birthdates = [
     {"Name": "Isaiah Sealy", "Birthdate": "1/1/2007"},
     {"Name": "Darius Acuff Jr.", "Birthdate": "11/16/2006"},
     {"Name": "Meleek Thomas", "Birthdate": "8/6/2006"},
@@ -551,43 +551,105 @@ df_players_by_age = [
     {"Name": "Nick Pringle", "Birthdate": "9/16/2001"},
 ]
 
-# Loop through the list of dictionaries and add key for age
-for player in df_players_by_age:
-    # Add a new key 'city' with a default value to each dictionary
-    player["Age"] = get_player_age(player['Birthdate'])
+df_players_by_age = [
+    {"Age": "Age 18", "Total": 0},
+    {"Age": "Age 19", "Total": 0},
+    {"Age": "Age 20", "Total": 0},
+    {"Age": "Age 21", "Total": 0},
+    {"Age": "Age 22", "Total": 0}
+]
 
-players_by_age = dmc.Card(
-    radius="md",
-    bd="1px solid #C7C8CA",
-    mb="5rem",
-    children=[
-        dmc.Title(
-            "Players by Age",
-            order=1,
-        ),
-        dmc.Title(
-            "The age of each player.",
-            order=5,
-            mb="xl",
-            fw="500",
-        ),
-        dmc.BarChart(
-            h=300,
-            dataKey="Name",
-            data=df_players_by_age,
-            series=[
-                {"name": "Age", "color": ARKANSAS_RED},
-            ],
-            orientation="vertical",
-            tickLine="none",
-            gridAxis="x",
-            withXAxis=True,
-            withYAxis=True,
-            mb="sm",
-            pr="1rem",
-        ),
-    ]
-)
+for player in players_and_birthdates:
+    age = get_player_age(player['Birthdate'])
+    if age == 18:
+        df_players_by_age[0]["Total"] += 1
+    elif age == 19:
+        df_players_by_age[1]["Total"] += 1
+    elif age == 20:
+        df_players_by_age[2]["Total"] += 1
+    elif age == 21:
+        df_players_by_age[3]["Total"] += 1
+    elif age == 22:
+        df_players_by_age[4]["Total"] += 1
+
+df_players_by_year = [
+    {"Year": "Freshman", "Total": 7},
+    {"Year": "Sophomore", "Total": 3},
+    {"Year": "Junior", "Total": 2},
+    {"Year": "Senior", "Total": 2},
+    {"Year": "Gr. Senior", "Total": 1},
+]
+
+players_by_age_and_year = dmc.Grid([
+    dmc.GridCol(
+        span={"base": 6, "sm": 6, "md": 6},
+        children=dmc.Card(
+            radius="md",
+            bd="1px solid #C7C8CA",
+            mb="5rem",
+            children=[
+                dmc.Title(
+                    "Players by Age",
+                    order=1,
+                ),
+                dmc.Title(
+                    "The total number of players grouped by their age.",
+                    order=5,
+                    mb="xl",
+                    fw="500",
+                ),
+                dmc.BarChart(
+                    h=300,
+                    dataKey="Age",
+                    data=df_players_by_age,
+                    series=[
+                        {"name": "Total", "color": ARKANSAS_RED}
+                    ],
+                    tickLine="none",
+                    gridAxis="x",
+                    withXAxis=True,
+                    withYAxis=True,
+                    mb="sm",
+                    pr="1rem",
+                ),
+            ]
+        )
+    ),
+    dmc.GridCol(
+        span={"base": 6, "sm": 6, "md": 6},
+        children=dmc.Card(
+            radius="md",
+            bd="1px solid #C7C8CA",
+            mb="5rem",
+            children=[
+                dmc.Title(
+                    "Players by Study Year",
+                    order=1,
+                ),
+                dmc.Title(
+                    "The total number of players grouped by year of study.",
+                    order=5,
+                    mb="xl",
+                    fw="500",
+                ),
+                dmc.BarChart(
+                    h=300,
+                    dataKey="Year",
+                    data=df_players_by_year,
+                    series=[
+                        {"name": "Total", "color": ARKANSAS_RED}
+                    ],
+                    tickLine="none",
+                    gridAxis="x",
+                    withXAxis=True,
+                    withYAxis=True,
+                    mb="sm",
+                    pr="1rem",
+                ),
+            ]
+        )
+    )
+])
 
 # df_player_age = [
 #     {"Player": "Jaden Karuletwa", "Age": 19, "Year": "Sophomore"},
@@ -600,7 +662,7 @@ players_by_age = dmc.Card(
 #     {"Player": "Ayden Kelley", "Age": 19, "Year": "Sophomore"},
 #     {"Player": "Elmir Džafić", "Age": 20, "Year": "Freshman"},
 #     {"Player": "D.J. Wagner", "Age": 20, "Year": "Junior"},
-#     {"Player": "Nick Pringle", "Age": 24, "Year": "Senior"},
+#     {"Player": "Nick Pringle", "Age": 24, "Year": "Gr. Senior"},
 #     {"Player": "Billy Richmond III", "Age": 19, "Year": "Junior"},
 #     {"Player": "Isaiah Sealy", "Age": 18, "Year": "Freshman"},
 #     {"Player": "Karim Rtail", "Age": 21, "Year": "Freshman"},
@@ -843,9 +905,34 @@ def player_card(player_stats_data, radar_data):
             ]
         ),
         span={"base": 12, "sm": 6, "md": 6, "lg": 4},
-        # miw="440",
-        # maw="440",
     )
+
+jaden_karuletwa_stats = {
+    "Name": "Jaden Karuletwa",
+    "Position": "Guard",
+    "Year": "Sophomore",
+    "Height": "6' 4\"",
+    "Weight": "195",
+    "Birthdate": "1/1/2006",
+    "Number": "0",
+    "Season High": "0",
+    "Games Played": "1",
+    "PPG": "0",
+    "FG": "0",
+    "3P": "0",
+    "FT": "0",
+}
+
+jaden_karuletwa_radar = [
+    {"stat": "Field Goals", "count": 0},
+    {"stat": "3-Pointers", "count": 0},
+    {"stat": "Free Thows", "count": 0},
+    {"stat": "Off. Rebounds", "count": 0},
+    {"stat": "Def. Rebounds", "count": 1},
+    {"stat": "Assists", "count": 1},
+    {"stat": "Turnovers", "count": 0},
+    {"stat": "Steals", "count": 0},
+]
 
 darius_acuff_jr_stats = {
     "Name": "Darius Acuff Jr.",
@@ -980,33 +1067,6 @@ karter_knox_radar = [
     {"stat": "Assists", "count": 3},
     {"stat": "Turnovers", "count": 3},
     {"stat": "Steals", "count": 1},
-]
-
-jaden_karuletwa_stats = {
-    "Name": "Jaden Karuletwa",
-    "Position": "Guard",
-    "Year": "Sophomore",
-    "Height": "6' 4\"",
-    "Weight": "195",
-    "Birthdate": "1/1/2006",
-    "Number": "0",
-    "Season High": "0",
-    "Games Played": "1",
-    "PPG": "0",
-    "FG": "0",
-    "3P": "0",
-    "FT": "0",
-}
-
-jaden_karuletwa_radar = [
-    {"stat": "Field Goals", "count": 0},
-    {"stat": "3-Pointers", "count": 0},
-    {"stat": "Free Thows", "count": 0},
-    {"stat": "Off. Rebounds", "count": 0},
-    {"stat": "Def. Rebounds", "count": 1},
-    {"stat": "Assists", "count": 1},
-    {"stat": "Turnovers", "count": 0},
-    {"stat": "Steals", "count": 0},
 ]
 
 amere_brown_stats = {
@@ -1339,6 +1399,6 @@ layout = dmc.Box(
         totals_points_by_type,
         point_type_by_percent_of_total,
         points_gap_over_time,
-        # players_by_age,
+        players_by_age_and_year,
     ]
 )
