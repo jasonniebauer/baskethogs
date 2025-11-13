@@ -583,7 +583,7 @@ df_players_by_year = [
 
 players_by_age_and_year = dmc.Grid([
     dmc.GridCol(
-        span={"base": 6, "sm": 6, "md": 6},
+        span={"base": 12, "sm": 6, "md": 6},
         children=dmc.Card(
             radius="md",
             bd="1px solid #C7C8CA",
@@ -617,7 +617,7 @@ players_by_age_and_year = dmc.Grid([
         )
     ),
     dmc.GridCol(
-        span={"base": 6, "sm": 6, "md": 6},
+        span={"base": 12, "sm": 6, "md": 6},
         children=dmc.Card(
             radius="md",
             bd="1px solid #C7C8CA",
