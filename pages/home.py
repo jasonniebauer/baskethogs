@@ -339,7 +339,7 @@ df_total_points_over_time = [
 total_points_over_time = dmc.Card(
     radius="md",
     bd="1px solid #C7C8CA",
-    mb="5rem",
+    mb={"base": "4rem", "md": "5rem"},
     children=[
         dmc.Title(
             "Total Points",
@@ -361,13 +361,58 @@ total_points_over_time = dmc.Card(
             ],
             curveType="linear",
             tickLine="y",
-            # withXAxis=False,
             mb="sm",
             pr="1rem",
             withLegend=True,
         ),
     ]
 )
+
+leaderboard_total_points = dmc.Card(
+    radius="md",
+    bd="1px solid #C7C8CA",
+    mb="5rem",
+    h="100%",
+    children=[
+        dmc.Title(
+            "Total Points Leaderboard",
+            order=1,
+        ),
+        dmc.Title(
+            "The top 5 players by total points for the season.",
+            order=5,
+            mb="xl",
+            fw="500",
+        ),
+        dmc.Table(
+            striped=True,
+            data={
+                "head": ["Rank", "Player", "Total Points"],
+                "body": [
+                    [1, "Darius Acuff Jr.", 59],
+                    [2, "Meleek Thomas", 54],
+                    [3, "D.J. Wagner", 28],
+                    [4, "Trevon Brazile", 28],
+                    [5, "Nick Pringle", 23],
+                ],
+            },
+        )
+    ]
+)
+
+total_points = dmc.Grid(
+    align="stretch",  # Default; explicitly set for clarity
+    children=[
+    dmc.GridCol(
+        span={"base": 12, "sm": 12, "md": 8},
+        children=total_points_over_time,
+    ),
+    dmc.GridCol(
+        span={"base": 12, "sm": 12, "md": 4},
+        style={"display": "flex", "flexDirection": "column"},  # Optional: Ensures inner content stretches
+        children=leaderboard_total_points,
+    ),
+])
 
 df_count_points_by_type = [
     {"date": "Southern", "2-Pointers": 27, "3-Pointers": 10, "Free Throws": 25},
@@ -1739,7 +1784,7 @@ layout = dmc.Box(
         players,
         team_stats_headline,
         # total_wins_over_time,
-        total_points_over_time,
+        total_points,
         field_goals_over_time,
         x3_pointers_over_time,
         free_throws_over_time,
