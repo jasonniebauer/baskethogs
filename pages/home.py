@@ -292,6 +292,13 @@ scoreboard = dmc.Grid(
     ]
 )
 
+team_stats_headline = dmc.Title(
+    "Team Stats",
+    order=1,
+    ta="center",
+    py="2rem",
+)
+
 # df_total_wins_over_time = [
 #   {"date": "Nov 3", "Total Wins": 1},
 #   {"date": "Nov 8", "Total Wins": 1},
@@ -324,9 +331,9 @@ scoreboard = dmc.Grid(
 # )
 
 df_total_points_over_time = [
-  {"date": "Nov 3", "Arkansas Points": 109, "Opponent Points": 77},
-  {"date": "Nov 8", "Arkansas Points": 66, "Opponent Points": 69},
-  {"date": "Nov 11", "Arkansas Points": 93, "Opponent Points": 56},
+  {"date": "Southern", "Arkansas Points": 109, "Opponent Points": 77},
+  {"date": "Michigan State", "Arkansas Points": 66, "Opponent Points": 69},
+  {"date": "Central Arkansas", "Arkansas Points": 93, "Opponent Points": 56},
 ]
 
 total_points_over_time = dmc.Card(
@@ -349,8 +356,8 @@ total_points_over_time = dmc.Card(
             dataKey="date",
             data=df_total_points_over_time,
             series = [
-                {"name": "Opponent Points", "color": SPOOFER_STONE},
                 {"name": "Arkansas Points", "color": ARKANSAS_RED},
+                {"name": "Opponent Points", "color": SPOOFER_STONE},
             ],
             curveType="linear",
             tickLine="y",
@@ -376,10 +383,9 @@ count_points_by_type = dmc.Card(
         dmc.Title(
             "Number of Points",
             order=1,
-            # mb="xl",
         ),
         dmc.Title(
-            "The total number of points for each type.",
+            "The total number of points by type.",
             order=5,
             mb="xl",
             fw="500",
@@ -459,7 +465,7 @@ point_type_by_percent_of_total = dmc.Card(
     mb="5rem",
     children=[
         dmc.Title(
-            "Percent of Total Points",
+            "Point Type of Total Points",
             order=1,
             # mb="xl",
         ),
@@ -729,6 +735,282 @@ field_goals_over_time = dmc.Card(
     ]
 )
 
+df_3_pointers_over_time = [
+    {"date": "Nov 3", "3-Pointers": 10, "3-Pointer Avg.": 10},
+    {"date": "Nov 8", "3-Pointers": 7, "3-Pointer Avg.": 10},
+    {"date": "Nov 11", "3-Pointers": 13, "3-Pointer Avg.": 10},
+]
+
+x3_pointers_over_time = dmc.Card(
+    radius="md",
+    bd="1px solid #C7C8CA",
+    mb="5rem",
+    children=[
+        dmc.Title(
+            "3-Pointers Over Time",
+            order=1,
+        ),
+        dmc.Title(
+            "The total number of 3-pointers made per game compared to the team's average.",
+            order=5,
+            mb="xl",
+            fw="500",
+        ),
+        dmc.CompositeChart(
+            h=300,
+            data=df_3_pointers_over_time,
+            dataKey="date",
+            curveType="Linear",
+            gridAxis="x",
+            withXAxis=True,
+            withYAxis=True,
+            withLegend=True,
+            series=[
+                {"name": "3-Pointer Avg.", "label": "3-Pointer Avg.", "color": "#C7C8CA", "type": "bar"},
+                {"name": "3-Pointers", "color": ARKANSAS_RED, "type": "line"},
+            ]
+        )
+    ]
+)
+
+df_free_throws_over_time = [
+    {"date": "Nov 3", "Free Throws": 25, "Free Throw Avg.": 19},
+    {"date": "Nov 8", "Free Throws": 15, "Free Throw Avg.": 19},
+    {"date": "Nov 11", "Free Throws": 18, "Free Throw Avg.": 19},
+]
+
+free_throws_over_time = dmc.Card(
+    radius="md",
+    bd="1px solid #C7C8CA",
+    mb="5rem",
+    children=[
+        dmc.Title(
+            "Free Throws Over Time",
+            order=1,
+        ),
+        dmc.Title(
+            "The total number of free throws made per game compared to the team's average.",
+            order=5,
+            mb="xl",
+            fw="500",
+        ),
+        dmc.CompositeChart(
+            h=300,
+            data=df_free_throws_over_time,
+            dataKey="date",
+            curveType="Linear",
+            gridAxis="x",
+            withXAxis=True,
+            withYAxis=True,
+            withLegend=True,
+            series=[
+                {"name": "Free Throw Avg.", "label": "Free Throw Avg.", "color": "#C7C8CA", "type": "bar"},
+                {"name": "Free Throws", "color": ARKANSAS_RED, "type": "line"},
+            ]
+        )
+    ]
+)
+
+df_assists_over_time = [
+    {"date": "Nov 3", "Assists": 23, "Assist Avg.": 19},
+    {"date": "Nov 8", "Assists": 16, "Assist Avg.": 19},
+    {"date": "Nov 11", "Assists": 17, "Assist Avg.": 19},
+]
+
+assists_over_time = dmc.Card(
+    radius="md",
+    bd="1px solid #C7C8CA",
+    mb="5rem",
+    children=[
+        dmc.Title(
+            "Assists Over Time",
+            order=1,
+        ),
+        dmc.Title(
+            "The total number of assists per game compared to the team's average.",
+            order=5,
+            mb="xl",
+            fw="500",
+        ),
+        dmc.CompositeChart(
+            h=300,
+            data=df_assists_over_time,
+            dataKey="date",
+            curveType="Linear",
+            gridAxis="x",
+            withXAxis=True,
+            withYAxis=True,
+            withLegend=True,
+            series=[
+                {"name": "Assist Avg.", "label": "Assit Avg.", "color": "#C7C8CA", "type": "bar"},
+                {"name": "Assists", "color": ARKANSAS_RED, "type": "line"},
+            ]
+        )
+    ]
+)
+
+df_turnovers_over_time = [
+    {"date": "Nov 3", "Turnovers": 9, "Turnover Avg.": 10},
+    {"date": "Nov 8", "Turnovers": 14, "Turnover Avg.": 10},
+    {"date": "Nov 11", "Turnovers": 8, "Turnover Avg.": 10},
+]
+
+turnovers_over_time = dmc.Card(
+    radius="md",
+    bd="1px solid #C7C8CA",
+    mb="5rem",
+    children=[
+        dmc.Title(
+            "Turnovers Over Time",
+            order=1,
+        ),
+        dmc.Title(
+            "The total number of turnovers per game compared to the team's average.",
+            order=5,
+            mb="xl",
+            fw="500",
+        ),
+        dmc.CompositeChart(
+            h=300,
+            data=df_turnovers_over_time,
+            dataKey="date",
+            curveType="Linear",
+            gridAxis="x",
+            withXAxis=True,
+            withYAxis=True,
+            withLegend=True,
+            series=[
+                {"name": "Turnover Avg.", "label": "Turnover Avg.", "color": "#C7C8CA", "type": "bar"},
+                {"name": "Turnovers", "color": ARKANSAS_RED, "type": "line"},
+            ]
+        )
+    ]
+)
+
+df_steals_over_time = [
+    {"date": "Nov 3", "Steals": 10, "Steal Avg.": 9},
+    {"date": "Nov 8", "Steals": 11, "Steal Avg.": 9},
+    {"date": "Nov 11", "Steals": 5, "Steal Avg.": 9},
+]
+
+steals_over_time = dmc.Card(
+    radius="md",
+    bd="1px solid #C7C8CA",
+    mb="5rem",
+    children=[
+        dmc.Title(
+            "Steals Over Time",
+            order=1,
+        ),
+        dmc.Title(
+            "The total number of steals per game compared to the team's average.",
+            order=5,
+            mb="xl",
+            fw="500",
+        ),
+        dmc.CompositeChart(
+            h=300,
+            data=df_steals_over_time,
+            dataKey="date",
+            curveType="Linear",
+            gridAxis="x",
+            withXAxis=True,
+            withYAxis=True,
+            withLegend=True,
+            series=[
+                {"name": "Steal Avg.", "label": "Steal Avg.", "color": "#C7C8CA", "type": "bar"},
+                {"name": "Steals", "color": ARKANSAS_RED, "type": "line"},
+            ]
+        )
+    ]
+)
+
+df_team_by_position = [
+    {"Position": "Guard", "Total": 6},
+    {"Position": "Forward", "Total": 4},
+    {"Position": "Wing", "Total": 4},
+    {"Position": "Center", "Total": 1},
+]
+
+df_team_by_position_percentage = [
+    {"positions": "Team Positions", "Guard": 6, "Forward": 4, "Wing": 4, "Center": 1},
+]
+
+team_by_positions = dmc.Grid([
+    dmc.GridCol(
+        span={"base": 12, "sm": 12, "md": 6},
+        children=dmc.Card(
+            radius="md",
+            bd="1px solid #C7C8CA",
+            mb="4rem",
+            children=[
+                dmc.Title(
+                    "Total Positions",
+                    order=1,
+                ),
+                dmc.Title(
+                    "The total number of positions across the team.",
+                    order=5,
+                    mb="xl",
+                    fw="500",
+                ),
+                dmc.BarChart(
+                    h=300,
+                    dataKey="Position",
+                    data=df_team_by_position,
+                    series=[
+                        {"name": "Total", "color": ARKANSAS_RED}
+                    ],
+                    tickLine="none",
+                    gridAxis="x",
+                    withXAxis=True,
+                    withYAxis=True,
+                    mb="sm",
+                    pr="1rem",
+                ),
+            ]
+        )
+    ),
+    dmc.GridCol(
+        span={"base": 12, "sm": 12, "md": 6},
+        children=dmc.Card(
+            radius="md",
+            bd="1px solid #C7C8CA",
+            mb="5rem",
+            children=[
+                dmc.Title(
+                    "Position Total % of Team",
+                    order=1,
+                ),
+                dmc.Title(
+                    "The total position's percentage of the team's available positions.",
+                    order=5,
+                    mb="xl",
+                    fw="500",
+                ),
+                dmc.BarChart(
+                    h=300,
+                    dataKey="positions",
+                    data=df_team_by_position_percentage,
+                    type="percent",
+                    series=[
+                        {"name": "Guard", "color": ARKANSAS_RED},
+                        {"name": "Forward", "color": SPOOFER_STONE},
+                        {"name": "Wing", "color": "#C7C8CA"},
+                        {"name": "Center", "color": "black"},
+                    ],
+                    withLegend=True,
+                    tickLine="none",
+                    gridAxis="x",
+                    withXAxis=True,
+                    withYAxis=True,
+                    mb="sm",
+                    pr="1rem",
+                ),
+            ]
+        )
+    )
+])
 
 def player_card(player_stats_data, radar_data):
     # Remove space characters and periods
@@ -762,8 +1044,6 @@ def player_card(player_stats_data, radar_data):
                                     mr="0.5rem",
                                     h="70px",
                                     w="70px",
-                                    # mb="0.25rem",
-                                    # style={"border": "2px solid #424242"}
                                 ),
                                 dmc.Box(
                                     children=[
@@ -1457,14 +1737,21 @@ layout = dmc.Box(
         scoreboard,
         player_stats_headline,
         players,
+        team_stats_headline,
         # total_wins_over_time,
         total_points_over_time,
+        field_goals_over_time,
+        x3_pointers_over_time,
+        free_throws_over_time,
+        assists_over_time,
+        turnovers_over_time,
+        steals_over_time,
         count_points_by_type,
         totals_points_by_type,
         point_type_by_percent_of_total,
         points_gap_over_time,
         players_by_age_and_year,
-        field_goals_over_time,
+        team_by_positions,
         # player_weight_vs_height,
     ]
 )

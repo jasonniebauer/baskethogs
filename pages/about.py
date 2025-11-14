@@ -35,7 +35,6 @@ layout = dmc.Box(
             dmc.Anchor(
                 "BasketHogs on Twitter(X)",
                 href="https://x.com/baskethogs",
-                # target="_blank",
                 c=ARKANSAS_RED,
             ),
             " and subscribe for:",
@@ -52,10 +51,18 @@ layout = dmc.Box(
             dmc.Anchor(
                 "BasketHogs on Twitter(X)",
                 href="https://x.com/baskethogs",
-                # target="_blank",
                 c=ARKANSAS_RED,
             ),
             ".",
+            html.Br(),
+            html.Br(),
+            "Wnat to support BasketHogs? ",
+            dmc.Anchor(
+                "Buy me a coffee",
+                href="https://buymeacoffee.com/baskethogs",
+                c=ARKANSAS_RED,
+                target="_blank",
+            ),
             html.Br(),
             html.Br(),
             html.Br(),
@@ -70,7 +77,6 @@ layout = dmc.Box(
                 ),
                 href="/",
                 c=ARKANSAS_RED,
-                # underline="never",
             )
         ],
         maw=670,
