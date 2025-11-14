@@ -300,8 +300,8 @@ team_stats_headline = dmc.Title(
 )
 
 # df_total_wins_over_time = [
-#   {"date": "Nov 3", "Total Wins": 1},
-#   {"date": "Nov 8", "Total Wins": 1},
+#   {"date": "Southern", "Total Wins": 1},
+#   {"date": "Michigan State", "Total Wins": 1},
 # ]
 
 # total_wins_over_time = dmc.Card(
@@ -370,9 +370,9 @@ total_points_over_time = dmc.Card(
 )
 
 df_count_points_by_type = [
-    {"date": "Nov 3", "2-Pointers": 27, "3-Pointers": 10, "Free Throws": 25},
-    {"date": "Nov 8", "2-Pointers": 15, "3-Pointers": 7, "Free Throws": 15},
-    {"date": "Nov 11", "2-Pointers": 18, "3-Pointers": 13, "Free Throws": 18},
+    {"date": "Southern", "2-Pointers": 27, "3-Pointers": 10, "Free Throws": 25},
+    {"date": "Michigan State", "2-Pointers": 15, "3-Pointers": 7, "Free Throws": 15},
+    {"date": "Central Arkansas", "2-Pointers": 18, "3-Pointers": 13, "Free Throws": 18},
 ]
 
 count_points_by_type = dmc.Card(
@@ -411,9 +411,9 @@ count_points_by_type = dmc.Card(
 )
 
 df_totals_points_by_type = [
-    {"date": "Nov 3", "2-Pointers": 54, "3-Pointers": 30, "Free Throws": 25},
-    {"date": "Nov 8", "2-Pointers": 30, "3-Pointers": 21, "Free Throws": 15},
-    {"date": "Nov 11", "2-Pointers": 36, "3-Pointers": 39, "Free Throws": 18},
+    {"date": "Southern", "2-Pointers": 54, "3-Pointers": 30, "Free Throws": 25},
+    {"date": "Michigan State", "2-Pointers": 30, "3-Pointers": 21, "Free Throws": 15},
+    {"date": "Central Arkansas", "2-Pointers": 36, "3-Pointers": 39, "Free Throws": 18},
 ]
 
 totals_points_by_type = dmc.Card(
@@ -454,9 +454,9 @@ totals_points_by_type = dmc.Card(
 )
 
 df_point_type_by_percent_of_total = [
-    {"date": "Nov 3", "2-Pointers": 49.5, "3-Pointers": 27.5, "Free Throws": 22.9},
-    {"date": "Nov 8", "2-Pointers": 45.4, "3-Pointers": 31.8, "Free Throws": 22.7},
-    {"date": "Nov 11", "2-Pointers": 38.7, "3-Pointers": 41.9, "Free Throws": 19.4},
+    {"date": "Southern", "2-Pointers": 49.5, "3-Pointers": 27.5, "Free Throws": 22.9},
+    {"date": "Michigan State", "2-Pointers": 45.4, "3-Pointers": 31.8, "Free Throws": 22.7},
+    {"date": "Central Arkansas", "2-Pointers": 38.7, "3-Pointers": 41.9, "Free Throws": 19.4},
 ]
 
 point_type_by_percent_of_total = dmc.Card(
@@ -497,9 +497,9 @@ point_type_by_percent_of_total = dmc.Card(
 )
 
 df_points_gap_over_time = [
-  {"date": "Nov 3", "Point Gap": 32},
-  {"date": "Nov 8", "Point Gap": 3},
-  {"date": "Nov 11", "Point Gap": 37},
+  {"date": "Southern", "Point Gap": 32},
+  {"date": "Michigan State", "Point Gap": 3},
+  {"date": "Central Arkansas", "Point Gap": 37},
 ]
 
 points_gap_over_time = dmc.Card(
@@ -698,9 +698,9 @@ players_by_age_and_year = dmc.Grid([
 # )
 
 df_field_goals_over_time = [
-    {"date": "Nov 3", "Field Goals": 37, "Field Goal Avg.": 30},
-    {"date": "Nov 8", "Field Goals": 22, "Field Goal Avg.": 30},
-    {"date": "Nov 11", "Field Goals": 31, "Field Goal Avg.": 30},
+    {"date": "Southern", "Field Goals": 37, "Field Goal Avg.": 30},
+    {"date": "Michigan State", "Field Goals": 22, "Field Goal Avg.": 30},
+    {"date": "Central Arkansas", "Field Goals": 31, "Field Goal Avg.": 30},
 ]
 
 field_goals_over_time = dmc.Card(
@@ -736,9 +736,9 @@ field_goals_over_time = dmc.Card(
 )
 
 df_3_pointers_over_time = [
-    {"date": "Nov 3", "3-Pointers": 10, "3-Pointer Avg.": 10},
-    {"date": "Nov 8", "3-Pointers": 7, "3-Pointer Avg.": 10},
-    {"date": "Nov 11", "3-Pointers": 13, "3-Pointer Avg.": 10},
+    {"date": "Southern", "3-Pointers": 10, "3-Pointer Avg.": 10},
+    {"date": "Michigan State", "3-Pointers": 7, "3-Pointer Avg.": 10},
+    {"date": "Central Arkansas", "3-Pointers": 13, "3-Pointer Avg.": 10},
 ]
 
 x3_pointers_over_time = dmc.Card(
@@ -774,9 +774,9 @@ x3_pointers_over_time = dmc.Card(
 )
 
 df_free_throws_over_time = [
-    {"date": "Nov 3", "Free Throws": 25, "Free Throw Avg.": 19},
-    {"date": "Nov 8", "Free Throws": 15, "Free Throw Avg.": 19},
-    {"date": "Nov 11", "Free Throws": 18, "Free Throw Avg.": 19},
+    {"date": "Southern", "Free Throws": 25, "Free Throw Avg.": 19},
+    {"date": "Michigan State", "Free Throws": 15, "Free Throw Avg.": 19},
+    {"date": "Central Arkansas", "Free Throws": 18, "Free Throw Avg.": 19},
 ]
 
 free_throws_over_time = dmc.Card(
@@ -812,9 +812,9 @@ free_throws_over_time = dmc.Card(
 )
 
 df_assists_over_time = [
-    {"date": "Nov 3", "Assists": 23, "Assist Avg.": 19},
-    {"date": "Nov 8", "Assists": 16, "Assist Avg.": 19},
-    {"date": "Nov 11", "Assists": 17, "Assist Avg.": 19},
+    {"date": "Southern", "Assists": 23, "Assist Avg.": 19},
+    {"date": "Michigan State", "Assists": 16, "Assist Avg.": 19},
+    {"date": "Central Arkansas", "Assists": 17, "Assist Avg.": 19},
 ]
 
 assists_over_time = dmc.Card(
@@ -850,9 +850,9 @@ assists_over_time = dmc.Card(
 )
 
 df_turnovers_over_time = [
-    {"date": "Nov 3", "Turnovers": 9, "Turnover Avg.": 10},
-    {"date": "Nov 8", "Turnovers": 14, "Turnover Avg.": 10},
-    {"date": "Nov 11", "Turnovers": 8, "Turnover Avg.": 10},
+    {"date": "Southern", "Turnovers": 9, "Turnover Avg.": 10},
+    {"date": "Michigan State", "Turnovers": 14, "Turnover Avg.": 10},
+    {"date": "Central Arkansas", "Turnovers": 8, "Turnover Avg.": 10},
 ]
 
 turnovers_over_time = dmc.Card(
@@ -888,9 +888,9 @@ turnovers_over_time = dmc.Card(
 )
 
 df_steals_over_time = [
-    {"date": "Nov 3", "Steals": 10, "Steal Avg.": 9},
-    {"date": "Nov 8", "Steals": 11, "Steal Avg.": 9},
-    {"date": "Nov 11", "Steals": 5, "Steal Avg.": 9},
+    {"date": "Southern", "Steals": 10, "Steal Avg.": 9},
+    {"date": "Michigan State", "Steals": 11, "Steal Avg.": 9},
+    {"date": "Central Arkansas", "Steals": 5, "Steal Avg.": 9},
 ]
 
 steals_over_time = dmc.Card(
