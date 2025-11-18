@@ -896,7 +896,7 @@ assists_over_time = dmc.Card(
             withYAxis=True,
             withLegend=True,
             series=[
-                {"name": "Assist Avg.", "label": "Assit Avg.", "color": "#C7C8CA", "type": "bar"},
+                {"name": "Assist Avg.", "label": "Assist Avg.", "color": "#C7C8CA", "type": "bar"},
                 {"name": "Assists", "color": ARKANSAS_RED, "type": "line"},
             ]
         )
