@@ -25,7 +25,7 @@ layout = dmc.Box(
                 target="_blank",
                 c=ARKANSAS_RED,
             ),
-            " to track and chart performance in a spreadsheet, and soon grew to a full website providing insights on the team's overall success as well as individual player stats.",
+            " to track the team's performance, and soon grew from a spreadsheet of metrics to a full website providing insights on the team's overall success as well as individual player stats.",
             html.Br(),
             html.Br(),
             "BasketHogs is updated after every game as soon as the data becomes available and is compiled. Charts will continue to grow and expand throughout the season, and player stats will become more balanced as the players spend time on the court.",
