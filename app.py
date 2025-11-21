@@ -178,7 +178,7 @@ header = dmc.Box(
                     }
                 ),
                 dmc.Title(
-                    "Men's Basketball 2025-2026 • Last Updated Nov 17, 2025",
+                    "Men's Basketball 2025-2026 • Last Updated Nov 18, 2025",
                     order=6,
                     c="white",
                     fw=500,
@@ -251,3 +251,4 @@ app.layout = html.Div([
 
 if __name__ == "__main__":
     app.run(debug=True)
+
