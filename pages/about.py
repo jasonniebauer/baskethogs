@@ -69,6 +69,7 @@ layout = dmc.Box(
                     target="_blank",
                     fw=500,
                 ),
+                dmc.Text("Showing support gets a shoutout on Twitter (X)", fz="0.75rem", lh=1.0, mt="0.875rem"),
             ]),
             html.Br(),
             html.Br(),
