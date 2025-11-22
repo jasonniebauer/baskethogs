@@ -16,6 +16,7 @@ external_stylesheets = [
 
 app = Dash(__name__, use_pages=True, suppress_callback_exceptions=True, external_stylesheets=external_stylesheets)
 
+APP_LAST_UPDATED = "Nov 22, 2025"
 
 # Google analytics
 app.index_string = f"""
@@ -178,7 +179,7 @@ header = dmc.Box(
                     }
                 ),
                 dmc.Title(
-                    "Men's Basketball 2025-2026 • Last Updated Nov 18, 2025",
+                    f"Men's Basketball 2025-2026 • Last Updated {APP_LAST_UPDATED}",
                     order=6,
                     c="white",
                     fw=500,
