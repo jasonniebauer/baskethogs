@@ -12,26 +12,576 @@ BLACK = "#000000"
 SPOOFER_STONE = "#424242"
 TODAY = date.today()
 
-TOTAL_GAMES_PLAYED = 6
+TOTAL_GAMES_PLAYED = 7
 TOTAL_WINS = 5
-WINNING_PERCENT = "83%"
-WIN_STREAK = "W4"
-AVG_POINTS_PER_GAME = 91
-AVG_FIELD_GOALS = 31
+WINNING_PERCENT = "71%"
+WIN_STREAK = "L1"
+AVG_POINTS_PER_GAME = 88
+AVG_FIELD_GOALS = 30
 AVG_3_POINTERS = 9
-AVG_FREE_THROWS = 21
-FIELD_GOAL_AVG = 31
-X3_POINTER_AVG = 9
-FREE_THROW_AVG = 21
+AVG_FREE_THROWS = 19
+AVG_ASSISTS_PER_GAME = 18
+AVG_TURNOVERS_PER_GAME = 10
+AVG_STEALS_PER_GAME = 8
 
-# team = dmc.AvatarGroup([
-#     dmc.Tooltip(
-#         dmc.Avatar(src="/assets/players/Meleek-Thomas.jpg", size="xl", radius="md"),
-#         label="Meleek Thomas",
-#         position="bottom",
-#     ),
-#     dmc.Avatar(src="/assets/players/Dj-Wagner.jpg", size="xl", radius="md"),
-# ])
+DF_GAME_STATS = [
+    {
+        "date": "Southern",
+        "Arkansas": 109,
+        "Opponent": 77,
+        "Field Goals": 37,
+        "Count 3-Pointers": 10,
+        "Count Free Throws": 25,
+        "Count 2-Pointers": 27,
+        "Assists": 23,
+        "Turnovers": 9,
+        "Steals": 10,
+    },
+    {
+        "date": "Michigan State",
+        "Arkansas": 66,
+        "Opponent": 69,
+        "Field Goals": 22,
+        "Count 3-Pointers": 7,
+        "Count Free Throws": 15,
+        "Count 2-Pointers": 15,
+        "Assists": 16,
+        "Turnovers": 14,
+        "Steals": 11,
+    },
+    {
+        "date": "Central Arkansas",
+        "Arkansas": 93,
+        "Opponent": 56,
+        "Field Goals": 31,
+        "Count 3-Pointers": 13,
+        "Count Free Throws": 18,
+        "Count 2-Pointers": 18,
+        "Assists": 17,
+        "Turnovers": 8,
+        "Steals": 5,
+    },
+    {
+        "date": "Samford",
+        "Arkansas": 79,
+        "Opponent": 75,
+        "Field Goals": 28,
+        "Count 3-Pointers": 6,
+        "Count Free Throws": 17,
+        "Count 2-Pointers": 22,
+        "Assists": 13,
+        "Turnovers": 9,
+        "Steals": 5,
+    },
+    {
+        "date": "Winthrop",
+        "Arkansas": 84,
+        "Opponent": 83,
+        "Field Goals": 29,
+        "Count 3-Pointers": 6,
+        "Count Free Throws": 20,
+        "Count 2-Pointers": 23,
+        "Assists": 13,
+        "Turnovers": 9,
+        "Steals": 5,
+    },
+    {
+        "date": "Jackson State",
+        "Arkansas": 115,
+        "Opponent": 61,
+        "Field Goals": 39,
+        "Count 3-Pointers": 9,
+        "Count Free Throws": 28,
+        "Count 2-Pointers": 30,
+        "Assists": 24,
+        "Turnovers": 6,
+        "Steals": 14,
+    },
+    {
+        "date": "Duke",
+        "Arkansas": 71,
+        "Opponent": 80,
+        "Field Goals": 36,
+        "Count 3-Pointers": 10,
+        "Count Free Throws": 9,
+        "Count 2-Pointers": 16,
+        "Assists": 17,
+        "Turnovers": 12,
+        "Steals": 8,
+    },
+]
+
+# Loop over each game to calculate stats
+for game in DF_GAME_STATS:
+    # Set averages for multiple stats
+    game['Field Goal Avg.'] = AVG_FIELD_GOALS
+    game['3-Pointer Avg.'] = AVG_3_POINTERS
+    game['Free Throw Avg.'] = AVG_FREE_THROWS
+    game['Assist Avg.'] = AVG_ASSISTS_PER_GAME
+    game['Turnover Avg.'] = AVG_TURNOVERS_PER_GAME
+    game['Steal Avg.'] = AVG_STEALS_PER_GAME
+
+    # Get the difference in points between each team
+    game['Point Gap'] = abs(game['Arkansas'] - game['Opponent'])
+
+    # Get the total number of 3-Pointer points made
+    game['3-Pointers'] = game['Count 3-Pointers'] * 3
+    # Get the total number of 3-Pointer points made
+    game['Free Throws'] = game['Count Free Throws'] * 1
+    # Get the total number of 3-Pointer points made
+    game['2-Pointers'] = game['Count 2-Pointers'] * 2
+
+    # Get the percent of 3-Pointers made of the total points per game
+    game['3-Pointers %'] = round(
+        (game['3-Pointers'] / game['Arkansas']) * 100, 1
+    )
+    # Get the percent of Free Throws made of the total points per game
+    game['Free Throws %'] = round(
+        (game['Free Throws'] / game['Arkansas']) * 100, 1
+    )
+    # Get the percent of 2-Pointers made of the total points per game
+    game['2-Pointers %'] = round(
+        (game['2-Pointers'] / game['Arkansas']) * 100, 1
+    )
+
+jaden_karuletwa_stats = {
+    "Name": "Jaden Karuletwa",
+    "Position": "Guard",
+    "Year": "Sophomore",
+    "Height": "6' 4\"",
+    "Weight": "195",
+    "Birthdate": "1/1/2006",
+    "Number": "0",
+    "Season High": "0",
+    "Games Played": "2",
+    "PPG": "0",
+    "FG%": "0",
+    "3P%": "0",
+    "FT%": "0",
+}
+
+jaden_karuletwa_radar = [
+    {"stat": "Field Goals", "count": 0},
+    {"stat": "3-Pointers", "count": 0},
+    {"stat": "Free Thows", "count": 0},
+    {"stat": "Off. Rebounds", "count": 0},
+    {"stat": "Def. Rebounds", "count": 1},
+    {"stat": "Assists", "count": 1},
+    {"stat": "Turnovers", "count": 0},
+    {"stat": "Steals", "count": 1},
+]
+
+meleek_thomas_stats = {
+    "Name": "Meleek Thomas",
+    "Position": "Forward",
+    "Year": "Freshman",
+    "Height": "6' 5\"",
+    "Weight": "185",
+    "Birthdate": "8/6/2006",
+    "Number": "1",
+    "Season High": "26",
+    "Games Played": "7",
+    "PPG": "18",
+    "FG%": "42",
+    "3P%": "35",
+    "FT%": "83",
+}
+
+meleek_thomas_radar = [
+    {"stat": "Field Goals", "count": 6},
+    {"stat": "3-Pointers", "count": 3},
+    {"stat": "Free Thows", "count": 3},
+    {"stat": "Off. Rebounds", "count": 2},
+    {"stat": "Def. Rebounds", "count": 3},
+    {"stat": "Assists", "count": 4},
+    {"stat": "Turnovers", "count": 1},
+    {"stat": "Steals", "count": 2},
+]
+
+amere_brown_stats = {
+    "Name": "Amere Brown",
+    "Position": "Guard",
+    "Year": "Freshman",
+    "Height": "5' 9\"",
+    "Weight": "180",
+    "Birthdate": "5/22/2006",
+    "Number": "2",
+    "Season High": "1",
+    "Games Played": "2",
+    "PPG": "1",
+    "FG%": "0",
+    "3P%": "0",
+    "FT%": "50",
+}
+
+amere_brown_radar = [
+    {"stat": "Field Goals", "count": 0},
+    {"stat": "3-Pointers", "count": 0},
+    {"stat": "Free Thows", "count": 1},
+    {"stat": "Off. Rebounds", "count": 0},
+    {"stat": "Def. Rebounds", "count": 0},
+    {"stat": "Assists", "count": 0},
+    {"stat": "Turnovers", "count": 0},
+    {"stat": "Steals", "count": 0},
+]
+
+darius_acuff_jr_stats = {
+    "Name": "Darius Acuff Jr.",
+    "Position": "Guard",
+    "Year": "Freshman",
+    "Height": "6' 3\"",
+    "Weight": "190",
+    "Birthdate": "11/16/2006",
+    "Number": "5",
+    "Season High": "22",
+    "Games Played": "7",
+    "PPG": "17",
+    "FG%": "47",
+    "3P%": "45",
+    "FT%": "76",
+}
+
+darius_acuff_jr_radar = [
+    {"stat": "Field Goals", "count": 6},
+    {"stat": "3-Pointers", "count": 3},
+    {"stat": "Free Thows", "count": 3},
+    {"stat": "Off. Rebounds", "count": 1},
+    {"stat": "Def. Rebounds", "count": 2},
+    {"stat": "Assists", "count": 4},
+    {"stat": "Turnovers", "count": 2},
+    {"stat": "Steals", "count": 2},
+]
+
+trevon_brazile_stats = {
+    "Name": "Trevon Brazile",
+    "Position": "Forward",
+    "Year": "Senior",
+    "Height": "6' 10\"",
+    "Weight": "230",
+    "Birthdate": "1/7/2003",
+    "Number": "7",
+    "Season High": "25",
+    "Games Played": "6",
+    "PPG": "13",
+    "FG%": "51",
+    "3P%": "25",
+    "FT%": "81",
+}
+
+trevon_brazile_radar = [
+    {"stat": "Field Goals", "count": 4},
+    {"stat": "3-Pointers", "count": 1},
+    {"stat": "Free Thows", "count": 4},
+    {"stat": "Off. Rebounds", "count": 2},
+    {"stat": "Def. Rebounds", "count": 6},
+    {"stat": "Assists", "count": 1},
+    {"stat": "Turnovers", "count": 1},
+    {"stat": "Steals", "count": 1},
+]
+
+karter_knox_stats = {
+    "Name": "Karter Knox",
+    "Position": "Wing",
+    "Year": "Sophomore",
+    "Height": "6' 6\"",
+    "Weight": "220",
+    "Birthdate": "5/16/2005",
+    "Number": "1",
+    "Season High": "19",
+    "Games Played": "6",
+    "PPG": "9",
+    "FG%": "46",
+    "3P%": "47",
+    "FT%": "86",
+}
+
+karter_knox_radar = [
+    {"stat": "Field Goals", "count": 3},
+    {"stat": "3-Pointers", "count": 2},
+    {"stat": "Free Thows", "count": 4},
+    {"stat": "Off. Rebounds", "count": 1},
+    {"stat": "Def. Rebounds", "count": 5},
+    {"stat": "Assists", "count": 2},
+    {"stat": "Turnovers", "count": 2},
+    {"stat": "Steals", "count": 1},
+]
+
+malique_ewin_stats = {
+    "Name": "Malique Ewin",
+    "Position": "Forward",
+    "Year": "Senior",
+    "Height": "6' 10\"",
+    "Weight": "240",
+    "Birthdate": "1/1/2003",
+    "Number": "12",
+    "Season High": "21",
+    "Games Played": "7",
+    "PPG": "7",
+    "FG%": "66",
+    "3P%": "100",
+    "FT%": "100",
+}
+
+malique_ewin_radar = [
+    {"stat": "Field Goals", "count": 3},
+    {"stat": "3-Pointers", "count": 1},
+    {"stat": "Free Thows", "count": 2},
+    {"stat": "Off. Rebounds", "count": 2},
+    {"stat": "Def. Rebounds", "count": 2},
+    {"stat": "Assists", "count": 2},
+    {"stat": "Turnovers", "count": 1},
+    {"stat": "Steals", "count": 1},
+]
+
+ayden_kelley_stats = {
+    "Name": "Ayden Kelley",
+    "Position": "Guard",
+    "Year": "Sophomore",
+    "Height": "5' 10\"",
+    "Weight": "170",
+    "Birthdate": "4/9/2006",
+    "Number": "14",
+    "Season High": "0",
+    "Games Played": "2",
+    "PPG": "0",
+    "FG%": "0",
+    "3P%": "0",
+    "FT%": "0",
+}
+
+ayden_kelley_radar = [
+    {"stat": "Field Goals", "count": 0},
+    {"stat": "3-Pointers", "count": 0},
+    {"stat": "Free Thows", "count": 0},
+    {"stat": "Off. Rebounds", "count": 0},
+    {"stat": "Def. Rebounds", "count": 0},
+    {"stat": "Assists", "count": 0},
+    {"stat": "Turnovers", "count": 0},
+    {"stat": "Steals", "count": 0},
+]
+
+elmir_dzafic_stats = {
+    "Name": "Elmir Dzafic",
+    "Position": "Center",
+    "Year": "Freshman",
+    "Height": "7' 0\"",
+    "Weight": "285",
+    "Birthdate": "1/1/2005",
+    "Number": "15",
+    "Season High": "1",
+    "Games Played": "2",
+    "PPG": "1",
+    "FG%": "0",
+    "3P%": "0",
+    "FT%": "50",
+}
+
+elmir_dzafic_radar = [
+    {"stat": "Field Goals", "count": 0},
+    {"stat": "3-Pointers", "count": 0},
+    {"stat": "Free Thows", "count": 1},
+    {"stat": "Off. Rebounds", "count": 0},
+    {"stat": "Def. Rebounds", "count": 0},
+    {"stat": "Assists", "count": 0},
+    {"stat": "Turnovers", "count": 2},
+    {"stat": "Steals", "count": 1},
+]
+
+dj_wagner_stats = {
+    "Name": "D.J. Wagner",
+    "Position": "Guard",
+    "Year": "Junior",
+    "Height": "6' 4\"",
+    "Weight": "190",
+    "Birthdate": "5/4/2005",
+    "Number": "21",
+    "Season High": "16",
+    "Games Played": "7",
+    "PPG": "8",
+    "FG%": "42",
+    "3P%": "33",
+    "FT%": "87",
+}
+
+dj_wagner_radar = [
+    {"stat": "Field Goals", "count": 3},
+    {"stat": "3-Pointers", "count": 2},
+    {"stat": "Free Thows", "count": 2},
+    {"stat": "Off. Rebounds", "count": 0},
+    {"stat": "Def. Rebounds", "count": 2},
+    {"stat": "Assists", "count": 4},
+    {"stat": "Turnovers", "count": 1},
+    {"stat": "Steals", "count": 2},
+]
+
+nick_pringle_stats = {
+    "Name": "Nick Pringle",
+    "Position": "Forward",
+    "Year": "Gr. Senior",
+    "Height": "6' 10\"",
+    "Weight": "230",
+    "Birthdate": "9/16/2001",
+    "Number": "23",
+    "Season High": "13",
+    "Games Played": "7",
+    "PPG": "6",
+    "FG%": "71",
+    "3P%": "0",
+    "FT%": "72",
+}
+
+nick_pringle_radar = [
+    {"stat": "Field Goals", "count": 3},
+    {"stat": "3-Pointers", "count": 0},
+    {"stat": "Free Thows", "count": 3},
+    {"stat": "Off. Rebounds", "count": 2},
+    {"stat": "Def. Rebounds", "count": 4},
+    {"stat": "Assists", "count": 2},
+    {"stat": "Turnovers", "count": 1},
+    {"stat": "Steals", "count": 2},
+]
+
+billy_richmond_stats = {
+    "Name": "Billy Richmond III",
+    "Position": "Wing",
+    "Year": "Junior",
+    "Height": "6' 6\"",
+    "Weight": "205",
+    "Birthdate": "4/11/2006",
+    "Number": "24",
+    "Season High": "14",
+    "Games Played": "7",
+    "PPG": "8",
+    "FG%": "56",
+    "3P%": "29",
+    "FT%": "69",
+}
+
+billy_richmond_radar = [
+    {"stat": "Field Goals", "count": 3},
+    {"stat": "3-Pointers", "count": 1},
+    {"stat": "Free Thows", "count": 2},
+    {"stat": "Off. Rebounds", "count": 2},
+    {"stat": "Def. Rebounds", "count": 3},
+    {"stat": "Assists", "count": 2},
+    {"stat": "Turnovers", "count": 2},
+    {"stat": "Steals", "count": 1},
+]
+
+isaiah_sealy_stats = {
+    "Name": "Isaiah Sealy",
+    "Position": "Wing",
+    "Year": "Freshman",
+    "Height": "6' 7\"",
+    "Weight": "195",
+    "Birthdate": "1/1/2007",
+    "Number": "30",
+    "Season High": "12",
+    "Games Played": "5",
+    "PPG": "6",
+    "FG%": "50",
+    "3P%": "0",
+    "FT%": "87",
+}
+
+isaiah_sealy_radar = [
+    {"stat": "Field Goals", "count": 3},
+    {"stat": "3-Pointers", "count": 0},
+    {"stat": "Free Thows", "count": 3},
+    {"stat": "Off. Rebounds", "count": 1},
+    {"stat": "Def. Rebounds", "count": 4},
+    {"stat": "Assists", "count": 2},
+    {"stat": "Turnovers", "count": 1},
+    {"stat": "Steals", "count": 1},
+]
+
+karim_rtail_stats = {
+    "Name": "Karim Rtail",
+    "Position": "Wing",
+    "Year": "Freshman",
+    "Height": "6' 7\"",
+    "Weight": "205",
+    "Birthdate": "3/23/2004",
+    "Number": "35",
+    "Season High": "0",
+    "Games Played": "0",
+    "PPG": "0",
+    "FG%": "0",
+    "3P%": "0",
+    "FT%": "0",
+}
+
+karim_rtail_radar = [
+    {"stat": "Field Goals", "count": 0},
+    {"stat": "3-Pointers", "count": 0},
+    {"stat": "Free Thows", "count": 0},
+    {"stat": "Off. Rebounds", "count": 0},
+    {"stat": "Def. Rebounds", "count": 0},
+    {"stat": "Assists", "count": 0},
+    {"stat": "Turnovers", "count": 0},
+    {"stat": "Steals", "count": 0},
+]
+
+paulo_semedo_stats = {
+    "Name": "Paulo Semedo",
+    "Position": "Forward",
+    "Year": "Freshman",
+    "Height": "7' 1\"",
+    "Weight": "225",
+    "Birthdate": "6/12/2006",
+    "Number": "99",
+    "Season High": "0",
+    "Games Played": "0",
+    "PPG": "0",
+    "FG%": "0",
+    "3P%": "0",
+    "FT%": "0",
+}
+
+paulo_semedo_radar = [
+    {"stat": "Field Goals", "count": 0},
+    {"stat": "3-Pointers", "count": 0},
+    {"stat": "Free Thows", "count": 0},
+    {"stat": "Off. Rebounds", "count": 0},
+    {"stat": "Def. Rebounds", "count": 0},
+    {"stat": "Assists", "count": 0},
+    {"stat": "Turnovers", "count": 0},
+    {"stat": "Steals", "count": 0},
+]
+
+def scoreboard_stat_card(value, title, subtitle):
+    return dmc.GridCol(
+        mb="xl",  # Margin bottom
+        children=[
+            dmc.Title(
+                value,  # Stat value
+                order=1,  # Largest: ~2.5rem, bold by default Large. Display Heading (order=1, like .display-1)
+                c="black",  # Color utility
+                ta="center",  # Text align
+                fz="6rem",  # Font size
+                lh=1.0,  # Line height
+                fw="800",  # Font weight
+                ff="Oxanium, sans-serif",  # Font family
+            ),
+            dmc.Title(
+                title,  # Stat title
+                order=4,  # Largest: ~2.5rem, bold by default Large. Display Heading (order=1, like .display-1)
+                c="black",  # Color utility
+                ta="center",  # Text align
+                tt="uppercase",  # Uppercase text
+                lh=1.0,  # Line height
+                fw="800",  # Font weight
+            ),
+            dmc.Title(
+                subtitle,  # Stat subtitle
+                order=6,  # Largest: ~2.5rem, bold by default Large. Display Heading (order=1, like .display-1)
+                c="#9D2235",  # Color utility
+                ta="center",  # Text align
+                fw="600",  # Font weight
+            ),
+        ],
+        span={"base": 6, "sm": 6, "md": 3},  # Grid column width at different viewpoints
+    )
 
 scoreboard = dmc.Grid(
     pt="7rem",
@@ -39,268 +589,14 @@ scoreboard = dmc.Grid(
     justify="center",
     gutter="sm",
     children=[
-        dmc.GridCol(
-            mb="xl",
-            children=[
-                dmc.Title(
-                    TOTAL_GAMES_PLAYED,
-                    order=1,  # Largest: ~2.5rem, bold by default Large. Display Heading (order=1, like .display-1)
-                    c="black",  # Color utility
-                    ta="center",  # Text align, like .text-center
-                    fz="6rem",
-                    lh=1.0,
-                    fw="800",
-                    ff="Oxanium, sans-serif",
-                ),
-                dmc.Title(
-                    "Total Games",
-                    order=4,  # Largest: ~2.5rem, bold by default Large. Display Heading (order=1, like .display-1)
-                    c="black",  # Color utility
-                    ta="center",  # Text align, like .text-center
-                    tt="uppercase",  # Uppercase text
-                    lh=1.0,
-                    fw="800",
-                ),
-                dmc.Title(
-                    "Non-Conference",
-                    order=6,  # Largest: ~2.5rem, bold by default Large. Display Heading (order=1, like .display-1)
-                    c="#9D2235",  # Color utility
-                    ta="center",  # Text align, like .text-center
-                    fw="600",
-                ),
-            ],
-            span={"base": 6, "sm": 6, "md": 3},
-        ),
-        dmc.GridCol(
-            mb="xl",
-            children=[
-                dmc.Title(
-                    TOTAL_WINS,
-                    order=1,  # Largest: ~2.5rem, bold by default Large. Display Heading (order=1, like .display-1)
-                    c="black",  # Color utility
-                    ta="center",  # Text align, like .text-center
-                    fz="6rem",
-                    lh=1.0,
-                    fw="800",
-                    ff="Oxanium, sans-serif",
-                ),
-                dmc.Title(
-                    "Total Wins",
-                    order=4,  # Largest: ~2.5rem, bold by default Large. Display Heading (order=1, like .display-1)
-                    c="black",  # Color utility
-                    ta="center",  # Text align, like .text-center
-                    tt="uppercase",  # Uppercase text
-                    lh=1.0,
-                    fw="800",
-                ),
-                dmc.Title(
-                    "Non-Conference",
-                    order=6,  # Largest: ~2.5rem, bold by default Large. Display Heading (order=1, like .display-1)
-                    c="#9D2235",  # Color utility
-                    ta="center",  # Text align, like .text-center
-                    fw="600",
-                ),
-            ],
-            span={"base": 6, "sm": 6, "md": 3},
-        ),
-        dmc.GridCol(
-            mb="xl",
-            children=[
-                dmc.Title(
-                    WINNING_PERCENT,
-                    order=1,  # Largest: ~2.5rem, bold by default Large. Display Heading (order=1, like .display-1)
-                    c="black",  # Color utility
-                    ta="center",  # Text align, like .text-center
-                    fz="6rem",  # Font size
-                    lh=1.0,  # Line height
-                    fw="800",  # Font weight
-                    ff="Oxanium, sans-serif",  # Font family
-                ),
-                dmc.Title(
-                    "Winning Percent",
-                    order=4,  # Largest: ~2.5rem, bold by default Large. Display Heading (order=1, like .display-1)
-                    c="black",  # Color utility
-                    ta="center",  # Text align, like .text-center
-                    tt="uppercase",  # Uppercase text
-                    # mb="md",  # Margin bottom
-                    lh=1.0,
-                    fw="800",
-                ),
-                dmc.Title(
-                    "Win to Loss Ratio",
-                    order=6,  # Largest: ~2.5rem, bold by default Large. Display Heading (order=1, like .display-1)
-                    c="#9D2235",  # Color utility
-                    ta="center",  # Text align, like .text-center
-                    fw="600",
-                ),
-            ],
-            span={"base": 6, "sm": 6, "md": 3},
-        ),
-        dmc.GridCol(
-            mb="xl",
-            children=[
-                dmc.Title(
-                    WIN_STREAK,
-                    order=1,  # Largest: ~2.5rem, bold by default Large. Display Heading (order=1, like .display-1)
-                    c="black",  # Color utility
-                    ta="center",  # Text align, like .text-center
-                    fz="6rem",
-                    lh=1.0,
-                    fw="800",
-                    ff="Oxanium, sans-serif",
-                ),
-                dmc.Title(
-                    "Streak",
-                    order=4,  # Largest: ~2.5rem, bold by default Large. Display Heading (order=1, like .display-1)
-                    c="black",  # Color utility
-                    ta="center",  # Text align, like .text-center
-                    tt="uppercase",  # Uppercase text
-                    # mb="md",  # Margin bottom
-                    lh=1.0,
-                    fw="800",
-                ),
-                dmc.Title(
-                    "Non-Conference",
-                    order=6,  # Largest: ~2.5rem, bold by default Large. Display Heading (order=1, like .display-1)
-                    c="#9D2235",  # Color utility
-                    ta="center",  # Text align, like .text-center
-                    fw="600",
-                ),
-            ],
-            span={"base": 6, "sm": 6, "md": 3},
-        ),
-        dmc.GridCol(
-            mb="xl",
-            children=[
-                dmc.Title(
-                    AVG_POINTS_PER_GAME,
-                    order=1,  # Largest: ~2.5rem, bold by default Large. Display Heading (order=1, like .display-1)
-                    c="black",  # Color utility
-                    ta="center",  # Text align, like .text-center
-                    fz="6rem",
-                    lh=1.0,
-                    fw="800",
-                    ff="Oxanium, sans-serif",
-                ),
-                dmc.Title(
-                    "Avg. Points",
-                    order=4,  # Largest: ~2.5rem, bold by default Large. Display Heading (order=1, like .display-1)
-                    c="black",  # Color utility
-                    ta="center",  # Text align, like .text-center
-                    tt="uppercase",  # Uppercase text
-                    # mb="md",  # Margin bottom
-                    lh=1.0,
-                    fw="800",
-                ),
-                dmc.Title(
-                    "Per Game",
-                    order=6,  # Largest: ~2.5rem, bold by default Large. Display Heading (order=1, like .display-1)
-                    c="#9D2235",  # Color utility
-                    ta="center",  # Text align, like .text-center
-                    fw="600",
-                ),
-            ],
-            span={"base": 6, "sm": 6, "md": 3},
-        ),
-        dmc.GridCol(
-            mb="xl",
-            children=[
-                dmc.Title(
-                    AVG_FIELD_GOALS,
-                    order=1,  # Largest: ~2.5rem, bold by default Large. Display Heading (order=1, like .display-1)
-                    c="black",  # Color utility
-                    ta="center",  # Text align, like .text-center
-                    fz="6rem",
-                    lh=1.0,
-                    fw="800",
-                    ff="Oxanium, sans-serif",
-                ),
-                dmc.Title(
-                    "Avg. Field Goals",
-                    order=4,  # Largest: ~2.5rem, bold by default Large. Display Heading (order=1, like .display-1)
-                    c="black",  # Color utility
-                    ta="center",  # Text align, like .text-center
-                    tt="uppercase",  # Uppercase text
-                    fw="800",
-                    # mb="md",  # Margin bottom
-                    lh=1.0,
-                ),
-                dmc.Title(
-                    "Per Game",
-                    order=6,  # Largest: ~2.5rem, bold by default Large. Display Heading (order=1, like .display-1)
-                    c="#9D2235",  # Color utility
-                    ta="center",  # Text align, like .text-center
-                    fw="600",
-                ),
-            ],
-            span={"base": 6, "sm": 6, "md": 3},
-        ),
-        dmc.GridCol(
-            mb="xl",
-            children=[
-                dmc.Title(
-                    AVG_3_POINTERS,
-                    order=1,  # Largest: ~2.5rem, bold by default Large. Display Heading (order=1, like .display-1)
-                    c="black",  # Color utility
-                    ta="center",  # Text align, like .text-center
-                    fz="6rem",
-                    lh=1.0,
-                    fw="800",
-                    ff="Oxanium, sans-serif",
-                ),
-                dmc.Title(
-                    "Avg. 3-Pointers",
-                    order=4,  # Largest: ~2.5rem, bold by default Large. Display Heading (order=1, like .display-1)
-                    c="black",  # Color utility
-                    ta="center",  # Text align, like .text-center
-                    tt="uppercase",  # Uppercase text
-                    fw="800",
-                    # mb="md",  # Margin bottom
-                    lh=1.0,
-                ),
-                dmc.Title(
-                    "Per Game",
-                    order=6,  # Largest: ~2.5rem, bold by default Large. Display Heading (order=1, like .display-1)
-                    c="#9D2235",  # Color utility
-                    ta="center",  # Text align, like .text-center
-                    fw="600",
-                ),
-            ],
-            span={"base": 6, "sm": 6, "md": 3},
-        ),
-        dmc.GridCol(
-            mb="xl",
-            children=[
-                dmc.Title(
-                    AVG_FREE_THROWS,
-                    order=1,  # Largest: ~2.5rem, bold by default Large. Display Heading (order=1, like .display-1)
-                    c="black",  # Color utility
-                    ta="center",  # Text align, like .text-center
-                    fz="6rem",
-                    lh=1.0,
-                    fw="800",
-                    ff="Oxanium, sans-serif",
-                ),
-                dmc.Title(
-                    "Avg. Free Throws",
-                    order=4,  # Largest: ~2.5rem, bold by default Large. Display Heading (order=1, like .display-1)
-                    c="black",  # Color utility
-                    ta="center",  # Text align, like .text-center
-                    tt="uppercase",  # Uppercase text
-                    fw="800",
-                    # mb="md",  # Margin bottom
-                    lh=1.0,
-                ),
-                dmc.Title(
-                    "Per Game",
-                    order=6,  # Largest: ~2.5rem, bold by default Large. Display Heading (order=1, like .display-1)
-                    c="#9D2235",  # Color utility
-                    ta="center",  # Text align, like .text-center
-                    fw="600",
-                ),
-            ],
-            span={"base": 6, "sm": 6, "md": 3},
-        ),
+        scoreboard_stat_card(TOTAL_GAMES_PLAYED, "Total Games", "Non-Conference"),
+        scoreboard_stat_card(TOTAL_WINS, "Total Wins", "Non-Conference"),
+        scoreboard_stat_card(WIN_STREAK, "Streak", "Non-Conference"),
+        scoreboard_stat_card(WINNING_PERCENT, "Winning Percent", "Win to Loss Ratio"),
+        scoreboard_stat_card(AVG_POINTS_PER_GAME, "Avg. Points", "Per Game"),
+        scoreboard_stat_card(AVG_FIELD_GOALS, "Avg. Field Goals", "Per Game"),
+        scoreboard_stat_card(AVG_3_POINTERS, "Avg. 3-Pointers", "Per Game"),
+        scoreboard_stat_card(AVG_FREE_THROWS, "Avg. Free Throws", "Per Game"),
     ]
 )
 
@@ -310,6 +606,15 @@ team_stats_headline = dmc.Title(
     ta="center",
     py="2rem",
 )
+
+# team = dmc.AvatarGroup([
+#     dmc.Tooltip(
+#         dmc.Avatar(src="/assets/players/Meleek-Thomas.jpg", size="xl", radius="md"),
+#         label="Meleek Thomas",
+#         position="bottom",
+#     ),
+#     dmc.Avatar(src="/assets/players/Dj-Wagner.jpg", size="xl", radius="md"),
+# ])
 
 # df_total_wins_over_time = [
 #   {"date": "Southern", "Total Wins": 1},
@@ -342,111 +647,6 @@ team_stats_headline = dmc.Title(
 #     ]
 # )
 
-df_game_stats = [
-    {
-        "date": "Southern",
-        "Arkansas": 109,
-        "Opponent": 77,
-        "Point Gap": 32,
-        "Count 3-Pointers": 10,
-        "Count Free Throws": 25,
-        "Count 2-Pointers": 27,
-        "3-Pointers": 30,
-        "Free Throws": 25,
-        "2-Pointers": 54,
-        "% 3-Pointers": 27.5,
-        "% Free Throws": 22.9,
-        "% 2-Pointers": 49.5,
-    },
-    {
-        "date": "Michigan State",
-        "Arkansas": 66,
-        "Opponent": 69,
-        "Point Gap": 3,
-        "Count 3-Pointers": 7,
-        "Count Free Throws": 15,
-        "Count 2-Pointers": 15,
-        "3-Pointers": 21,
-        "Free Throws": 15,
-        "2-Pointers": 30,
-        "% 3-Pointers": 31.8,
-        "% Free Throws": 22.7,
-        "% 2-Pointers": 45.5,
-    },
-    {
-        "date": "Central Arkansas",
-        "Arkansas": 93,
-        "Opponent": 56,
-        "Point Gap": 37,
-        "Count 3-Pointers": 13,
-        "Count Free Throws": 18,
-        "Count 2-Pointers": 18,
-        "3-Pointers": 39,
-        "Free Throws": 18,
-        "2-Pointers": 36,
-        "% 3-Pointers": 41.9,
-        "% Free Throws": 19.4,
-        "% 2-Pointers": 38.7,
-    },
-    {
-        "date": "Samford",
-        "Arkansas": 79,
-        "Opponent": 75,
-        "Point Gap": 4,
-        "Count 3-Pointers": 6,
-        "Count Free Throws": 17,
-        "Count 2-Pointers": 22,
-        "3-Pointers": 18,
-        "Free Throws": 17,
-        "2-Pointers": 44,
-        "% 3-Pointers": 22.8,
-        "% Free Throws": 21.5,
-        "% 2-Pointers": 55.7,
-    },
-    {
-        "date": "Winthrop",
-        "Arkansas": 84,
-        "Opponent": 83,
-        "Point Gap": 1,
-        "Count 3-Pointers": 6,
-        "Count Free Throws": 20,
-        "Count 2-Pointers": 23,
-        "3-Pointers": 18,
-        "Free Throws": 20,
-        "2-Pointers": 46,
-        "% 3-Pointers": 21.4,
-        "% Free Throws": 23.8,
-        "% 2-Pointers": 54.8,
-    },
-    {
-        "date": "Jackson State",
-        "Arkansas": 115,
-        "Opponent": 61,
-        "Point Gap": 54,
-        "Count 3-Pointers": 9,
-        "Count Free Throws": 28,
-        "Count 2-Pointers": 30,
-        "3-Pointers": 27,
-        "Free Throws": 28,
-        "2-Pointers": 60,
-        "% 3-Pointers": 23.5,
-        "% Free Throws": 24.3,
-        "% 2-Pointers": 52.2,
-    },
-]
-
-# # Loop over 
-# for game in df_game_stats:
-#     game['% 3-pointers'] = round(
-#         (game['3-Pointers'] / game['Arkansas']) * 100, 1
-#     )
-
-#     game['% 2-pointers'] = round(
-#         (game['2-Pointers'] / game['Arkansas']) * 100, 1
-#     )
-#     print(game['% 3-pointers'])
-
-
 total_points_over_time = dmc.Card(
     radius="md",
     bd="1px solid #C7C8CA",
@@ -455,7 +655,6 @@ total_points_over_time = dmc.Card(
         dmc.Title(
             "Total Points",
             order=1,
-            # mb="xl",
         ),
         dmc.Title(
             "The total points scored per game.",
@@ -466,7 +665,7 @@ total_points_over_time = dmc.Card(
         dmc.LineChart(
             h=300,
             dataKey="date",
-            data=df_game_stats,
+            data=DF_GAME_STATS,
             series = [
                 {"name": "Arkansas", "color": ARKANSAS_RED},
                 {"name": "Opponent", "color": SPOOFER_STONE},
@@ -545,7 +744,7 @@ count_points_by_type = dmc.Card(
         dmc.BarChart(
             h=300,
             dataKey="date",
-            data=df_game_stats,
+            data=DF_GAME_STATS,
             series=[
                 {"name": "Count 3-Pointers", "label": "3-Pointers", "color": SPOOFER_STONE},
                 {"name": "Count Free Throws", "label": "Free Throws", "color": "#C7C8CA"},
@@ -580,7 +779,7 @@ totals_points_by_type = dmc.Card(
         dmc.BarChart(
             h=300,
             dataKey="date",
-            data=df_game_stats,
+            data=DF_GAME_STATS,
             type="stacked",
             series=[
                 {"name": "3-Pointers", "color": SPOOFER_STONE},
@@ -606,7 +805,6 @@ point_type_by_percent_of_total = dmc.Card(
         dmc.Title(
             "Point Type of Total Points",
             order=1,
-            # mb="xl",
         ),
         dmc.Title(
             "The percentage of total points scored per point type.",
@@ -617,12 +815,12 @@ point_type_by_percent_of_total = dmc.Card(
         dmc.BarChart(
             h=300,
             dataKey="date",
-            data=df_game_stats,
+            data=DF_GAME_STATS,
             type="percent",
             series=[
-                {"name": "% 3-Pointers", "label": "3-Pointer %", "color": SPOOFER_STONE},
-                {"name": "% Free Throws", "label": "Free Throw %", "color": "#C7C8CA"},
-                {"name": "% 2-Pointers", "label": "2-Pointer %", "color": ARKANSAS_RED},
+                {"name": "3-Pointers %", "color": SPOOFER_STONE},
+                {"name": "Free Throws %", "color": "#C7C8CA"},
+                {"name": "2-Pointers %", "color": ARKANSAS_RED},
             ],
             withLegend=True,
             tickLine="none",
@@ -654,7 +852,7 @@ points_gap_over_time = dmc.Card(
         dmc.LineChart(
             h=300,
             dataKey="date",
-            data=df_game_stats,
+            data=DF_GAME_STATS,
             series = [
                 {"name": "Point Gap", "color": ARKANSAS_RED},
             ],
@@ -830,15 +1028,6 @@ players_by_age_and_year = dmc.Grid([
 #     ]
 # )
 
-df_field_goals_over_time = [
-    {"date": "Southern", "Field Goals": 37, "Field Goal Avg.": FIELD_GOAL_AVG},
-    {"date": "Michigan State", "Field Goals": 22, "Field Goal Avg.": FIELD_GOAL_AVG},
-    {"date": "Central Arkansas", "Field Goals": 31, "Field Goal Avg.": FIELD_GOAL_AVG},
-    {"date": "Samford", "Field Goals": 28, "Field Goal Avg.": FIELD_GOAL_AVG},
-    {"date": "Winthrop", "Field Goals": 29, "Field Goal Avg.": FIELD_GOAL_AVG},
-    {"date": "Jackson State", "Field Goals": 39, "Field Goal Avg.": FIELD_GOAL_AVG},
-]
-
 field_goals_over_time = dmc.Card(
     radius="md",
     bd="1px solid #C7C8CA",
@@ -856,7 +1045,7 @@ field_goals_over_time = dmc.Card(
         ),
         dmc.CompositeChart(
             h=300,
-            data=df_field_goals_over_time,
+            data=DF_GAME_STATS,
             dataKey="date",
             curveType="Linear",
             gridAxis="x",
@@ -870,15 +1059,6 @@ field_goals_over_time = dmc.Card(
         )
     ]
 )
-
-df_3_pointers_over_time = [
-    {"date": "Southern", "3-Pointers": 10, "3-Pointer Avg.": X3_POINTER_AVG},
-    {"date": "Michigan State", "3-Pointers": 7, "3-Pointer Avg.": X3_POINTER_AVG},
-    {"date": "Central Arkansas", "3-Pointers": 13, "3-Pointer Avg.": X3_POINTER_AVG},
-    {"date": "Samford", "3-Pointers": 6, "3-Pointer Avg.": X3_POINTER_AVG},
-    {"date": "Winthrop", "3-Pointers": 6, "3-Pointer Avg.": X3_POINTER_AVG},
-    {"date": "Jackson State", "3-Pointers": 9, "3-Pointer Avg.": X3_POINTER_AVG},
-]
 
 x3_pointers_over_time = dmc.Card(
     radius="md",
@@ -897,7 +1077,7 @@ x3_pointers_over_time = dmc.Card(
         ),
         dmc.CompositeChart(
             h=300,
-            data=df_3_pointers_over_time,
+            data=DF_GAME_STATS,
             dataKey="date",
             curveType="Linear",
             gridAxis="x",
@@ -906,20 +1086,11 @@ x3_pointers_over_time = dmc.Card(
             withLegend=True,
             series=[
                 {"name": "3-Pointer Avg.", "label": "3-Pointer Avg.", "color": "#C7C8CA", "type": "bar"},
-                {"name": "3-Pointers", "color": ARKANSAS_RED, "type": "line"},
+                {"name": "Count 3-Pointers", "label": "3-Pointers", "color": ARKANSAS_RED, "type": "line"},
             ]
         )
     ]
 )
-
-df_free_throws_over_time = [
-    {"date": "Southern", "Free Throws": 25, "Free Throw Avg.": FREE_THROW_AVG},
-    {"date": "Michigan State", "Free Throws": 15, "Free Throw Avg.": FREE_THROW_AVG},
-    {"date": "Central Arkansas", "Free Throws": 18, "Free Throw Avg.": FREE_THROW_AVG},
-    {"date": "Samford", "Free Throws": 17, "Free Throw Avg.": FREE_THROW_AVG},
-    {"date": "Winthrop", "Free Throws": 20, "Free Throw Avg.": FREE_THROW_AVG},
-    {"date": "Jackson State", "Free Throws": 28, "Free Throw Avg.": FREE_THROW_AVG},
-]
 
 free_throws_over_time = dmc.Card(
     radius="md",
@@ -938,7 +1109,7 @@ free_throws_over_time = dmc.Card(
         ),
         dmc.CompositeChart(
             h=300,
-            data=df_free_throws_over_time,
+            data=DF_GAME_STATS,
             dataKey="date",
             curveType="Linear",
             gridAxis="x",
@@ -947,23 +1118,11 @@ free_throws_over_time = dmc.Card(
             withLegend=True,
             series=[
                 {"name": "Free Throw Avg.", "label": "Free Throw Avg.", "color": "#C7C8CA", "type": "bar"},
-                {"name": "Free Throws", "color": ARKANSAS_RED, "type": "line"},
+                {"name": "Count Free Throws", "label": "Free Throws", "color": ARKANSAS_RED, "type": "line"},
             ]
         )
     ]
 )
-
-# The average number of assists per game
-assists_avg = 18
-
-df_assists_over_time = [
-    {"date": "Southern", "Assists": 23, "Assist Avg.": assists_avg},
-    {"date": "Michigan State", "Assists": 16, "Assist Avg.": assists_avg},
-    {"date": "Central Arkansas", "Assists": 17, "Assist Avg.": assists_avg},
-    {"date": "Samford", "Assists": 13, "Assist Avg.": assists_avg},
-    {"date": "Winthrop", "Assists": 13, "Assist Avg.": assists_avg},
-    {"date": "Jackson State", "Assists": 24, "Assist Avg.": assists_avg},
-]
 
 assists_over_time = dmc.Card(
     radius="md",
@@ -982,7 +1141,7 @@ assists_over_time = dmc.Card(
         ),
         dmc.CompositeChart(
             h=300,
-            data=df_assists_over_time,
+            data=DF_GAME_STATS,
             dataKey="date",
             curveType="Linear",
             gridAxis="x",
@@ -996,18 +1155,6 @@ assists_over_time = dmc.Card(
         )
     ]
 )
-
-# The average number of turnovers per game
-turnovers_avg = 9
-
-df_turnovers_over_time = [
-    {"date": "Southern", "Turnovers": 9, "Turnover Avg.": turnovers_avg},
-    {"date": "Michigan State", "Turnovers": 14, "Turnover Avg.": turnovers_avg},
-    {"date": "Central Arkansas", "Turnovers": 8, "Turnover Avg.": turnovers_avg},
-    {"date": "Samford", "Turnovers": 9, "Turnover Avg.": turnovers_avg},
-    {"date": "Winthrop", "Turnovers": 9, "Turnover Avg.": turnovers_avg},
-    {"date": "Jackson State", "Turnovers": 6, "Turnover Avg.": turnovers_avg},
-]
 
 turnovers_over_time = dmc.Card(
     radius="md",
@@ -1026,7 +1173,7 @@ turnovers_over_time = dmc.Card(
         ),
         dmc.CompositeChart(
             h=300,
-            data=df_turnovers_over_time,
+            data=DF_GAME_STATS,
             dataKey="date",
             curveType="Linear",
             gridAxis="x",
@@ -1040,18 +1187,6 @@ turnovers_over_time = dmc.Card(
         )
     ]
 )
-
-# The average number of steals per game
-steals_avg = 8
-
-df_steals_over_time = [
-    {"date": "Southern", "Steals": 10, "Steal Avg.": steals_avg},
-    {"date": "Michigan State", "Steals": 11, "Steal Avg.": steals_avg},
-    {"date": "Central Arkansas", "Steals": 5, "Steal Avg.": steals_avg},
-    {"date": "Samford", "Steals": 5, "Steal Avg.": steals_avg},
-    {"date": "Winthrop", "Steals": 5, "Steal Avg.": steals_avg},
-    {"date": "Jackson State", "Steals": 14, "Steal Avg.": steals_avg},
-]
 
 steals_over_time = dmc.Card(
     radius="md",
@@ -1070,7 +1205,7 @@ steals_over_time = dmc.Card(
         ),
         dmc.CompositeChart(
             h=300,
-            data=df_steals_over_time,
+            data=DF_GAME_STATS,
             dataKey="date",
             curveType="Linear",
             gridAxis="x",
@@ -1411,410 +1546,6 @@ def player_card(player_stats_data, radar_data):
         mb="1.5rem",
     )
 
-jaden_karuletwa_stats = {
-    "Name": "Jaden Karuletwa",
-    "Position": "Guard",
-    "Year": "Sophomore",
-    "Height": "6' 4\"",
-    "Weight": "195",
-    "Birthdate": "1/1/2006",
-    "Number": "0",
-    "Season High": "0",
-    "Games Played": "2",
-    "PPG": "0",
-    "FG%": "0",
-    "3P%": "0",
-    "FT%": "0",
-}
-
-jaden_karuletwa_radar = [
-    {"stat": "Field Goals", "count": 0},
-    {"stat": "3-Pointers", "count": 0},
-    {"stat": "Free Thows", "count": 0},
-    {"stat": "Off. Rebounds", "count": 0},
-    {"stat": "Def. Rebounds", "count": 1},
-    {"stat": "Assists", "count": 1},
-    {"stat": "Turnovers", "count": 0},
-    {"stat": "Steals", "count": 1},
-]
-
-meleek_thomas_stats = {
-    "Name": "Meleek Thomas",
-    "Position": "Forward",
-    "Year": "Freshman",
-    "Height": "6' 5\"",
-    "Weight": "185",
-    "Birthdate": "8/6/2006",
-    "Number": "1",
-    "Season High": "26",
-    "Games Played": "6",
-    "PPG": "18",
-    "FG%": "43",
-    "3P%": "36",
-    "FT%": "83",
-}
-
-meleek_thomas_radar = [
-    {"stat": "Field Goals", "count": 6},
-    {"stat": "3-Pointers", "count": 3},
-    {"stat": "Free Thows", "count": 3},
-    {"stat": "Off. Rebounds", "count": 2},
-    {"stat": "Def. Rebounds", "count": 4},
-    {"stat": "Assists", "count": 4},
-    {"stat": "Turnovers", "count": 1},
-    {"stat": "Steals", "count": 2},
-]
-
-amere_brown_stats = {
-    "Name": "Amere Brown",
-    "Position": "Guard",
-    "Year": "Freshman",
-    "Height": "5' 9\"",
-    "Weight": "180",
-    "Birthdate": "5/22/2006",
-    "Number": "2",
-    "Season High": "1",
-    "Games Played": "2",
-    "PPG": "1",
-    "FG%": "0",
-    "3P%": "0",
-    "FT%": "50",
-}
-
-amere_brown_radar = [
-    {"stat": "Field Goals", "count": 0},
-    {"stat": "3-Pointers", "count": 0},
-    {"stat": "Free Thows", "count": 1},
-    {"stat": "Off. Rebounds", "count": 0},
-    {"stat": "Def. Rebounds", "count": 0},
-    {"stat": "Assists", "count": 0},
-    {"stat": "Turnovers", "count": 0},
-    {"stat": "Steals", "count": 0},
-]
-
-darius_acuff_jr_stats = {
-    "Name": "Darius Acuff Jr.",
-    "Position": "Guard",
-    "Year": "Freshman",
-    "Height": "6' 3\"",
-    "Weight": "190",
-    "Birthdate": "11/16/2006",
-    "Number": "5",
-    "Season High": "22",
-    "Games Played": "6",
-    "PPG": "17",
-    "FG%": "47",
-    "3P%": "44",
-    "FT%": "79",
-}
-
-darius_acuff_jr_radar = [
-    {"stat": "Field Goals", "count": 6},
-    {"stat": "3-Pointers", "count": 2},
-    {"stat": "Free Thows", "count": 4},
-    {"stat": "Off. Rebounds", "count": 1},
-    {"stat": "Def. Rebounds", "count": 2},
-    {"stat": "Assists", "count": 4},
-    {"stat": "Turnovers", "count": 2},
-    {"stat": "Steals", "count": 2},
-]
-
-trevon_brazile_stats = {
-    "Name": "Trevon Brazile",
-    "Position": "Forward",
-    "Year": "Senior",
-    "Height": "6' 10\"",
-    "Weight": "230",
-    "Birthdate": "1/7/2003",
-    "Number": "7",
-    "Season High": "25",
-    "Games Played": "5",
-    "PPG": "13",
-    "FG%": "52",
-    "3P%": "18",
-    "FT%": "83",
-}
-
-trevon_brazile_radar = [
-    {"stat": "Field Goals", "count": 4},
-    {"stat": "3-Pointers", "count": 1},
-    {"stat": "Free Thows", "count": 4},
-    {"stat": "Off. Rebounds", "count": 1},
-    {"stat": "Def. Rebounds", "count": 6},
-    {"stat": "Assists", "count": 1},
-    {"stat": "Turnovers", "count": 1},
-    {"stat": "Steals", "count": 1},
-]
-
-karter_knox_stats = {
-    "Name": "Karter Knox",
-    "Position": "Wing",
-    "Year": "Sophomore",
-    "Height": "6' 6\"",
-    "Weight": "220",
-    "Birthdate": "5/16/2005",
-    "Number": "1",
-    "Season High": "19",
-    "Games Played": "5",
-    "PPG": "10",
-    "FG%": "48",
-    "3P%": "54",
-    "FT%": "86",
-}
-
-karter_knox_radar = [
-    {"stat": "Field Goals", "count": 4},
-    {"stat": "3-Pointers", "count": 2},
-    {"stat": "Free Thows", "count": 4},
-    {"stat": "Off. Rebounds", "count": 2},
-    {"stat": "Def. Rebounds", "count": 5},
-    {"stat": "Assists", "count": 2},
-    {"stat": "Turnovers", "count": 2},
-    {"stat": "Steals", "count": 1},
-]
-
-malique_ewin_stats = {
-    "Name": "Malique Ewin",
-    "Position": "Forward",
-    "Year": "Senior",
-    "Height": "6' 10\"",
-    "Weight": "240",
-    "Birthdate": "1/1/2003",
-    "Number": "12",
-    "Season High": "21",
-    "Games Played": "6",
-    "PPG": "8",
-    "FG%": "72",
-    "3P%": "100",
-    "FT%": "100",
-}
-
-malique_ewin_radar = [
-    {"stat": "Field Goals", "count": 3},
-    {"stat": "3-Pointers", "count": 1},
-    {"stat": "Free Thows", "count": 3},
-    {"stat": "Off. Rebounds", "count": 2},
-    {"stat": "Def. Rebounds", "count": 2},
-    {"stat": "Assists", "count": 3},
-    {"stat": "Turnovers", "count": 1},
-    {"stat": "Steals", "count": 1},
-]
-
-ayden_kelley_stats = {
-    "Name": "Ayden Kelley",
-    "Position": "Guard",
-    "Year": "Sophomore",
-    "Height": "5' 10\"",
-    "Weight": "170",
-    "Birthdate": "4/9/2006",
-    "Number": "14",
-    "Season High": "0",
-    "Games Played": "2",
-    "PPG": "0",
-    "FG%": "0",
-    "3P%": "0",
-    "FT%": "0",
-}
-
-ayden_kelley_radar = [
-    {"stat": "Field Goals", "count": 0},
-    {"stat": "3-Pointers", "count": 0},
-    {"stat": "Free Thows", "count": 0},
-    {"stat": "Off. Rebounds", "count": 0},
-    {"stat": "Def. Rebounds", "count": 0},
-    {"stat": "Assists", "count": 0},
-    {"stat": "Turnovers", "count": 0},
-    {"stat": "Steals", "count": 0},
-]
-
-elmir_dzafic_stats = {
-    "Name": "Elmir Dzafic",
-    "Position": "Center",
-    "Year": "Freshman",
-    "Height": "7' 0\"",
-    "Weight": "285",
-    "Birthdate": "1/1/2005",
-    "Number": "15",
-    "Season High": "1",
-    "Games Played": "2",
-    "PPG": "1",
-    "FG%": "0",
-    "3P%": "0",
-    "FT%": "50",
-}
-
-elmir_dzafic_radar = [
-    {"stat": "Field Goals", "count": 0},
-    {"stat": "3-Pointers", "count": 0},
-    {"stat": "Free Thows", "count": 1},
-    {"stat": "Off. Rebounds", "count": 0},
-    {"stat": "Def. Rebounds", "count": 0},
-    {"stat": "Assists", "count": 0},
-    {"stat": "Turnovers", "count": 2},
-    {"stat": "Steals", "count": 1},
-]
-
-dj_wagner_stats = {
-    "Name": "D.J. Wagner",
-    "Position": "Guard",
-    "Year": "Junior",
-    "Height": "6' 4\"",
-    "Weight": "190",
-    "Birthdate": "5/4/2005",
-    "Number": "21",
-    "Season High": "16",
-    "Games Played": "6",
-    "PPG": "9",
-    "FG%": "45",
-    "3P%": "38",
-    "FT%": "86",
-}
-
-dj_wagner_radar = [
-    {"stat": "Field Goals", "count": 4},
-    {"stat": "3-Pointers", "count": 2},
-    {"stat": "Free Thows", "count": 2},
-    {"stat": "Off. Rebounds", "count": 0},
-    {"stat": "Def. Rebounds", "count": 3},
-    {"stat": "Assists", "count": 4},
-    {"stat": "Turnovers", "count": 1},
-    {"stat": "Steals", "count": 2},
-]
-
-nick_pringle_stats = {
-    "Name": "Nick Pringle",
-    "Position": "Forward",
-    "Year": "Gr. Senior",
-    "Height": "6' 10\"",
-    "Weight": "230",
-    "Birthdate": "9/16/2001",
-    "Number": "23",
-    "Season High": "13",
-    "Games Played": "6",
-    "PPG": "7",
-    "FG%": "78",
-    "3P%": "0",
-    "FT%": "71",
-}
-
-nick_pringle_radar = [
-    {"stat": "Field Goals", "count": 4},
-    {"stat": "3-Pointers", "count": 0},
-    {"stat": "Free Thows", "count": 3},
-    {"stat": "Off. Rebounds", "count": 2},
-    {"stat": "Def. Rebounds", "count": 4},
-    {"stat": "Assists", "count": 2},
-    {"stat": "Turnovers", "count": 1},
-    {"stat": "Steals", "count": 2},
-]
-
-billy_richmond_stats = {
-    "Name": "Billy Richmond III",
-    "Position": "Wing",
-    "Year": "Junior",
-    "Height": "6' 6\"",
-    "Weight": "205",
-    "Birthdate": "4/11/2006",
-    "Number": "24",
-    "Season High": "14",
-    "Games Played": "6",
-    "PPG": "8",
-    "FG%": "55",
-    "3P%": "25",
-    "FT%": "64",
-}
-
-billy_richmond_radar = [
-    {"stat": "Field Goals", "count": 3},
-    {"stat": "3-Pointers", "count": 1},
-    {"stat": "Free Thows", "count": 2},
-    {"stat": "Off. Rebounds", "count": 2},
-    {"stat": "Def. Rebounds", "count": 3},
-    {"stat": "Assists", "count": 2},
-    {"stat": "Turnovers", "count": 1},
-    {"stat": "Steals", "count": 2},
-]
-
-isaiah_sealy_stats = {
-    "Name": "Isaiah Sealy",
-    "Position": "Wing",
-    "Year": "Freshman",
-    "Height": "6' 7\"",
-    "Weight": "195",
-    "Birthdate": "1/1/2007",
-    "Number": "30",
-    "Season High": "12",
-    "Games Played": "5",
-    "PPG": "6",
-    "FG%": "50",
-    "3P%": "0",
-    "FT%": "87",
-}
-
-isaiah_sealy_radar = [
-    {"stat": "Field Goals", "count": 3},
-    {"stat": "3-Pointers", "count": 0},
-    {"stat": "Free Thows", "count": 3},
-    {"stat": "Off. Rebounds", "count": 1},
-    {"stat": "Def. Rebounds", "count": 4},
-    {"stat": "Assists", "count": 2},
-    {"stat": "Turnovers", "count": 1},
-    {"stat": "Steals", "count": 1},
-]
-
-karim_rtail_stats = {
-    "Name": "Karim Rtail",
-    "Position": "Wing",
-    "Year": "Freshman",
-    "Height": "6' 7\"",
-    "Weight": "205",
-    "Birthdate": "3/23/2004",
-    "Number": "35",
-    "Season High": "0",
-    "Games Played": "0",
-    "PPG": "0",
-    "FG%": "0",
-    "3P%": "0",
-    "FT%": "0",
-}
-
-karim_rtail_radar = [
-    {"stat": "Field Goals", "count": 0},
-    {"stat": "3-Pointers", "count": 0},
-    {"stat": "Free Thows", "count": 0},
-    {"stat": "Off. Rebounds", "count": 0},
-    {"stat": "Def. Rebounds", "count": 0},
-    {"stat": "Assists", "count": 0},
-    {"stat": "Turnovers", "count": 0},
-    {"stat": "Steals", "count": 0},
-]
-
-paulo_semedo_stats = {
-    "Name": "Paulo Semedo",
-    "Position": "Forward",
-    "Year": "Freshman",
-    "Height": "7' 1\"",
-    "Weight": "225",
-    "Birthdate": "6/12/2006",
-    "Number": "99",
-    "Season High": "0",
-    "Games Played": "0",
-    "PPG": "0",
-    "FG%": "0",
-    "3P%": "0",
-    "FT%": "0",
-}
-
-paulo_semedo_radar = [
-    {"stat": "Field Goals", "count": 0},
-    {"stat": "3-Pointers", "count": 0},
-    {"stat": "Free Thows", "count": 0},
-    {"stat": "Off. Rebounds", "count": 0},
-    {"stat": "Def. Rebounds", "count": 0},
-    {"stat": "Assists", "count": 0},
-    {"stat": "Turnovers", "count": 0},
-    {"stat": "Steals", "count": 0},
-]
 
 player_stats_headline = dmc.Title(
     "Player Stats",
