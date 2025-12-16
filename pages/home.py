@@ -12,10 +12,10 @@ BLACK = "#000000"
 SPOOFER_STONE = "#424242"
 TODAY = date.today()
 
-TOTAL_GAMES_PLAYED = 9
-TOTAL_WINS = 7
-WINNING_PERCENT = "78%"
-WIN_STREAK = "W2"
+TOTAL_GAMES_PLAYED = 10
+TOTAL_WINS = 8
+WINNING_PERCENT = "80%"
+WIN_STREAK = "W3"
 AVG_POINTS_PER_GAME = 88
 AVG_FIELD_GOALS = 30
 AVG_3_POINTERS = 9
@@ -133,6 +133,18 @@ DF_GAME_STATS = [
         "Turnovers": 8,
         "Steals": 11,
     },
+    {
+        "date": "Texas Tech",
+        "Arkansas": 93,
+        "Opponent": 86,
+        "Field Goals": 33,
+        "Count 3-Pointers": 10,
+        "Count Free Throws": 17,
+        "Count 2-Pointers": 23,
+        "Assists": 18,
+        "Turnovers": 7,
+        "Steals": 6,
+    },
 ]
 
 # Loop over each game to calculate stats
@@ -204,20 +216,20 @@ meleek_thomas_stats = {
     "Birthdate": "8/6/2006",
     "Number": "1",
     "Season High": "26",
-    "Games Played": "9",
-    "PPG": "17",
-    "FG%": "41",
-    "3P%": "35",
-    "FT%": "83",
+    "Games Played": "10",
+    "PPG": "16",
+    "FG%": "40",
+    "3P%": "34",
+    "FT%": "84",
 }
 
 meleek_thomas_radar = [
-    {"stat": "Field Goals", "count": 6},
-    {"stat": "3-Pointers", "count": 3},
+    {"stat": "Field Goals", "count": 5},
+    {"stat": "3-Pointers", "count": 2},
     {"stat": "Free Thows", "count": 4},
-    {"stat": "Off. Rebounds", "count": 2},
+    {"stat": "Off. Rebounds", "count": 1},
     {"stat": "Def. Rebounds", "count": 3},
-    {"stat": "Assists", "count": 4},
+    {"stat": "Assists", "count": 3},
     {"stat": "Turnovers", "count": 2},
     {"stat": "Steals", "count": 2},
 ]
@@ -258,11 +270,11 @@ darius_acuff_jr_stats = {
     "Birthdate": "11/16/2006",
     "Number": "5",
     "Season High": "22",
-    "Games Played": "9",
-    "PPG": "17",
+    "Games Played": "10",
+    "PPG": "18",
     "FG%": "46",
     "3P%": "42",
-    "FT%": "73",
+    "FT%": "72",
 }
 
 darius_acuff_jr_radar = [
@@ -271,7 +283,7 @@ darius_acuff_jr_radar = [
     {"stat": "Free Thows", "count": 3},
     {"stat": "Off. Rebounds", "count": 1},
     {"stat": "Def. Rebounds", "count": 3},
-    {"stat": "Assists", "count": 5},
+    {"stat": "Assists", "count": 6},
     {"stat": "Turnovers", "count": 2},
     {"stat": "Steals", "count": 1},
 ]
@@ -285,15 +297,15 @@ trevon_brazile_stats = {
     "Birthdate": "1/7/2003",
     "Number": "7",
     "Season High": "25",
-    "Games Played": "8",
-    "PPG": "13",
-    "FG%": "51",
-    "3P%": "32",
-    "FT%": "79",
+    "Games Played": "9",
+    "PPG": "14",
+    "FG%": "53",
+    "3P%": "41",
+    "FT%": "81",
 }
 
 trevon_brazile_radar = [
-    {"stat": "Field Goals", "count": 4},
+    {"stat": "Field Goals", "count": 5},
     {"stat": "3-Pointers", "count": 2},
     {"stat": "Free Thows", "count": 3},
     {"stat": "Off. Rebounds", "count": 1},
@@ -311,19 +323,19 @@ karter_knox_stats = {
     "Weight": "220",
     "Birthdate": "5/16/2005",
     "Number": "1",
-    "Season High": "19",
-    "Games Played": "8",
-    "PPG": "8",
-    "FG%": "42",
-    "3P%": "50",
-    "FT%": "86",
+    "Season High": "20",
+    "Games Played": "9",
+    "PPG": "10",
+    "FG%": "47",
+    "3P%": "54",
+    "FT%": "76",
 }
 
 karter_knox_radar = [
-    {"stat": "Field Goals", "count": 3},
+    {"stat": "Field Goals", "count": 4},
     {"stat": "3-Pointers", "count": 2},
-    {"stat": "Free Thows", "count": 4},
-    {"stat": "Off. Rebounds", "count": 1},
+    {"stat": "Free Thows", "count": 3},
+    {"stat": "Off. Rebounds", "count": 2},
     {"stat": "Def. Rebounds", "count": 4},
     {"stat": "Assists", "count": 2},
     {"stat": "Turnovers", "count": 2},
@@ -339,18 +351,18 @@ malique_ewin_stats = {
     "Birthdate": "1/1/2003",
     "Number": "12",
     "Season High": "21",
-    "Games Played": "9",
+    "Games Played": "10",
     "PPG": "8",
-    "FG%": "67",
+    "FG%": "68",
     "3P%": "100",
-    "FT%": "84",
+    "FT%": "81",
 }
 
 malique_ewin_radar = [
     {"stat": "Field Goals", "count": 3},
     {"stat": "3-Pointers", "count": 1},
-    {"stat": "Free Thows", "count": 3},
-    {"stat": "Off. Rebounds", "count": 3},
+    {"stat": "Free Thows", "count": 2},
+    {"stat": "Off. Rebounds", "count": 2},
     {"stat": "Def. Rebounds", "count": 2},
     {"stat": "Assists", "count": 2},
     {"stat": "Turnovers", "count": 1},
@@ -420,7 +432,7 @@ dj_wagner_stats = {
     "Birthdate": "5/4/2005",
     "Number": "21",
     "Season High": "16",
-    "Games Played": "9",
+    "Games Played": "10",
     "PPG": "8",
     "FG%": "40",
     "3P%": "31",
@@ -447,11 +459,11 @@ nick_pringle_stats = {
     "Birthdate": "9/16/2001",
     "Number": "23",
     "Season High": "13",
-    "Games Played": "9",
+    "Games Played": "10",
     "PPG": "5",
-    "FG%": "65",
+    "FG%": "64",
     "3P%": "0",
-    "FT%": "72",
+    "FT%": "59",
 }
 
 nick_pringle_radar = [
@@ -474,11 +486,11 @@ billy_richmond_stats = {
     "Birthdate": "4/11/2006",
     "Number": "24",
     "Season High": "14",
-    "Games Played": "9",
+    "Games Played": "10",
     "PPG": "8",
-    "FG%": "56",
+    "FG%": "53",
     "3P%": "25",
-    "FT%": "77",
+    "FT%": "81",
 }
 
 billy_richmond_radar = [
@@ -489,7 +501,7 @@ billy_richmond_radar = [
     {"stat": "Def. Rebounds", "count": 3},
     {"stat": "Assists", "count": 2},
     {"stat": "Turnovers", "count": 2},
-    {"stat": "Steals", "count": 1},
+    {"stat": "Steals", "count": 2},
 ]
 
 isaiah_sealy_stats = {
