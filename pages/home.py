@@ -2,7 +2,6 @@ from datetime import datetime, date
 import dash
 from dash import html
 import dash_mantine_components as dmc
-from dash_iconify import DashIconify
 
 
 dash.register_page(__name__, path="/", name="Home", title="BasketHogs")
@@ -1483,31 +1482,6 @@ def player_card(player_stats_data, radar_data):
                                         "borderBottom": "1px solid #C7C8CA",
                                     }
                                 ),
-                                # dmc.TableTh(
-                                #     children=dmc.Group(
-                                #         [
-                                #             dmc.Text("Season High", fw=500, fz="0.875rem"),
-                                #             dmc.Tooltip(
-                                #                 label="Most points scored in a single game.",
-                                #                 children=dmc.ActionIcon(
-                                #                     DashIconify(icon="mdi:information-outline"),
-                                #                     variant="subtle",
-                                #                     color="grey",
-                                #                     size="xs",
-                                #                 ),
-                                #                 position="top",
-                                #                 withArrow=True,
-                                #                 inline=True,
-                                #             ),
-                                #         ],
-                                #         gap="0.25rem",  # Tight spacing between text and icon
-                                #     ),
-                                #     style={
-                                #         "backgroundColor": "#F2F2F4",
-                                #         "borderRight": "1px solid #C7C8CA",
-                                #         "borderBottom": "1px solid #C7C8CA",
-                                #     },
-                                # ),
                                 dmc.TableTd(
                                     player_stats_data['Season High'],
                                     ta="right",
