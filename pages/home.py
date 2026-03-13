@@ -1163,56 +1163,56 @@ points_gap_over_time = dmc.Card(
     ]
 )
 
-def get_player_age(birthdate_string):
-    # Convert the player's birthdate string to a date
-    birthdate = datetime.strptime(birthdate_string, "%m/%d/%Y").date()
-    # Get the player's age based on their date of birth
-    return TODAY.year - birthdate.year - ((TODAY.month, TODAY.day) < (birthdate.month, birthdate.day))
+# def get_player_age(birthdate_string):
+#     # Convert the player's birthdate string to a date
+#     birthdate = datetime.strptime(birthdate_string, "%m/%d/%Y").date()
+#     # Get the player's age based on their date of birth
+#     return TODAY.year - birthdate.year - ((TODAY.month, TODAY.day) < (birthdate.month, birthdate.day))
 
-players_and_birthdates = [
-    {"Name": "Isaiah Sealy", "Birthdate": "1/1/2007"},
-    {"Name": "Darius Acuff Jr.", "Birthdate": "11/16/2006"},
-    {"Name": "Meleek Thomas", "Birthdate": "8/6/2006"},
-    {"Name": "Paulo Semedo", "Birthdate": "6/12/2006"},
-    {"Name": "Amere Brown", "Birthdate": "5/22/2006"},
-    {"Name": "Billy Richmond III", "Birthdate": "4/11/2006"},
-    {"Name": "Ayden Kelley", "Birthdate": "4/9/2006"},
-    {"Name": "Jaden Karuletwa", "Birthdate": "1/1/2006"},
-    {"Name": "Karter Knox", "Birthdate": "5/16/2005"},
-    {"Name": "D.J. Wagner", "Birthdate": "5/4/2005"},
-    {"Name": "Elmir Dzafic", "Birthdate": "1/1/2005"},
-    {"Name": "Karim Rtail", "Birthdate": "3/23/2004"},
-    {"Name": "Trevon Brazile", "Birthdate": "1/7/2003"},
-    {"Name": "Malique Ewin", "Birthdate": "1/1/2003"},
-    {"Name": "Nick Pringle", "Birthdate": "9/16/2001"},
-]
+# players_and_birthdates = [
+#     {"Name": "Isaiah Sealy", "Birthdate": "1/1/2007"},
+#     {"Name": "Darius Acuff Jr.", "Birthdate": "11/16/2006"},
+#     {"Name": "Meleek Thomas", "Birthdate": "8/6/2006"},
+#     {"Name": "Paulo Semedo", "Birthdate": "6/12/2006"},
+#     {"Name": "Amere Brown", "Birthdate": "5/22/2006"},
+#     {"Name": "Billy Richmond III", "Birthdate": "4/11/2006"},
+#     {"Name": "Ayden Kelley", "Birthdate": "4/9/2006"},
+#     {"Name": "Jaden Karuletwa", "Birthdate": "1/1/2006"},
+#     {"Name": "Karter Knox", "Birthdate": "5/16/2005"},
+#     {"Name": "D.J. Wagner", "Birthdate": "5/4/2005"},
+#     {"Name": "Elmir Dzafic", "Birthdate": "1/1/2005"},
+#     {"Name": "Karim Rtail", "Birthdate": "3/23/2004"},
+#     {"Name": "Trevon Brazile", "Birthdate": "1/7/2003"},
+#     {"Name": "Malique Ewin", "Birthdate": "1/1/2003"},
+#     {"Name": "Nick Pringle", "Birthdate": "9/16/2001"},
+# ]
 
 df_players_by_age = [
-    {"Age": "Age 18", "Total": 0},
-    {"Age": "Age 19", "Total": 0},
-    {"Age": "Age 20", "Total": 0},
-    {"Age": "Age 21", "Total": 0},
+    # {"Age": "Age 18", "Total": 0},
+    {"Age": "Age 19", "Total": 7},
+    {"Age": "Age 20", "Total": 3},
+    {"Age": "Age 21", "Total": 2},
     {"Age": "Age 22", "Total": 0},
-    {"Age": "Age 23", "Total": 0},
-    {"Age": "Age 24", "Total": 0}
+    {"Age": "Age 23", "Total": 2},
+    {"Age": "Age 24", "Total": 1}
 ]
 
-for player in players_and_birthdates:
-    age = get_player_age(player['Birthdate'])
-    if age == 18:
-        df_players_by_age[0]["Total"] += 1
-    elif age == 19:
-        df_players_by_age[1]["Total"] += 1
-    elif age == 20:
-        df_players_by_age[2]["Total"] += 1
-    elif age == 21:
-        df_players_by_age[3]["Total"] += 1
-    elif age == 22:
-        df_players_by_age[4]["Total"] += 1
-    elif age == 23:
-        df_players_by_age[5]["Total"] += 1
-    elif age == 24:
-        df_players_by_age[6]["Total"] += 1
+# for player in players_and_birthdates:
+#     age = get_player_age(player['Birthdate'])
+#     if age == 18:
+#         df_players_by_age[0]["Total"] += 1
+#     elif age == 19:
+#         df_players_by_age[1]["Total"] += 1
+#     elif age == 20:
+#         df_players_by_age[2]["Total"] += 1
+#     elif age == 21:
+#         df_players_by_age[3]["Total"] += 1
+#     elif age == 22:
+#         df_players_by_age[4]["Total"] += 1
+#     elif age == 23:
+#         df_players_by_age[5]["Total"] += 1
+#     elif age == 24:
+#         df_players_by_age[6]["Total"] += 1
 
 df_players_by_year = [
     {"Year": "Freshman", "Total": 7},
