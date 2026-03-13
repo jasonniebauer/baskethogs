@@ -721,7 +721,7 @@ total_points_over_time = dmc.Card(
             mb="xl",
             fw="500",
         ),
-        dmc.LineChart(
+        dmc.AreaChart(
             h=300,
             dataKey="date",
             data=DF_GAME_STATS,
