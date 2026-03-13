@@ -108,28 +108,11 @@ navbar = dmc.Flex(
                         variant="white",
                         color="black",
                         size="xs",
-                        mr="1rem",
                         style={
                             "boxShadow": "5px 5px 10px 2px rgba(0, 0, 0, 0.6)"
                         }
                     ),
                     href="/about",
-                    underline="never",
-                ),
-                dmc.Anchor(
-                    dmc.Button(
-                        "Twitter",
-                        variant="white",
-                        color="black",
-                        size="xs",
-                        rightSection=DashIconify(icon="logos:x"),
-                        styles={
-                            "section": {
-                                "marginInlineStart": "0.375rem"
-                            }
-                        }
-                    ),
-                    href="https://x.com/baskethogs",
                     underline="never",
                 ),
             ]
