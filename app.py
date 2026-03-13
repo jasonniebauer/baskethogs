@@ -117,7 +117,6 @@ navbar = dmc.Flex(
                 ),
             ]
         )
-        
     ]
 )
 
