@@ -1,6 +1,5 @@
 from dash import Dash, html, page_container
 import dash_mantine_components as dmc
-from dash_iconify import DashIconify
 
 
 # Google Analytics Measurement ID
