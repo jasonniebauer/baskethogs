@@ -728,7 +728,6 @@ total_points_over_time = dmc.Card(
             series = [
                 {"name": "Arkansas", "color": ARKANSAS_RED},
                 {"name": "Opponent", "color": SPOOFER_STONE},
-                # {"name": "Total 3-Pointers", "label": "Test"}
             ],
             curveType="linear",
             tickLine="y",
