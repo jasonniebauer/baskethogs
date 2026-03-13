@@ -1192,7 +1192,9 @@ df_players_by_age = [
     {"Age": "Age 19", "Total": 0},
     {"Age": "Age 20", "Total": 0},
     {"Age": "Age 21", "Total": 0},
-    {"Age": "Age 22", "Total": 0}
+    {"Age": "Age 22", "Total": 0},
+    {"Age": "Age 23", "Total": 0},
+    {"Age": "Age 24", "Total": 0}
 ]
 
 for player in players_and_birthdates:
@@ -1207,6 +1209,10 @@ for player in players_and_birthdates:
         df_players_by_age[3]["Total"] += 1
     elif age == 22:
         df_players_by_age[4]["Total"] += 1
+    elif age == 23:
+        df_players_by_age[5]["Total"] += 1
+    elif age == 24:
+        df_players_by_age[6]["Total"] += 1
 
 df_players_by_year = [
     {"Year": "Freshman", "Total": 7},
