@@ -15,6 +15,9 @@ external_stylesheets = [
 
 app = Dash(__name__, use_pages=True, suppress_callback_exceptions=True, external_stylesheets=external_stylesheets)
 
+# Assign server variable for deployment run command
+server = app.server
+
 APP_LAST_UPDATED = "Dec 25, 2025"
 
 # Google analytics
