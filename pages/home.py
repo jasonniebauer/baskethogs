@@ -1,6 +1,5 @@
 from datetime import datetime, date
 import dash
-from dash import html
 import dash_mantine_components as dmc
 from data.game_stats import df_game_stats
 
