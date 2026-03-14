@@ -231,9 +231,6 @@ app.layout = html.Div([
     )
 ])
 
-# if __name__ == "__main__":
-#     app.run(debug=True)
-
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 8080))  # Use $PORT env var if set, fallback to 8080
-    app.run(debug=False, host='0.0.0.0', port=port)  # Use run_server (Dash-specific), bind externally
+    app.run(debug=False, host='0.0.0.0', port=port)  # Set debug to True to deploy to Plotly Cloud
