@@ -11,17 +11,17 @@ BLACK = "#000000"
 SPOOFER_STONE = "#424242"
 TODAY = date.today()
 
-TOTAL_GAMES_PLAYED = 12
-TOTAL_WINS = 9
+TOTAL_GAMES_PLAYED = 31
+TOTAL_WINS = 23
 WINNING_PERCENT = f"{round((TOTAL_WINS / TOTAL_GAMES_PLAYED) * 100)}%"
 SEC_TOURNAMENT = "2nd"
 AVG_POINTS_PER_GAME = 90
-AVG_FIELD_GOALS = 31
-AVG_3_POINTERS = 9
-AVG_FREE_THROWS = 19
-AVG_ASSISTS_PER_GAME = 18
-AVG_TURNOVERS_PER_GAME = 10
-AVG_STEALS_PER_GAME = 8
+AVG_FIELD_GOALS = 32
+AVG_3_POINTERS = 8
+AVG_FREE_THROWS = 17
+AVG_ASSISTS_PER_GAME = 17
+AVG_TURNOVERS_PER_GAME = 9
+AVG_STEALS_PER_GAME = 7
 DF_GAME_STATS = df_game_stats
 
 # Loop over each game to calculate stats
@@ -503,9 +503,9 @@ scoreboard = dmc.Grid(
     gutter="sm",
     children=[
         scoreboard_stat_card(SEC_TOURNAMENT, "SEC Tournament", "2025-2026 Season"),
-        scoreboard_stat_card(WINNING_PERCENT, "Winning Percent", "Win to Loss Ratio"),
         scoreboard_stat_card(TOTAL_GAMES_PLAYED, "Total Games", "2025-2026 Season"),
         scoreboard_stat_card(TOTAL_WINS, "Total Wins", "2025-2026 Season"),
+        scoreboard_stat_card(WINNING_PERCENT, "Winning Percent", "Win to Loss Ratio"),
         scoreboard_stat_card(AVG_POINTS_PER_GAME, "Avg. Points", "Per Game"),
         scoreboard_stat_card(AVG_FIELD_GOALS, "Avg. Field Goals", "Per Game"),
         scoreboard_stat_card(AVG_3_POINTERS, "Avg. 3-Pointers", "Per Game"),
