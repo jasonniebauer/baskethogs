@@ -131,8 +131,8 @@ scoreboard = dmc.Grid(
     gutter="sm",
     children=[
         scoreboard_stat_card(SEC_TOURNAMENT, "SEC Tournament", "2025-2026 Season"),
-        scoreboard_stat_card(TOTAL_GAMES_PLAYED, "Total Games", "2025-2026 Season"),
         scoreboard_stat_card(TOTAL_WINS, "Total Wins", "2025-2026 Season"),
+        scoreboard_stat_card(TOTAL_GAMES_PLAYED, "Total Games", "2025-2026 Season"),
         scoreboard_stat_card(WINNING_PERCENT, "Winning Percent", "Win to Loss Ratio"),
         scoreboard_stat_card(AVG_POINTS_PER_GAME, "Avg. Points", "Per Game"),
         scoreboard_stat_card(AVG_FIELD_GOALS, "Avg. Field Goals", "Per Game"),
