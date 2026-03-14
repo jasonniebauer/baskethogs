@@ -2,6 +2,40 @@ from datetime import datetime, date
 import dash
 import dash_mantine_components as dmc
 from data.game_stats import df_game_stats
+from data.player_radar import (
+    jaden_karuletwa_radar,
+    meleek_thomas_radar,
+    amere_brown_radar,
+    darius_acuff_jr_radar,
+    trevon_brazile_radar,
+    karter_knox_radar,
+    malique_ewin_radar,
+    ayden_kelley_radar,
+    elmir_dzafic_radar,
+    dj_wagner_radar,
+    nick_pringle_radar,
+    billy_richmond_radar,
+    isaiah_sealy_radar,
+    karim_rtail_radar,
+    paulo_semedo_radar
+)
+from data.player_stats import (
+    jaden_karuletwa_stats,
+    meleek_thomas_stats,
+    amere_brown_stats,
+    darius_acuff_jr_stats,
+    trevon_brazile_stats,
+    karter_knox_stats,
+    malique_ewin_stats,
+    ayden_kelley_stats,
+    elmir_dzafic_stats,
+    dj_wagner_stats,
+    nick_pringle_stats,
+    billy_richmond_stats,
+    isaiah_sealy_stats,
+    karim_rtail_stats,
+    paulo_semedo_stats
+)
 
 
 dash.register_page(__name__, path="/", name="Home", title="BasketHogs")
@@ -55,411 +89,6 @@ for game in df_game_stats:
     game['2-Pointers %'] = round(
         (game['2-Pointers'] / game['Arkansas']) * 100, 1
     )
-
-jaden_karuletwa_stats = {
-    "Name": "Jaden Karuletwa",
-    "Position": "Guard",
-    "Year": "Sophomore",
-    "Height": "6' 4\"",
-    "Weight": "195",
-    "Birthdate": "1/1/2006",
-    "Number": "0",
-    "Season High": "5",
-    "Games Played": "3",
-    "PPG": "2",
-    "FG%": "0",
-    "3P%": "0",
-    "FT%": "100%",
-}
-
-jaden_karuletwa_radar = [
-    {"stat": "Field Goals", "count": 1},
-    {"stat": "3-Pointers", "count": 1},
-    {"stat": "Free Thows", "count": 2},
-    {"stat": "Off. Rebounds", "count": 0},
-    {"stat": "Def. Rebounds", "count": 1},
-    {"stat": "Assists", "count": 1},
-    {"stat": "Turnovers", "count": 0},
-    {"stat": "Steals", "count": 1},
-]
-
-meleek_thomas_stats = {
-    "Name": "Meleek Thomas",
-    "Position": "Forward",
-    "Year": "Freshman",
-    "Height": "6' 5\"",
-    "Weight": "185",
-    "Birthdate": "8/6/2006",
-    "Number": "1",
-    "Season High": "26",
-    "Games Played": "12",
-    "PPG": "14",
-    "FG%": "37",
-    "3P%": "33",
-    "FT%": "84",
-}
-
-meleek_thomas_radar = [
-    {"stat": "Field Goals", "count": 5},
-    {"stat": "3-Pointers", "count": 2},
-    {"stat": "Free Thows", "count": 4},
-    {"stat": "Off. Rebounds", "count": 2},
-    {"stat": "Def. Rebounds", "count": 3},
-    {"stat": "Assists", "count": 3},
-    {"stat": "Turnovers", "count": 2},
-    {"stat": "Steals", "count": 2},
-]
-
-amere_brown_stats = {
-    "Name": "Amere Brown",
-    "Position": "Guard",
-    "Year": "Freshman",
-    "Height": "5' 9\"",
-    "Weight": "180",
-    "Birthdate": "5/22/2006",
-    "Number": "2",
-    "Season High": "1",
-    "Games Played": "3",
-    "PPG": "0",
-    "FG%": "0",
-    "3P%": "0",
-    "FT%": "50",
-}
-
-amere_brown_radar = [
-    {"stat": "Field Goals", "count": 0},
-    {"stat": "3-Pointers", "count": 0},
-    {"stat": "Free Thows", "count": 1},
-    {"stat": "Off. Rebounds", "count": 0},
-    {"stat": "Def. Rebounds", "count": 0},
-    {"stat": "Assists", "count": 0},
-    {"stat": "Turnovers", "count": 0},
-    {"stat": "Steals", "count": 0},
-]
-
-darius_acuff_jr_stats = {
-    "Name": "Darius Acuff Jr.",
-    "Position": "Guard",
-    "Year": "Freshman",
-    "Height": "6' 3\"",
-    "Weight": "190",
-    "Birthdate": "11/16/2006",
-    "Number": "5",
-    "Season High": "27",
-    "Games Played": "12",
-    "PPG": "19",
-    "FG%": "49",
-    "3P%": "44",
-    "FT%": "73",
-}
-
-darius_acuff_jr_radar = [
-    {"stat": "Field Goals", "count": 7},
-    {"stat": "3-Pointers", "count": 3},
-    {"stat": "Free Thows", "count": 4},
-    {"stat": "Off. Rebounds", "count": 1},
-    {"stat": "Def. Rebounds", "count": 3},
-    {"stat": "Assists", "count": 6},
-    {"stat": "Turnovers", "count": 2},
-    {"stat": "Steals", "count": 2},
-]
-
-trevon_brazile_stats = {
-    "Name": "Trevon Brazile",
-    "Position": "Forward",
-    "Year": "Senior",
-    "Height": "6' 10\"",
-    "Weight": "230",
-    "Birthdate": "1/7/2003",
-    "Number": "7",
-    "Season High": "26",
-    "Games Played": "11",
-    "PPG": "14",
-    "FG%": "55",
-    "3P%": "46",
-    "FT%": "80",
-}
-
-trevon_brazile_radar = [
-    {"stat": "Field Goals", "count": 5},
-    {"stat": "3-Pointers", "count": 3},
-    {"stat": "Free Thows", "count": 3},
-    {"stat": "Off. Rebounds", "count": 2},
-    {"stat": "Def. Rebounds", "count": 6},
-    {"stat": "Assists", "count": 2},
-    {"stat": "Turnovers", "count": 2},
-    {"stat": "Steals", "count": 2},
-]
-
-karter_knox_stats = {
-    "Name": "Karter Knox",
-    "Position": "Wing",
-    "Year": "Sophomore",
-    "Height": "6' 6\"",
-    "Weight": "220",
-    "Birthdate": "5/16/2005",
-    "Number": "1",
-    "Season High": "20",
-    "Games Played": "11",
-    "PPG": "9",
-    "FG%": "45",
-    "3P%": "47",
-    "FT%": "81",
-}
-
-karter_knox_radar = [
-    {"stat": "Field Goals", "count": 3},
-    {"stat": "3-Pointers", "count": 2},
-    {"stat": "Free Thows", "count": 3},
-    {"stat": "Off. Rebounds", "count": 1},
-    {"stat": "Def. Rebounds", "count": 4},
-    {"stat": "Assists", "count": 2},
-    {"stat": "Turnovers", "count": 2},
-    {"stat": "Steals", "count": 1},
-]
-
-malique_ewin_stats = {
-    "Name": "Malique Ewin",
-    "Position": "Forward",
-    "Year": "Senior",
-    "Height": "6' 10\"",
-    "Weight": "240",
-    "Birthdate": "1/1/2003",
-    "Number": "12",
-    "Season High": "21",
-    "Games Played": "12",
-    "PPG": "9",
-    "FG%": "65",
-    "3P%": "100",
-    "FT%": "71",
-}
-
-malique_ewin_radar = [
-    {"stat": "Field Goals", "count": 3},
-    {"stat": "3-Pointers", "count": 1},
-    {"stat": "Free Thows", "count": 3},
-    {"stat": "Off. Rebounds", "count": 3},
-    {"stat": "Def. Rebounds", "count": 2},
-    {"stat": "Assists", "count": 1},
-    {"stat": "Turnovers", "count": 1},
-    {"stat": "Steals", "count": 1},
-]
-
-ayden_kelley_stats = {
-    "Name": "Ayden Kelley",
-    "Position": "Guard",
-    "Year": "Sophomore",
-    "Height": "5' 10\"",
-    "Weight": "170",
-    "Birthdate": "4/9/2006",
-    "Number": "14",
-    "Season High": "1",
-    "Games Played": "3",
-    "PPG": "0",
-    "FG%": "0",
-    "3P%": "0",
-    "FT%": "50",
-}
-
-ayden_kelley_radar = [
-    {"stat": "Field Goals", "count": 0},
-    {"stat": "3-Pointers", "count": 0},
-    {"stat": "Free Thows", "count": 1},
-    {"stat": "Off. Rebounds", "count": 0},
-    {"stat": "Def. Rebounds", "count": 0},
-    {"stat": "Assists", "count": 0},
-    {"stat": "Turnovers", "count": 0},
-    {"stat": "Steals", "count": 0},
-]
-
-elmir_dzafic_stats = {
-    "Name": "Elmir Dzafic",
-    "Position": "Center",
-    "Year": "Freshman",
-    "Height": "7' 0\"",
-    "Weight": "285",
-    "Birthdate": "1/1/2005",
-    "Number": "15",
-    "Season High": "1",
-    "Games Played": "2",
-    "PPG": "1",
-    "FG%": "0",
-    "3P%": "0",
-    "FT%": "50",
-}
-
-elmir_dzafic_radar = [
-    {"stat": "Field Goals", "count": 0},
-    {"stat": "3-Pointers", "count": 0},
-    {"stat": "Free Thows", "count": 1},
-    {"stat": "Off. Rebounds", "count": 0},
-    {"stat": "Def. Rebounds", "count": 0},
-    {"stat": "Assists", "count": 0},
-    {"stat": "Turnovers", "count": 2},
-    {"stat": "Steals", "count": 1},
-]
-
-dj_wagner_stats = {
-    "Name": "D.J. Wagner",
-    "Position": "Guard",
-    "Year": "Junior",
-    "Height": "6' 4\"",
-    "Weight": "190",
-    "Birthdate": "5/4/2005",
-    "Number": "21",
-    "Season High": "16",
-    "Games Played": "12",
-    "PPG": "8",
-    "FG%": "41",
-    "3P%": "35",
-    "FT%": "78",
-}
-
-dj_wagner_radar = [
-    {"stat": "Field Goals", "count": 3},
-    {"stat": "3-Pointers", "count": 2},
-    {"stat": "Free Thows", "count": 2},
-    {"stat": "Off. Rebounds", "count": 0},
-    {"stat": "Def. Rebounds", "count": 2},
-    {"stat": "Assists", "count": 3},
-    {"stat": "Turnovers", "count": 1},
-    {"stat": "Steals", "count": 2},
-]
-
-nick_pringle_stats = {
-    "Name": "Nick Pringle",
-    "Position": "Forward",
-    "Year": "Gr. Senior",
-    "Height": "6' 10\"",
-    "Weight": "230",
-    "Birthdate": "9/16/2001",
-    "Number": "23",
-    "Season High": "14",
-    "Games Played": "12",
-    "PPG": "5",
-    "FG%": "68",
-    "3P%": "0",
-    "FT%": "61",
-}
-
-nick_pringle_radar = [
-    {"stat": "Field Goals", "count": 3},
-    {"stat": "3-Pointers", "count": 0},
-    {"stat": "Free Thows", "count": 3},
-    {"stat": "Off. Rebounds", "count": 2},
-    {"stat": "Def. Rebounds", "count": 4},
-    {"stat": "Assists", "count": 2},
-    {"stat": "Turnovers", "count": 1},
-    {"stat": "Steals", "count": 2},
-]
-
-billy_richmond_stats = {
-    "Name": "Billy Richmond III",
-    "Position": "Wing",
-    "Year": "Junior",
-    "Height": "6' 6\"",
-    "Weight": "205",
-    "Birthdate": "4/11/2006",
-    "Number": "24",
-    "Season High": "15",
-    "Games Played": "12",
-    "PPG": "9",
-    "FG%": "57",
-    "3P%": "35",
-    "FT%": "77",
-}
-
-billy_richmond_radar = [
-    {"stat": "Field Goals", "count": 3},
-    {"stat": "3-Pointers", "count": 1},
-    {"stat": "Free Thows", "count": 2},
-    {"stat": "Off. Rebounds", "count": 2},
-    {"stat": "Def. Rebounds", "count": 3},
-    {"stat": "Assists", "count": 2},
-    {"stat": "Turnovers", "count": 2},
-    {"stat": "Steals", "count": 2},
-]
-
-isaiah_sealy_stats = {
-    "Name": "Isaiah Sealy",
-    "Position": "Wing",
-    "Year": "Freshman",
-    "Height": "6' 7\"",
-    "Weight": "195",
-    "Birthdate": "1/1/2007",
-    "Number": "30",
-    "Season High": "12",
-    "Games Played": "7",
-    "PPG": "5",
-    "FG%": "50",
-    "3P%": "0",
-    "FT%": "81",
-}
-
-isaiah_sealy_radar = [
-    {"stat": "Field Goals", "count": 3},
-    {"stat": "3-Pointers", "count": 0},
-    {"stat": "Free Thows", "count": 3},
-    {"stat": "Off. Rebounds", "count": 1},
-    {"stat": "Def. Rebounds", "count": 3},
-    {"stat": "Assists", "count": 2},
-    {"stat": "Turnovers", "count": 1},
-    {"stat": "Steals", "count": 1},
-]
-
-karim_rtail_stats = {
-    "Name": "Karim Rtail",
-    "Position": "Wing",
-    "Year": "Freshman",
-    "Height": "6' 7\"",
-    "Weight": "205",
-    "Birthdate": "3/23/2004",
-    "Number": "35",
-    "Season High": "0",
-    "Games Played": "0",
-    "PPG": "0",
-    "FG%": "0",
-    "3P%": "0",
-    "FT%": "0",
-}
-
-karim_rtail_radar = [
-    {"stat": "Field Goals", "count": 0},
-    {"stat": "3-Pointers", "count": 0},
-    {"stat": "Free Thows", "count": 0},
-    {"stat": "Off. Rebounds", "count": 0},
-    {"stat": "Def. Rebounds", "count": 0},
-    {"stat": "Assists", "count": 0},
-    {"stat": "Turnovers", "count": 0},
-    {"stat": "Steals", "count": 0},
-]
-
-paulo_semedo_stats = {
-    "Name": "Paulo Semedo",
-    "Position": "Forward",
-    "Year": "Freshman",
-    "Height": "7' 1\"",
-    "Weight": "225",
-    "Birthdate": "6/12/2006",
-    "Number": "99",
-    "Season High": "0",
-    "Games Played": "0",
-    "PPG": "0",
-    "FG%": "0",
-    "3P%": "0",
-    "FT%": "0",
-}
-
-paulo_semedo_radar = [
-    {"stat": "Field Goals", "count": 0},
-    {"stat": "3-Pointers", "count": 0},
-    {"stat": "Free Thows", "count": 0},
-    {"stat": "Off. Rebounds", "count": 0},
-    {"stat": "Def. Rebounds", "count": 0},
-    {"stat": "Assists", "count": 0},
-    {"stat": "Turnovers", "count": 0},
-    {"stat": "Steals", "count": 0},
-]
 
 def scoreboard_stat_card(value, title, subtitle):
     return dmc.GridCol(
