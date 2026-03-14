@@ -22,10 +22,9 @@ AVG_FREE_THROWS = 17
 AVG_ASSISTS_PER_GAME = 17
 AVG_TURNOVERS_PER_GAME = 9
 AVG_STEALS_PER_GAME = 7
-DF_GAME_STATS = df_game_stats
 
 # Loop over each game to calculate stats
-for game in DF_GAME_STATS:
+for game in df_game_stats:
     # Set averages for multiple stats
     game['Field Goal Avg.'] = AVG_FIELD_GOALS
     game['3-Pointer Avg.'] = AVG_3_POINTERS
@@ -578,7 +577,7 @@ total_points_over_time = dmc.Card(
         dmc.AreaChart(
             h=300,
             dataKey="date",
-            data=DF_GAME_STATS,
+            data=df_game_stats,
             series = [
                 {"name": "Arkansas", "color": ARKANSAS_RED},
                 {"name": "Opponent", "color": SPOOFER_STONE},
@@ -656,7 +655,7 @@ count_points_by_type = dmc.Card(
         dmc.BarChart(
             h=300,
             dataKey="date",
-            data=DF_GAME_STATS,
+            data=df_game_stats,
             series=[
                 {"name": "Count 3-Pointers", "label": "3-Pointers", "color": SPOOFER_STONE},
                 {"name": "Count Free Throws", "label": "Free Throws", "color": "#C7C8CA"},
@@ -691,7 +690,7 @@ totals_points_by_type = dmc.Card(
         dmc.BarChart(
             h=300,
             dataKey="date",
-            data=DF_GAME_STATS,
+            data=df_game_stats,
             type="stacked",
             series=[
                 {"name": "3-Pointers", "color": SPOOFER_STONE},
@@ -727,7 +726,7 @@ point_type_by_percent_of_total = dmc.Card(
         dmc.BarChart(
             h=300,
             dataKey="date",
-            data=DF_GAME_STATS,
+            data=df_game_stats,
             type="percent",
             series=[
                 {"name": "3-Pointers %", "color": SPOOFER_STONE},
@@ -764,7 +763,7 @@ points_gap_over_time = dmc.Card(
         dmc.AreaChart(
             h=300,
             dataKey="date",
-            data=DF_GAME_STATS,
+            data=df_game_stats,
             series = [
                 {"name": "Point Gap", "color": ARKANSAS_RED},
             ],
@@ -963,7 +962,7 @@ field_goals_over_time = dmc.Card(
         ),
         dmc.CompositeChart(
             h=300,
-            data=DF_GAME_STATS,
+            data=df_game_stats,
             dataKey="date",
             curveType="Linear",
             gridAxis="x",
@@ -995,7 +994,7 @@ x3_pointers_over_time = dmc.Card(
         ),
         dmc.CompositeChart(
             h=300,
-            data=DF_GAME_STATS,
+            data=df_game_stats,
             dataKey="date",
             curveType="Linear",
             gridAxis="x",
@@ -1027,7 +1026,7 @@ free_throws_over_time = dmc.Card(
         ),
         dmc.CompositeChart(
             h=300,
-            data=DF_GAME_STATS,
+            data=df_game_stats,
             dataKey="date",
             curveType="Linear",
             gridAxis="x",
@@ -1059,7 +1058,7 @@ assists_over_time = dmc.Card(
         ),
         dmc.CompositeChart(
             h=300,
-            data=DF_GAME_STATS,
+            data=df_game_stats,
             dataKey="date",
             curveType="Linear",
             gridAxis="x",
@@ -1091,7 +1090,7 @@ turnovers_over_time = dmc.Card(
         ),
         dmc.CompositeChart(
             h=300,
-            data=DF_GAME_STATS,
+            data=df_game_stats,
             dataKey="date",
             curveType="Linear",
             gridAxis="x",
@@ -1123,7 +1122,7 @@ steals_over_time = dmc.Card(
         ),
         dmc.CompositeChart(
             h=300,
-            data=DF_GAME_STATS,
+            data=df_game_stats,
             dataKey="date",
             curveType="Linear",
             gridAxis="x",
