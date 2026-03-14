@@ -14,7 +14,7 @@ TODAY = date.today()
 TOTAL_GAMES_PLAYED = 12
 TOTAL_WINS = 9
 WINNING_PERCENT = f"{round((TOTAL_WINS / TOTAL_GAMES_PLAYED) * 100)}%"
-WIN_STREAK = "L1"
+SEC_TOURNAMENT = "2nd"
 AVG_POINTS_PER_GAME = 90
 AVG_FIELD_GOALS = 31
 AVG_3_POINTERS = 9
@@ -502,10 +502,10 @@ scoreboard = dmc.Grid(
     justify="center",
     gutter="sm",
     children=[
+        scoreboard_stat_card(SEC_TOURNAMENT, "SEC Tournament", "2025-2026 Season"),
+        scoreboard_stat_card(WINNING_PERCENT, "Winning Percent", "Win to Loss Ratio"),
         scoreboard_stat_card(TOTAL_GAMES_PLAYED, "Total Games", "2025-2026 Season"),
         scoreboard_stat_card(TOTAL_WINS, "Total Wins", "2025-2026 Season"),
-        scoreboard_stat_card(WIN_STREAK, "Streak", "2025-2026 Season"),
-        scoreboard_stat_card(WINNING_PERCENT, "Winning Percent", "Win to Loss Ratio"),
         scoreboard_stat_card(AVG_POINTS_PER_GAME, "Avg. Points", "Per Game"),
         scoreboard_stat_card(AVG_FIELD_GOALS, "Avg. Field Goals", "Per Game"),
         scoreboard_stat_card(AVG_3_POINTERS, "Avg. 3-Pointers", "Per Game"),
