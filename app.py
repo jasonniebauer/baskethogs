@@ -1,3 +1,4 @@
+import os
 from dash import Dash, html, page_container
 import dash_mantine_components as dmc
 
@@ -14,9 +15,6 @@ external_stylesheets = [
 ]
 
 app = Dash(__name__, use_pages=True, suppress_callback_exceptions=True, external_stylesheets=external_stylesheets)
-
-# Assign server variable for deployment run command
-server = app.server
 
 APP_LAST_UPDATED = "Dec 25, 2025"
 
@@ -233,5 +231,9 @@ app.layout = html.Div([
     )
 ])
 
+# if __name__ == "__main__":
+#     app.run(debug=True)
+
 if __name__ == "__main__":
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 8080))  # Use $PORT env var if set, fallback to 8080
+    app.run(debug=False, host='0.0.0.0', port=port)  # Use run_server (Dash-specific), bind externally
