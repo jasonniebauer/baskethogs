@@ -11,7 +11,7 @@ jaden_karuletwa_stats = {
     "PPG": 1,
     "FG%": 0,
     "3P%": 0,
-    "FT%": "100%",
+    "FT%": 100,
 }
 
 meleek_thomas_stats = {
@@ -27,7 +27,7 @@ meleek_thomas_stats = {
     "PPG": 16,
     "FG%": 43,
     "3P%": 41,
-    "FT%": "84",
+    "FT%": 85,
 }
 
 amere_brown_stats = {
@@ -43,7 +43,7 @@ amere_brown_stats = {
     "PPG": 0,
     "FG%": 0,
     "3P%": 0,
-    "FT%": "50",
+    "FT%": 25,
 }
 
 darius_acuff_jr_stats = {
@@ -59,7 +59,7 @@ darius_acuff_jr_stats = {
     "PPG": 23,
     "FG%": 49,
     "3P%": 44,
-    "FT%": "73",
+    "FT%": 81,
 }
 
 trevon_brazile_stats = {
@@ -75,7 +75,7 @@ trevon_brazile_stats = {
     "PPG": 13,
     "FG%": 53,
     "3P%": 35,
-    "FT%": "80",
+    "FT%": 72,
 }
 
 karter_knox_stats = {
@@ -91,7 +91,7 @@ karter_knox_stats = {
     "PPG": 8,
     "FG%": 46,
     "3P%": 38,
-    "FT%": "81",
+    "FT%": 73,
 }
 
 malique_ewin_stats = {
@@ -107,7 +107,7 @@ malique_ewin_stats = {
     "PPG": 10,
     "FG%": 60,
     "3P%": 75,
-    "FT%": "71",
+    "FT%": 73,
 }
 
 ayden_kelley_stats = {
@@ -123,7 +123,7 @@ ayden_kelley_stats = {
     "PPG": 1,
     "FG%": 50,
     "3P%": 100,
-    "FT%": "50",
+    "FT%": 50,
 }
 
 elmir_dzafic_stats = {
@@ -139,7 +139,7 @@ elmir_dzafic_stats = {
     "PPG": 0,
     "FG%": 0,
     "3P%": 0,
-    "FT%": "50",
+    "FT%": 50,
 }
 
 dj_wagner_stats = {
@@ -155,7 +155,7 @@ dj_wagner_stats = {
     "PPG": 8,
     "FG%": 43,
     "3P%": 35,
-    "FT%": "78",
+    "FT%": 72,
 }
 
 nick_pringle_stats = {
@@ -171,7 +171,7 @@ nick_pringle_stats = {
     "PPG": 5,
     "FG%": 72,
     "3P%": 0,
-    "FT%": "61",
+    "FT%": 57,
 }
 
 billy_richmond_stats = {
@@ -187,7 +187,7 @@ billy_richmond_stats = {
     "PPG": 11,
     "FG%": 56,
     "3P%": 24,
-    "FT%": "77",
+    "FT%": 80,
 }
 
 isaiah_sealy_stats = {
@@ -203,7 +203,7 @@ isaiah_sealy_stats = {
     "PPG": 3,
     "FG%": 50,
     "3P%": 0,
-    "FT%": "81",
+    "FT%": 75,
 }
 
 karim_rtail_stats = {
@@ -219,7 +219,7 @@ karim_rtail_stats = {
     "PPG": 0,
     "FG%": 0,
     "3P%": 0,
-    "FT%": "0",
+    "FT%": 0,
 }
 
 paulo_semedo_stats = {
@@ -235,5 +235,5 @@ paulo_semedo_stats = {
     "PPG": 0,
     "FG%": 0,
     "3P%": 0,
-    "FT%": "0",
+    "FT%": 0,
 }
