@@ -16,7 +16,7 @@ external_stylesheets = [
 
 app = Dash(__name__, use_pages=True, suppress_callback_exceptions=True, external_stylesheets=external_stylesheets)
 
-APP_LAST_UPDATED = "Mar 15, 2026"
+APP_LAST_UPDATED = "Mar 19, 2026"
 
 # Google analytics
 app.index_string = f"""
