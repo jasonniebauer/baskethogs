@@ -10,7 +10,7 @@ jaden_karuletwa_stats = {
     "Games Played": 9,
     "PPG": 1,
     "FG%": 0,
-    "3P%": "0",
+    "3P%": 0,
     "FT%": "100%",
 }
 
@@ -26,7 +26,7 @@ meleek_thomas_stats = {
     "Games Played": 35,
     "PPG": 16,
     "FG%": 43,
-    "3P%": "33",
+    "3P%": 41,
     "FT%": "84",
 }
 
@@ -42,7 +42,7 @@ amere_brown_stats = {
     "Games Played": 7,
     "PPG": 0,
     "FG%": 0,
-    "3P%": "0",
+    "3P%": 0,
     "FT%": "50",
 }
 
@@ -58,7 +58,7 @@ darius_acuff_jr_stats = {
     "Games Played": 34,
     "PPG": 23,
     "FG%": 49,
-    "3P%": "44",
+    "3P%": 44,
     "FT%": "73",
 }
 
@@ -74,7 +74,7 @@ trevon_brazile_stats = {
     "Games Played": 34,
     "PPG": 13,
     "FG%": 53,
-    "3P%": "46",
+    "3P%": 35,
     "FT%": "80",
 }
 
@@ -90,7 +90,7 @@ karter_knox_stats = {
     "Games Played": 22,
     "PPG": 8,
     "FG%": 46,
-    "3P%": "47",
+    "3P%": 38,
     "FT%": "81",
 }
 
@@ -106,7 +106,7 @@ malique_ewin_stats = {
     "Games Played": 35,
     "PPG": 10,
     "FG%": 60,
-    "3P%": "100",
+    "3P%": 75,
     "FT%": "71",
 }
 
@@ -122,7 +122,7 @@ ayden_kelley_stats = {
     "Games Played": 7,
     "PPG": 1,
     "FG%": 50,
-    "3P%": "0",
+    "3P%": 100,
     "FT%": "50",
 }
 
@@ -138,7 +138,7 @@ elmir_dzafic_stats = {
     "Games Played": 7,
     "PPG": 0,
     "FG%": 0,
-    "3P%": "0",
+    "3P%": 0,
     "FT%": "50",
 }
 
@@ -154,7 +154,7 @@ dj_wagner_stats = {
     "Games Played": 33,
     "PPG": 8,
     "FG%": 43,
-    "3P%": "35",
+    "3P%": 35,
     "FT%": "78",
 }
 
@@ -170,7 +170,7 @@ nick_pringle_stats = {
     "Games Played": 34,
     "PPG": 5,
     "FG%": 72,
-    "3P%": "0",
+    "3P%": 0,
     "FT%": "61",
 }
 
@@ -186,7 +186,7 @@ billy_richmond_stats = {
     "Games Played": 35,
     "PPG": 11,
     "FG%": 56,
-    "3P%": "35",
+    "3P%": 24,
     "FT%": "77",
 }
 
@@ -202,7 +202,7 @@ isaiah_sealy_stats = {
     "Games Played": 17,
     "PPG": 3,
     "FG%": 50,
-    "3P%": "0",
+    "3P%": 0,
     "FT%": "81",
 }
 
@@ -218,7 +218,7 @@ karim_rtail_stats = {
     "Games Played": 0,
     "PPG": 0,
     "FG%": 0,
-    "3P%": "0",
+    "3P%": 0,
     "FT%": "0",
 }
 
@@ -234,6 +234,6 @@ paulo_semedo_stats = {
     "Games Played": 0,
     "PPG": 0,
     "FG%": 0,
-    "3P%": "0",
+    "3P%": 0,
     "FT%": "0",
 }
