@@ -9,7 +9,7 @@ jaden_karuletwa_stats = {
     "Season High": 5,
     "Games Played": 9,
     "PPG": 1,
-    "FG%": "0",
+    "FG%": 0,
     "3P%": "0",
     "FT%": "100%",
 }
@@ -25,7 +25,7 @@ meleek_thomas_stats = {
     "Season High": 30,
     "Games Played": 35,
     "PPG": 16,
-    "FG%": "37",
+    "FG%": 43,
     "3P%": "33",
     "FT%": "84",
 }
@@ -41,7 +41,7 @@ amere_brown_stats = {
     "Season High": 1,
     "Games Played": 7,
     "PPG": 0,
-    "FG%": "0",
+    "FG%": 0,
     "3P%": "0",
     "FT%": "50",
 }
@@ -57,7 +57,7 @@ darius_acuff_jr_stats = {
     "Season High": 49,
     "Games Played": 34,
     "PPG": 23,
-    "FG%": "49",
+    "FG%": 49,
     "3P%": "44",
     "FT%": "73",
 }
@@ -73,7 +73,7 @@ trevon_brazile_stats = {
     "Season High": 28,
     "Games Played": 34,
     "PPG": 13,
-    "FG%": "55",
+    "FG%": 53,
     "3P%": "46",
     "FT%": "80",
 }
@@ -89,7 +89,7 @@ karter_knox_stats = {
     "Season High": 20,
     "Games Played": 22,
     "PPG": 8,
-    "FG%": "45",
+    "FG%": 46,
     "3P%": "47",
     "FT%": "81",
 }
@@ -105,7 +105,7 @@ malique_ewin_stats = {
     "Season High": 21,
     "Games Played": 35,
     "PPG": 10,
-    "FG%": "65",
+    "FG%": 60,
     "3P%": "100",
     "FT%": "71",
 }
@@ -121,7 +121,7 @@ ayden_kelley_stats = {
     "Season High": 3,
     "Games Played": 7,
     "PPG": 1,
-    "FG%": "0",
+    "FG%": 50,
     "3P%": "0",
     "FT%": "50",
 }
@@ -137,7 +137,7 @@ elmir_dzafic_stats = {
     "Season High": 1,
     "Games Played": 7,
     "PPG": 0,
-    "FG%": "0",
+    "FG%": 0,
     "3P%": "0",
     "FT%": "50",
 }
@@ -153,7 +153,7 @@ dj_wagner_stats = {
     "Season High": 16,
     "Games Played": 33,
     "PPG": 8,
-    "FG%": "41",
+    "FG%": 43,
     "3P%": "35",
     "FT%": "78",
 }
@@ -169,7 +169,7 @@ nick_pringle_stats = {
     "Season High": 15,
     "Games Played": 34,
     "PPG": 5,
-    "FG%": "68",
+    "FG%": 72,
     "3P%": "0",
     "FT%": "61",
 }
@@ -185,7 +185,7 @@ billy_richmond_stats = {
     "Season High": 25,
     "Games Played": 35,
     "PPG": 11,
-    "FG%": "57",
+    "FG%": 56,
     "3P%": "35",
     "FT%": "77",
 }
@@ -201,7 +201,7 @@ isaiah_sealy_stats = {
     "Season High": 12,
     "Games Played": 17,
     "PPG": 3,
-    "FG%": "50",
+    "FG%": 50,
     "3P%": "0",
     "FT%": "81",
 }
@@ -217,7 +217,7 @@ karim_rtail_stats = {
     "Season High": 0,
     "Games Played": 0,
     "PPG": 0,
-    "FG%": "0",
+    "FG%": 0,
     "3P%": "0",
     "FT%": "0",
 }
@@ -233,7 +233,7 @@ paulo_semedo_stats = {
     "Season High": 0,
     "Games Played": 0,
     "PPG": 0,
-    "FG%": "0",
+    "FG%": 0,
     "3P%": "0",
     "FT%": "0",
 }
