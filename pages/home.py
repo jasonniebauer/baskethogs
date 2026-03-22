@@ -416,7 +416,9 @@ points_gap_over_time = dmc.Card(
             series=[
                 {"name": "Point Gap Avg.", "label": "Point Gap Avg.", "color": "#C7C8CA", "type": "bar"},
                 {"name": "Point Gap", "color": ARKANSAS_RED, "type": "line"},
-            ]
+            ],
+            mb="sm",
+            pr="1rem",
         )
     ]
 )
@@ -617,7 +619,9 @@ field_goals_over_time = dmc.Card(
             series=[
                 {"name": "Field Goal Avg.", "label": "Field Goal Avg.", "color": "#C7C8CA", "type": "bar"},
                 {"name": "Field Goals", "color": ARKANSAS_RED, "type": "line"},
-            ]
+            ],
+            mb="sm",
+            pr="1rem",
         )
     ]
 )
@@ -649,7 +653,9 @@ x3_pointers_over_time = dmc.Card(
             series=[
                 {"name": "3-Pointer Avg.", "label": "3-Pointer Avg.", "color": "#C7C8CA", "type": "bar"},
                 {"name": "Count 3-Pointers", "label": "3-Pointers", "color": ARKANSAS_RED, "type": "line"},
-            ]
+            ],
+            mb="sm",
+            pr="1rem",
         )
     ]
 )
@@ -681,7 +687,9 @@ free_throws_over_time = dmc.Card(
             series=[
                 {"name": "Free Throw Avg.", "label": "Free Throw Avg.", "color": "#C7C8CA", "type": "bar"},
                 {"name": "Count Free Throws", "label": "Free Throws", "color": ARKANSAS_RED, "type": "line"},
-            ]
+            ],
+            mb="sm",
+            pr="1rem",
         )
     ]
 )
@@ -713,7 +721,9 @@ assists_over_time = dmc.Card(
             series=[
                 {"name": "Assist Avg.", "label": "Assist Avg.", "color": "#C7C8CA", "type": "bar"},
                 {"name": "Assists", "color": ARKANSAS_RED, "type": "line"},
-            ]
+            ],
+            mb="sm",
+            pr="1rem",
         )
     ]
 )
@@ -745,7 +755,9 @@ turnovers_over_time = dmc.Card(
             series=[
                 {"name": "Turnover Avg.", "label": "Turnover Avg.", "color": "#C7C8CA", "type": "bar"},
                 {"name": "Turnovers", "color": ARKANSAS_RED, "type": "line"},
-            ]
+            ],
+            mb="sm",
+            pr="1rem",
         )
     ]
 )
@@ -777,7 +789,9 @@ steals_over_time = dmc.Card(
             series=[
                 {"name": "Steal Avg.", "label": "Steal Avg.", "color": "#C7C8CA", "type": "bar"},
                 {"name": "Steals", "color": ARKANSAS_RED, "type": "line"},
-            ]
+            ],
+            mb="sm",
+            pr="1rem",
         )
     ]
 )
