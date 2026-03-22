@@ -45,8 +45,8 @@ BLACK = "#000000"
 SPOOFER_STONE = "#424242"
 TODAY = date.today()
 
-TOTAL_GAMES_PLAYED = 35
-TOTAL_WINS = 27
+TOTAL_GAMES_PLAYED = 36
+TOTAL_WINS = 28
 WINNING_PERCENT = f"{round((TOTAL_WINS / TOTAL_GAMES_PLAYED) * 100)}%"
 SEC_TOURNAMENT = "1st"
 AVG_POINTS_PER_GAME = 90
@@ -56,6 +56,7 @@ AVG_FREE_THROWS = 17
 AVG_ASSISTS_PER_GAME = 17
 AVG_TURNOVERS_PER_GAME = 9
 AVG_STEALS_PER_GAME = 7
+AVG_POINT_GAP = 16
 
 # Loop over each game to calculate stats
 for game in df_game_stats:
@@ -66,6 +67,7 @@ for game in df_game_stats:
     game['Assist Avg.'] = AVG_ASSISTS_PER_GAME
     game['Turnover Avg.'] = AVG_TURNOVERS_PER_GAME
     game['Steal Avg.'] = AVG_STEALS_PER_GAME
+    game['Point Gap Avg.'] = AVG_POINT_GAP
 
     # Get the difference in points between each team
     game['Point Gap'] = abs(game['Arkansas'] - game['Opponent'])
@@ -389,19 +391,33 @@ points_gap_over_time = dmc.Card(
             mb="xl",
             fw="500",
         ),
-        dmc.AreaChart(
+        # dmc.AreaChart(
+        #     h=300,
+        #     dataKey="date",
+        #     data=df_game_stats,
+        #     series = [
+        #         {"name": "Point Gap", "color": ARKANSAS_RED},
+        #     ],
+        #     curveType="linear",
+        #     tickLine="y",
+        #     # withXAxis=False,
+        #     mb="sm",
+        #     pr="1rem",
+        # ),
+        dmc.CompositeChart(
             h=300,
-            dataKey="date",
             data=df_game_stats,
-            series = [
-                {"name": "Point Gap", "color": ARKANSAS_RED},
-            ],
-            curveType="linear",
-            tickLine="y",
-            # withXAxis=False,
-            mb="sm",
-            pr="1rem",
-        ),
+            dataKey="date",
+            curveType="Linear",
+            gridAxis="x",
+            withXAxis=True,
+            withYAxis=True,
+            withLegend=True,
+            series=[
+                {"name": "Point Gap Avg.", "label": "Point Gap Avg.", "color": "#C7C8CA", "type": "bar"},
+                {"name": "Point Gap", "color": ARKANSAS_RED, "type": "line"},
+            ]
+        )
     ]
 )
 
