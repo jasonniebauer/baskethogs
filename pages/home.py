@@ -1115,32 +1115,32 @@ players = dmc.Grid(
             radar_data=darius_acuff_jr_radar,
         ),
         player_card(
-            player_stats_data=meleek_thomas_stats,
-            radar_data=meleek_thomas_radar,
-        ),
-        player_card(
-            player_stats_data=dj_wagner_stats,
-            radar_data=dj_wagner_radar,
-        ),
-        player_card(
             player_stats_data=billy_richmond_stats,
             radar_data=billy_richmond_radar,
+        ),
+        player_card(
+            player_stats_data=meleek_thomas_stats,
+            radar_data=meleek_thomas_radar,
         ),
         player_card(
             player_stats_data=trevon_brazile_stats,
             radar_data=trevon_brazile_radar,
         ),
         player_card(
+            player_stats_data=malique_ewin_stats,
+            radar_data=malique_ewin_radar,
+        ),
+        player_card(
             player_stats_data=nick_pringle_stats,
             radar_data=nick_pringle_radar,
         ),
         player_card(
-            player_stats_data=karter_knox_stats,
-            radar_data=karter_knox_radar,
+            player_stats_data=dj_wagner_stats,
+            radar_data=dj_wagner_radar,
         ),
         player_card(
-            player_stats_data=malique_ewin_stats,
-            radar_data=malique_ewin_radar,
+            player_stats_data=karter_knox_stats,
+            radar_data=karter_knox_radar,
         ),
         player_card(
             player_stats_data=isaiah_sealy_stats,
@@ -1155,12 +1155,12 @@ players = dmc.Grid(
             radar_data=jaden_karuletwa_radar,
         ),
         player_card(
-            player_stats_data=amere_brown_stats,
-            radar_data=amere_brown_radar,
-        ),
-        player_card(
             player_stats_data=ayden_kelley_stats,
             radar_data=ayden_kelley_radar,
+        ),
+        player_card(
+            player_stats_data=amere_brown_stats,
+            radar_data=amere_brown_radar,
         ),
         player_card(
             player_stats_data=karim_rtail_stats,
