@@ -11,7 +11,7 @@ jaden_karuletwa_radar = [
 
 meleek_thomas_radar = [
     {"stat": "Field Goals", "count": 5},
-    {"stat": "3-Pointers", "count": 3},
+    {"stat": "3-Pointers", "count": 2},
     {"stat": "Free Thows", "count": 3},
     {"stat": "Off. Rebounds", "count": 1},
     {"stat": "Def. Rebounds", "count": 3},
@@ -34,10 +34,10 @@ amere_brown_radar = [
 darius_acuff_jr_radar = [
     {"stat": "Field Goals", "count": 8},
     {"stat": "3-Pointers", "count": 3},
-    {"stat": "Free Thows", "count": 5},
+    {"stat": "Free Thows", "count": 6},
     {"stat": "Off. Rebounds", "count": 1},
     {"stat": "Def. Rebounds", "count": 3},
-    {"stat": "Assists", "count": 7},
+    {"stat": "Assists", "count": 6},
     {"stat": "Turnovers", "count": 2},
     {"stat": "Steals", "count": 2},
 ]
