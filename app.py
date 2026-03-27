@@ -1,10 +1,14 @@
 import os
+from dotenv import load_dotenv
 from dash import Dash, html, page_container
 import dash_mantine_components as dmc
 
 
+# Load .env file
+load_dotenv()
+
 # Google Analytics Measurement ID
-GA_MEASUREMENT_ID = 'G-ZD0QG42GY9'
+GA_MEASUREMENT_ID = os.getenv("GOOGLE_ANALYTICS")
 
 external_stylesheets = [
     {
