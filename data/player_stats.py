@@ -23,11 +23,11 @@ meleek_thomas_stats = {
     "Birthdate": "8/6/2006",
     "Number": "1",
     "Season High": 30,
-    "Games Played": 35,
+    "Games Played": 37,
     "PPG": 16,
     "FG%": 43,
-    "3P%": 41,
-    "FT%": 85,
+    "3P%": 42,
+    "FT%": 84,
 }
 
 amere_brown_stats = {
@@ -55,9 +55,9 @@ darius_acuff_jr_stats = {
     "Birthdate": "11/16/2006",
     "Number": "5",
     "Season High": 49,
-    "Games Played": 34,
+    "Games Played": 36,
     "PPG": 23,
-    "FG%": 49,
+    "FG%": 48,
     "3P%": 44,
     "FT%": 81,
 }
@@ -71,11 +71,11 @@ trevon_brazile_stats = {
     "Birthdate": "1/7/2003",
     "Number": "7",
     "Season High": 28,
-    "Games Played": 34,
+    "Games Played": 36,
     "PPG": 13,
     "FG%": 53,
-    "3P%": 35,
-    "FT%": 72,
+    "3P%": 34,
+    "FT%": 71,
 }
 
 karter_knox_stats = {
@@ -103,11 +103,11 @@ malique_ewin_stats = {
     "Birthdate": "1/1/2003",
     "Number": "12",
     "Season High": 21,
-    "Games Played": 35,
+    "Games Played": 37,
     "PPG": 10,
-    "FG%": 60,
+    "FG%": 59,
     "3P%": 75,
-    "FT%": 73,
+    "FT%": 74,
 }
 
 ayden_kelley_stats = {
@@ -151,8 +151,8 @@ dj_wagner_stats = {
     "Birthdate": "5/4/2005",
     "Number": "21",
     "Season High": 16,
-    "Games Played": 33,
-    "PPG": 8,
+    "Games Played": 35,
+    "PPG": 7,
     "FG%": 43,
     "3P%": 35,
     "FT%": 72,
@@ -167,9 +167,9 @@ nick_pringle_stats = {
     "Birthdate": "9/16/2001",
     "Number": "23",
     "Season High": 15,
-    "Games Played": 34,
+    "Games Played": 35,
     "PPG": 5,
-    "FG%": 72,
+    "FG%": 73,
     "3P%": 0,
     "FT%": 57,
 }
@@ -183,11 +183,11 @@ billy_richmond_stats = {
     "Birthdate": "4/11/2006",
     "Number": "24",
     "Season High": 25,
-    "Games Played": 35,
+    "Games Played": 37,
     "PPG": 11,
     "FG%": 56,
-    "3P%": 24,
-    "FT%": 80,
+    "3P%": 26,
+    "FT%": 78,
 }
 
 isaiah_sealy_stats = {
@@ -199,7 +199,7 @@ isaiah_sealy_stats = {
     "Birthdate": "1/1/2007",
     "Number": "30",
     "Season High": 12,
-    "Games Played": 17,
+    "Games Played": 19,
     "PPG": 3,
     "FG%": 50,
     "3P%": 0,
