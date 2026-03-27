@@ -150,46 +150,6 @@ team_stats_headline = dmc.Title(
     py="2rem",
 )
 
-# team = dmc.AvatarGroup([
-#     dmc.Tooltip(
-#         dmc.Avatar(src="/assets/players/Meleek-Thomas.jpg", size="xl", radius="md"),
-#         label="Meleek Thomas",
-#         position="bottom",
-#     ),
-#     dmc.Avatar(src="/assets/players/Dj-Wagner.jpg", size="xl", radius="md"),
-# ])
-
-# df_total_wins_over_time = [
-#   {"date": "Southern", "Total Wins": 1},
-#   {"date": "Michigan State", "Total Wins": 1},
-# ]
-
-# total_wins_over_time = dmc.Card(
-#     radius="md",
-#     bd="1px solid #C7C8CA",
-#     mb="5rem",
-#     children=[
-#         dmc.Title(
-#             "Total Wins Over Time",
-#             order=1,
-#             mb="xl",
-#         ),
-#         dmc.LineChart(
-#             h=300,
-#             dataKey="date",
-#             data=df_total_wins_over_time,
-#             series = [
-#                 {"name": "Total Wins", "color": ARKANSAS_RED},
-#             ],
-#             curveType="Linear",
-#             tickLine="y",
-#             # withXAxis=False,
-#             mb="sm",
-#             pr="1rem",
-#         ),
-#     ]
-# )
-
 total_points_over_time = dmc.Card(
     radius="md",
     bd="1px solid #C7C8CA",
