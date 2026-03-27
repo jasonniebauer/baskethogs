@@ -431,4 +431,16 @@ df_game_stats = [
         "Turnovers": 7,
         "Steals": 8,
     },
+    {
+        "date": "Arizona",
+        "Arkansas": 88,
+        "Opponent": 109,
+        "Field Goals": 31,
+        "Count 3-Pointers": 5,
+        "Count Free Throws": 21,
+        "Count 2-Pointers": 26,
+        "Assists": 13,
+        "Turnovers": 9,
+        "Steals": 9,
+    },
 ]
