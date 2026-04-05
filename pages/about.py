@@ -21,7 +21,7 @@ layout = dmc.Box(
             "BasketHogs is an analytics hub for measuring the performance of the Arkansas Razorback men's basketball team across the 2025-2026 season. BasketHogs started as a weekend project by ",
             dmc.Anchor(
                 "Jason Niebauer",
-                href="https://www.linkedin.com/in/jasonniebauer/",
+                href="https://jasonniebauer.com",
                 target="_blank",
                 c=ARKANSAS_RED,
             ),
